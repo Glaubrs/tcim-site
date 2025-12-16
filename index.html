@@ -179,6 +179,26 @@
 
     .version-body { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; }
 
+    .version-summary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 0.35rem;
+      margin-bottom: 0.35rem;
+      color: var(--text-primary);
+    }
+
+    .version-summary strong {
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-right: 0.25rem;
+    }
+
+    .motivos-resumo {
+      margin-top: 0.35rem;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
     /* --- NOVO GRID DE ESTATÍSTICAS (CORRIGIDO) --- */
     .version-stats-grid {
       display: grid;
