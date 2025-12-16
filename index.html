@@ -383,6 +383,7 @@
             ? v.accuracy
             : (bestVersion && v.version === bestVersion && typeof bestAcc === "number" ? bestAcc : null);
           const vAcc = (typeof accVal === "number") ? `${(accVal * 100).toFixed(0)}%` : "--";
+          const vScore = (typeof v.score === "number") ? `Score: ${v.score.toFixed(1)}` : "";
           
           let vHit = '<div class="hit-indicator" style="color:var(--text-muted)">- Último sinal gerado: Pendente</div>';
           if(v.hit === true) vHit = '<div class="hit-indicator hit-success">✔ Último sinal gerado: Win</div>';
@@ -401,10 +402,7 @@
             ? `<div class="version-alerts">⚠ Alertas:<ul>${alerts.slice(0,3).map(a => `<li>${a}</li>`).join("")}</ul></div>`
             : "";
 
-          const cleanMotivos = Array.isArray(sym.motivos) ? sym.motivos.filter(m => !/gap|ffill/i.test(m)) : [];
-          const motivosResumo = cleanMotivos.length
-            ? `<div style="margin-top:8px; color:var(--text-secondary); font-size:0.85rem;">${cleanMotivos.slice(0,1).join('<br>')}</div>`
-            : "";
+          const motivosResumo = "";
           
           // Classe para destacar risco na mitigação
           const mitClass = mit.toLowerCase().includes('risco') || mit.toLowerCase().includes('alerta') 
@@ -441,7 +439,8 @@
                    </div>
                 </div>
 
-                ${alertsHtml || motivosResumo}
+                <div style="margin:4px 0; color:var(--text-secondary); font-size:0.85rem;">${vScore}</div>
+                ${alertsHtml}
                 ${vHit}
               </div>
             </div>
