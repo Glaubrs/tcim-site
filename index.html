@@ -321,9 +321,8 @@
       if (!refStr) return "";
       const d = new Date(refStr);
       if (Number.isNaN(d.getTime())) return "";
-      const date = d.toLocaleDateString("pt-BR");
-      const time = d.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
-      return `${date} ${time}`;
+      // Apenas data
+      return d.toLocaleDateString("pt-BR");
     }
 
     function stripGapText(text) {
@@ -381,7 +380,8 @@
               const vScore = (typeof v.score === "number") ? `Score: ${v.score.toFixed(1)}` : "";
               
               const sym = (v.symbol_results && v.symbol_results[0]) || {};
-              const refLabel = formatRefTime(sym.ref_time);
+              const hitRef = v.hit_ref_time || sym.ref_time;
+              const refLabel = formatRefTime(hitRef);
               const refText = refLabel ? ` em ${refLabel}` : "";
               let vHit = `<div class="hit-indicator" style="color:var(--text-muted)">- Último sinal gerado${refText}: Pendente</div>`;
               if(v.hit === true) vHit = `<div class="hit-indicator hit-success">✔ Último sinal gerado${refText}: Win</div>`;
