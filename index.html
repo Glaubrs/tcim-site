@@ -403,7 +403,7 @@
 
           const cleanMotivos = Array.isArray(sym.motivos) ? sym.motivos.filter(m => !/gap|ffill/i.test(m)) : [];
           const motivosResumo = cleanMotivos.length
-            ? `<div style="margin-top:8px; color:var(--text-secondary); font-size:0.85rem;">${cleanMotivos.slice(0,2).join('<br>')}</div>`
+            ? `<div style="margin-top:8px; color:var(--text-secondary); font-size:0.85rem;">${cleanMotivos.slice(0,1).join('<br>')}</div>`
             : "";
           
           // Classe para destacar risco na mitigação
@@ -441,8 +441,7 @@
                    </div>
                 </div>
 
-                ${alertsHtml || vMotivo}
-                ${motivosResumo}
+                ${alertsHtml || motivosResumo}
                 ${vHit}
               </div>
             </div>
