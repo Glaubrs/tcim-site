@@ -317,6 +317,15 @@
       return `${h}:${m}:${sec}`;
     }
 
+    function formatRefTime(refStr) {
+      if (!refStr) return "";
+      const d = new Date(refStr);
+      if (Number.isNaN(d.getTime())) return "";
+      const date = d.toLocaleDateString("pt-BR");
+      const time = d.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
+      return `${date} ${time}`;
+    }
+
     function stripGapText(text) {
       if (!text) return "";
       return text
@@ -371,11 +380,13 @@
               const vAcc = (typeof accVal === "number") ? `${(accVal * 100).toFixed(0)}%` : "--";
               const vScore = (typeof v.score === "number") ? `Score: ${v.score.toFixed(1)}` : "";
               
-              let vHit = '<div class="hit-indicator" style="color:var(--text-muted)">- Último sinal gerado: Pendente</div>';
-              if(v.hit === true) vHit = '<div class="hit-indicator hit-success">✔ Último sinal gerado: Win</div>';
-              if(v.hit === false) vHit = '<div class="hit-indicator hit-fail">✖ Último sinal gerado: Loss</div>';
-
               const sym = (v.symbol_results && v.symbol_results[0]) || {};
+              const refLabel = formatRefTime(sym.ref_time);
+              const refText = refLabel ? ` em ${refLabel}` : "";
+              let vHit = `<div class="hit-indicator" style="color:var(--text-muted)">- Último sinal gerado${refText}: Pendente</div>`;
+              if(v.hit === true) vHit = `<div class="hit-indicator hit-success">✔ Último sinal gerado${refText}: Win</div>`;
+              if(v.hit === false) vHit = `<div class="hit-indicator hit-fail">✖ Último sinal gerado${refText}: Loss</div>`;
+
               const blocos = sym.blocos || {};
               const tend = (blocos.tendencia && blocos.tendencia.status) ? blocos.tendencia.status : "-";
               const ctx = (blocos.contexto && blocos.contexto.status) ? blocos.contexto.status : "-";
@@ -515,4 +526,3 @@
   </script>
 </body>
 </html>
-
