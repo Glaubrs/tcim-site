@@ -1,5 +1,5 @@
 {
-  "updated_at": "2025-12-16T17:02:00+00:00",
+  "updated_at": "2025-12-16T18:21:00+00:00",
   "regions": [
     {
       "region": "Europe",
@@ -235,6 +235,68 @@
       "best_version": {
         "version": "1.2.1",
         "accuracy": 0.6761904761904762
+      }
+    },
+    {
+      "region": "America",
+      "session_name": "AMERICA",
+      "session_start": "17/12/2025 10:30",
+      "updated_at": "2025-12-16T18:21:00+00:00",
+      "versions": [
+        {
+          "region": "America",
+          "version": "1.2.3",
+          "vies": "FORA",
+          "score": 0.0,
+          "motivo": "XAUUSD: FORA (score=0.0) | Alertas: Dados de XAUUSD estao defasados 1140.0 min (limite 10 min). Verifique API/conexao.",
+          "hit": true,
+          "hit_ref_time": "2025-12-08T00:00:00",
+          "updated_at": "2025-12-16T18:21:00+00:00",
+          "symbol_results": [
+            {
+              "symbol": "XAUUSD",
+              "vies": "FORA",
+              "score": 0.0,
+              "motivos": [],
+              "alertas": [
+                "Dados de XAUUSD estao defasados 1140.0 min (limite 10 min). Verifique API/conexao."
+              ],
+              "blocos": {},
+              "hit": null,
+              "ref_time": null
+            }
+          ],
+          "accuracy": 0.88
+        },
+        {
+          "region": "America",
+          "version": "1.0.3",
+          "vies": "FORA",
+          "score": 0.0,
+          "motivo": "XAUUSD: FORA (score=0.0) | Alertas: Dados de XAUUSD estao defasados 1140.0 min (limite 10 min). Verifique API/conexao.",
+          "hit": true,
+          "hit_ref_time": "2025-12-10T00:00:00",
+          "updated_at": "2025-12-16T18:21:00+00:00",
+          "symbol_results": [
+            {
+              "symbol": "XAUUSD",
+              "vies": "FORA",
+              "score": 0.0,
+              "motivos": [],
+              "alertas": [
+                "Dados de XAUUSD estao defasados 1140.0 min (limite 10 min). Verifique API/conexao."
+              ],
+              "blocos": {},
+              "hit": null,
+              "ref_time": null
+            }
+          ],
+          "accuracy": 0.7464788732394366
+        }
+      ],
+      "best_version": {
+        "version": "1.2.3",
+        "accuracy": 0.88
       }
     }
   ]
