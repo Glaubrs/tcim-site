@@ -9,7 +9,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
-
   <style>
     :root {
       /* Streamlit Dark Theme Palette */
@@ -36,6 +35,7 @@
       /* Fontes */
       --font-body: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
       --font-mono: 'Source Code Pro', monospace;
+      --font-digital: 'Courier New', monospace;
     }
 
     * { box-sizing: border-box; }
@@ -65,180 +65,135 @@
       padding-bottom: 1.5rem;
     }
 
-    .branding {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-    }
+    .branding { display: flex; align-items: center; gap: 1.5rem; }
+    .logo-img { height: 60px; width: auto; object-fit: contain; border-radius: 8px; }
 
-    .logo-img {
-      height: 60px;
-      width: auto;
-      object-fit: contain;
-      border-radius: 8px;
-    }
+    .title-group h1 { margin: 0; font-size: 2.25rem; font-weight: 700; color: var(--text-primary); line-height: 1; }
+    .title-group .sub { margin-top: 0.5rem; color: var(--text-secondary); font-size: 1rem; font-weight: 400; }
 
-    .title-group h1 {
-      margin: 0;
-      font-size: 2.25rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      line-height: 1;
-    }
-
-    .title-group .sub {
-      margin-top: 0.5rem;
-      color: var(--text-secondary);
-      font-size: 1rem;
-      font-weight: 400;
-    }
-
-    .header-info {
-      text-align: right;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      align-items: flex-end;
-    }
-
-    .meta-info {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      font-family: var(--font-mono);
-    }
+    .header-info { text-align: right; display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-end; }
+    .meta-info { font-size: 0.8rem; color: var(--text-muted); font-family: var(--font-mono); }
 
     .dash-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.5rem 1rem;
-      border-radius: 0.5rem;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      background-color: transparent;
-      color: var(--text-primary);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 14px;
-      transition: all 0.2s;
+      display: inline-flex; align-items: center; justify-content: center; padding: 0.5rem 1rem;
+      border-radius: 0.5rem; border: 1px solid rgba(255, 255, 255, 0.2); background-color: transparent;
+      color: var(--text-primary); text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.2s;
     }
+    .dash-button:hover { border-color: var(--color-sell); color: var(--color-sell); background-color: rgba(255, 75, 75, 0.05); }
 
-    .dash-button:hover {
-      border-color: var(--color-sell);
-      color: var(--color-sell);
-      background-color: rgba(255, 75, 75, 0.05);
-    }
-
-    /* --- Stats Bar --- */
+    /* --- Stats Bar Layout --- */
     #stats { margin-bottom: 2rem; }
     .stats-grid { 
         display: flex; 
         gap: 1.5rem; 
         flex-wrap: wrap; 
-        align-items: stretch; /* Garante altura igual para os cards */
+        align-items: flex-start; /* Alinhamento topo */
     }
     
+    /* Stats Normais */
     .stat-item { 
-        display: flex; 
-        flex-direction: column; 
-        min-width: 140px; 
-        padding: 0.5rem 0; /* Espaço leve */
+        display: flex; flex-direction: column; min-width: 140px; 
+        padding-top: 1rem; /* Alinhar visualmente com o corpo da placa */
     }
-
     .stat-label { font-size: 14px; color: var(--text-secondary); margin-bottom: 6px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.5px; }
     .stat-value { font-family: var(--font-body); font-size: 32px; font-weight: 700; color: var(--text-primary); }
     .stat-value.highlight { color: var(--color-buy); }
 
-    /* --- SAFETY PLACA (Mini Card) --- */
-    .stat-item.safety-item {
-        background: var(--bg-card);
-        border: 1px solid var(--border-color);
-        padding: 0.8rem 1.2rem;
-        border-radius: 8px;
-        align-items: center;
-        text-align: center;
-        justify-content: center;
-        transition: all 0.3s ease;
-        min-width: 160px;
+
+    /* --- SAFETY SIGN (Estilo Placa Industrial) --- */
+    /* Adaptado do seu exemplo para Flexbox */
+    .safety-sign {
+      background: linear-gradient(180deg, #262730 0%, #1c1e24 100%);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      
+      /* Tamanho flexível mas imponente */
+      min-width: 280px;
+      flex-grow: 1; 
+      max-width: 400px; /* Limite para não ficar gigante em telas wide */
+      
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
     }
 
-    /* Estilo "SAFE" (Verde Neon) */
-    .safety-item.safe {
-        border-color: var(--color-buy);
-        box-shadow: 0 0 15px rgba(9, 171, 59, 0.1);
-    }
-    .safety-item.safe .stat-label { color: var(--color-buy); opacity: 0.9; font-weight: 600; }
-    .safety-item.safe .stat-value { color: var(--color-buy); text-shadow: 0 0 10px rgba(9, 171, 59, 0.4); }
-
-    /* Estilo "DANGER" (Vermelho Alerta) */
-    .safety-item.danger {
-        border-color: var(--color-sell);
-        box-shadow: 0 0 15px rgba(255, 75, 75, 0.1);
-        background: repeating-linear-gradient(
-            45deg,
-            var(--bg-card),
-            var(--bg-card) 10px,
-            rgba(255, 75, 75, 0.05) 10px,
-            rgba(255, 75, 75, 0.05) 20px
-        );
-    }
-    .safety-item.danger .stat-label { color: var(--color-sell); font-weight: 700; letter-spacing: 1px; }
-    .safety-item.danger .stat-value { color: var(--color-sell); text-shadow: 0 0 10px rgba(255, 75, 75, 0.4); }
-
-
-    /* --- Grid & Cards --- */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 1.5rem;
+    .sign-header {
+      padding: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.85rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      display: flex; justify-content: center; align-items: center; gap: 8px;
     }
 
+    .sign-body { padding: 15px 20px; }
+    .sign-pre { color: var(--text-secondary); font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 5px; }
+    
+    .sign-number {
+      font-family: var(--font-digital);
+      font-size: 4rem; /* Ajustei levemente para encaixar melhor */
+      font-weight: 700;
+      line-height: 1;
+      margin: 10px 0;
+      text-shadow: 0 0 20px rgba(255,255,255,0.1);
+    }
+    .sign-pos { font-weight: 600; font-size: 1rem; color: var(--text-primary); }
+
+    /* ESTADO: SEGURO (GREEN) */
+    .safety-sign.safe { border-color: var(--color-buy); box-shadow: 0 0 15px rgba(9, 171, 59, 0.15); }
+    .safety-sign.safe .sign-header { background-color: rgba(9, 171, 59, 0.15); color: var(--color-buy); border-bottom-color: var(--color-buy); }
+    .safety-sign.safe .sign-number { color: var(--color-buy); text-shadow: 0 0 20px rgba(9, 171, 59, 0.6); }
+    .safety-sign.safe .sign-pos { color: var(--text-primary); }
+
+    /* ESTADO: PERIGO (RED) */
+    .safety-sign.danger { border-color: var(--color-sell); box-shadow: 0 0 15px rgba(255, 75, 75, 0.15); }
+    .safety-sign.danger .sign-header {
+      background: repeating-linear-gradient(
+        45deg,
+        #2d1b1b,
+        #2d1b1b 10px,
+        var(--color-sell) 10px,
+        var(--color-sell) 20px
+      );
+      color: white; text-shadow: 0 1px 2px black; border-bottom-color: var(--color-sell);
+    }
+    .safety-sign.danger .sign-number { color: var(--color-sell); text-shadow: 0 0 20px rgba(255, 75, 75, 0.6); }
+    .safety-sign.danger .sign-pos { color: var(--color-sell); }
+
+
+    /* --- Grid & Cards (Abaixo) --- */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+    
     .card {
-      background-color: var(--bg-card);
-      border-radius: 0.5rem;
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+      background-color: var(--bg-card); border-radius: 0.5rem; padding: 1.5rem;
+      display: flex; flex-direction: column; box-shadow: 0 1px 2px rgba(0,0,0,0.1);
       transition: transform 0.2s;
     }
-
     .card:hover { transform: translateY(-2px); }
 
-    .card-header {
-      margin-bottom: 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-    }
-
+    .card-header { margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: flex-start; }
     .session-name { font-size: 1.1rem; font-weight: 600; color: var(--text-primary); }
     .version-tag { font-size: 0.8rem; color: var(--text-muted); margin-top: 2px; display: block; }
 
-    /* Timer */
     .timer-container {
-      background: var(--bg-body);
-      border-radius: 0.25rem;
-      padding: 1rem;
-      text-align: center;
-      margin-bottom: 1.5rem;
-      border: 1px solid var(--border-color);
+      background: var(--bg-body); border-radius: 0.25rem; padding: 1rem; text-align: center;
+      margin-bottom: 1.5rem; border: 1px solid var(--border-color);
     }
-
     .timer-label { font-size: 0.75rem; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 0.25rem; letter-spacing: 0.5px; }
     .timer { font-family: var(--font-mono); font-size: 2rem; font-weight: 600; color: var(--text-primary); }
 
-    /* Versions List */
     .version-list { display: flex; flex-direction: column; gap: 1rem; }
     .version-card { background-color: transparent; border: 1px solid var(--border-color); border-radius: 0.25rem; padding: 1rem; }
-
     .version-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
     .version-label { font-weight: 600; color: var(--text-primary); font-size: 1rem; }
     .version-acc { font-size: 0.85rem; color: var(--text-secondary); }
 
     .version-badge {
       display: inline-block; padding: 0.35rem 0.7rem; border-radius: 0.3rem;
-      font-size: 1rem; font-weight: 700; text-transform: uppercase; margin-left: auto;
-      letter-spacing: 0.5px;
+      font-size: 1rem; font-weight: 700; text-transform: uppercase; margin-left: auto; letter-spacing: 0.5px;
     }
     .badge-up { background: var(--color-buy-bg); color: var(--color-buy); }
     .badge-down { background: var(--color-sell-bg); color: var(--color-sell); }
@@ -246,31 +201,20 @@
     .badge-wait { background: var(--bg-hover); color: var(--text-secondary); border: 1px solid var(--border-color); }
 
     .version-body { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; }
-
-    .version-stats-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px 12px;
-      margin-bottom: 16px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-    }
-
+    .version-stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 12px; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    
     .v-stat-item { display: flex; flex-direction: column; align-items: flex-start; }
     .v-stat-label { font-size: 0.75rem; color: var(--text-muted); font-weight: 600; margin-bottom: 4px; text-transform: uppercase; }
     .v-stat-value { font-family: var(--font-mono); font-size: 0.9rem; font-weight: 600; color: var(--text-primary); line-height: 1.3; word-break: break-word; }
-
     .highlight-risk { color: var(--text-primary); border-left: 2px solid var(--color-warn); padding-left: 6px; }
 
     .hit-indicator { font-weight: 600; margin-top: 0.75rem; display: block; padding-top: 0.5rem; border-top: 1px dashed var(--border-color); }
     .hit-success { color: var(--color-buy); }
     .hit-fail { color: var(--color-sell); }
-
+    
     .version-alerts { color: var(--color-warn); font-size: 0.85rem; margin-top: 0.5rem; background: rgba(234, 179, 8, 0.1); padding: 0.5rem; border-radius: 4px; }
     .version-alerts ul { margin: 0; padding-left: 1.2rem; }
-
     .waiting-msg { text-align: center; color: var(--text-muted); padding: 1rem; font-style: italic; }
-
     .error { background: var(--color-sell-bg); border: 1px solid var(--color-sell); color: var(--color-sell); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1.5rem; }
 
     @media (max-width: 600px) {
@@ -279,9 +223,9 @@
       .branding { width: 100%; justify-content: flex-start; }
       .header-info { text-align: left; align-items: flex-start; width: 100%; }
       .dash-button { width: 100%; }
-      .stats-grid { gap: 1rem; flex-direction: column; }
+      .stats-grid { gap: 2rem; flex-direction: column; }
       .stat-item { width: 100%; }
-      .safety-item { width: 100%; }
+      .safety-sign { width: 100%; max-width: none; }
     }
   </style>
 </head>
@@ -296,7 +240,6 @@
           <div class="sub">Monitoramento de Viés</div>
         </div>
       </div>
-
       <div class="header-info">
         <a class="dash-button" href="https://tcim-dashboard.streamlit.app/" target="_blank" rel="noopener">
           Abrir Dashboard
@@ -322,17 +265,24 @@
            <div class="stat-value" id="statsByRegion" style="font-size: 1.25rem; font-weight: 600;">--</div>
         </div>
 
-        <div class="stat-item safety-item" id="lossSign">
-           <div class="stat-label" id="lossSignTitle">Dias sem Loss</div>
-           <div class="stat-value" id="statsDaysNoLoss">--</div>
+        <div class="safety-sign safe" id="lossSign">
+           <div class="sign-header">
+             <span id="signHeaderIcon">⚡</span> 
+             <span id="signHeaderText">Disciplina Operacional</span>
+           </div>
+           <div class="sign-body">
+             <div class="sign-pre" id="signPreText">ESTAMOS HÁ</div>
+             <div class="sign-number" id="statsDaysNoLoss">--</div>
+             <div class="sign-pos" id="signPosText">DIAS SEM LOSS</div>
+           </div>
         </div>
+
       </div>
     </div>
 
     <div id="error" class="error" style="display:none;"></div>
     
-    <div class="grid" id="cards">
-      </div>
+    <div class="grid" id="cards"></div>
   </div>
 
   <script>
@@ -352,11 +302,16 @@
     const errorEl = document.getElementById("error");
     const statsBox = document.getElementById("stats");
     const statsTotalEl = document.getElementById("statsTotal");
-    const statsDaysNoLossEl = document.getElementById("statsDaysNoLoss");
-    const statsByRegionEl = document.getElementById("statsByRegion");
     const accuracyOverallEl = document.getElementById("accuracyOverall");
+    const statsByRegionEl = document.getElementById("statsByRegion");
+
+    // Elementos da Placa
     const lossSignEl = document.getElementById("lossSign");
-    const lossSignTitleEl = document.getElementById("lossSignTitle");
+    const daysNoLossEl = document.getElementById("statsDaysNoLoss");
+    const signHeaderTextEl = document.getElementById("signHeaderText");
+    const signHeaderIconEl = document.getElementById("signHeaderIcon");
+    const signPreTextEl = document.getElementById("signPreText");
+    const signPosTextEl = document.getElementById("signPosText");
 
     function parseUtcToday(hhmm) {
       const [h, m] = hhmm.split(":").map(Number);
@@ -387,15 +342,6 @@
       return d.toLocaleDateString("pt-BR");
     }
 
-    function stripGapText(text) {
-      if (!text) return "";
-      return text
-        .split(/<br>|\\n|;/)
-        .map(t => t.trim())
-        .filter(t => t && !/gap|ffill/i.test(t))
-        .join("<br>");
-    }
-
     function filterGapAlerts(list) {
       if (!Array.isArray(list)) return [];
       return list.filter(item => !/gap|ffill/i.test(item));
@@ -403,7 +349,6 @@
 
     function render() {
       const now = Date.now();
-
       // 1. Prepara e Ordena as Sessões
       const sessionsWithStatus = sessions.map(sess => {
         const openUtc = parseUtcToday(sess.open);
@@ -411,7 +356,6 @@
         const window = nextWindow(openUtc, closeUtc);
         const isOpen = window.status === "open" && now < window.nextClose;
         const timeTarget = isOpen ? window.nextClose : window.nextOpen;
-
         return { ...sess, _window: window, _isOpen: isOpen, _timeTarget: timeTarget };
       });
 
@@ -425,7 +369,6 @@
       cardsEl.innerHTML = sessionsWithStatus.map(sess => {
         const window = sess._window;
         const isOpen = sess._isOpen;
-        
         const target = isOpen ? window.nextClose : window.nextOpen;
         const countdown = fmt(target - now);
         const label = isOpen ? "Fecha em" : "Abre em";
@@ -451,7 +394,6 @@
                 : (bestVersion && v.version === bestVersion && typeof bestAcc === "number" ? bestAcc : null);
               const vAcc = (typeof accVal === "number") ? `${(accVal * 100).toFixed(0)}%` : "--";
               const vScore = (typeof v.score === "number") ? `Score: ${v.score.toFixed(1)}` : "";
-              
               const sym = (v.symbol_results && v.symbol_results[0]) || {};
               const hitRef = v.hit_ref_time || sym.ref_time;
               const refLabel = formatRefTime(hitRef);
@@ -465,23 +407,13 @@
               const ctx = (blocos.contexto && blocos.contexto.status) ? blocos.contexto.status : "-";
               const imp = (blocos.impulso && blocos.impulso.status) ? blocos.impulso.status : "-";
               const mit = (blocos.mitigacao && blocos.mitigacao.status) ? blocos.mitigacao.status : "-";
-              
+              const mitClass = mit.toLowerCase().includes('risco') || mit.toLowerCase().includes('alerta') ? 'v-stat-value highlight-risk' : 'v-stat-value';
               const alerts = filterGapAlerts(Array.isArray(sym.alertas) ? sym.alertas : []);
-              const alertsHtml = alerts.length
-                ? `<div class="version-alerts">⚠ Alertas:<ul>${alerts.slice(0,3).map(a => `<li>${a}</li>`).join("")}</ul></div>`
-                : "";
-              
-              const mitClass = mit.toLowerCase().includes('risco') || mit.toLowerCase().includes('alerta') 
-                      ? 'v-stat-value highlight-risk' 
-                      : 'v-stat-value';
+              const alertsHtml = alerts.length ? `<div class="version-alerts">⚠ Alertas:<ul>${alerts.slice(0,3).map(a => `<li>${a}</li>`).join("")}</ul></div>` : "";
 
               contentHtml = `
                 <div class="version-header">
-                    <div>
-                      <span class="version-label">v${v.version || "--"}</span>
-                      <span class="version-acc" style="margin-left:8px">Acc: ${vAcc}</span>
-                      <span class="version-acc" style="margin-left:8px">${vScore}</span>
-                    </div>
+                    <div><span class="version-label">v${v.version || "--"}</span><span class="version-acc" style="margin-left:8px">Acc: ${vAcc}</span><span class="version-acc" style="margin-left:8px">${vScore}</span></div>
                     <div class="version-badge ${badge}">${vbias}</div>
                 </div>
                 <div class="version-body">
@@ -493,67 +425,46 @@
                     </div>
                     ${alertsHtml}
                     ${vHit}
-                </div>
-              `;
+                </div>`;
           } else {
-              badge = "badge-wait";
-              vbias = "AGUARDE";
-              contentHtml = `
-                <div class="version-header">
-                    <div>
-                      <span class="version-label">v${v.version || "--"}</span>
-                    </div>
-                    <div class="version-badge ${badge}">${vbias}</div>
-                </div>
-                <div class="version-body">
-                   <div class="waiting-msg">Análise disponível em breve...</div>
-                </div>
-              `;
+              badge = "badge-wait"; vbias = "AGUARDE";
+              contentHtml = `<div class="version-header"><div><span class="version-label">v${v.version || "--"}</span></div><div class="version-badge ${badge}">${vbias}</div></div><div class="version-body"><div class="waiting-msg">Análise disponível em breve...</div></div>`;
           }
           return `<div class="version-card">${contentHtml}</div>`;
         }).join("") || '<div class="version-body" style="padding:1rem; text-align:center;">Sem versões disponíveis.</div>';
 
-        return `
-          <div class="card">
-            <div class="card-header">
-              <div>
-                <div class="session-name">${sess.name}</div>
-                <span class="version-tag">${versions.length || 0} versões ativas</span>
-              </div>
-            </div>
-            <div class="timer-container">
-              <div class="timer-label">${label}</div>
-              <div class="timer">${countdown}</div>
-            </div>
-            <div class="version-list">${versionCards}</div>
-          </div>
-        `;
+        return `<div class="card"><div class="card-header"><div><div class="session-name">${sess.name}</div><span class="version-tag">${versions.length || 0} versões ativas</span></div></div><div class="timer-container"><div class="timer-label">${label}</div><div class="timer">${countdown}</div></div><div class="version-list">${versionCards}</div></div>`;
       }).join("");
     }
 
     function renderStats() {
-      if (!statsData) {
-        statsBox.style.display = "none";
-        return;
-      }
+      if (!statsData) { statsBox.style.display = "none"; return; }
       statsBox.style.display = "block";
       
       const acc = typeof statsData.accuracy === "number" ? `${(statsData.accuracy * 100).toFixed(1)}%` : "--";
       accuracyOverallEl.textContent = acc;
       statsTotalEl.textContent = statsData.total || "--";
       
+      // -- LÓGICA DA PLACA GRANDE --
       const daysNoLoss = statsData.days_without_loss;
       const daysVal = typeof daysNoLoss === "number" ? daysNoLoss : 0;
-      statsDaysNoLossEl.textContent = daysVal;
+      
+      daysNoLossEl.textContent = String(daysVal).padStart(2, '0'); // Garante 08, 00 etc.
 
-      // Lógica Visual da Placa de Segurança
       if (daysVal === 0) {
-          lossSignEl.className = "stat-item safety-item danger";
-          lossSignTitleEl.textContent = "ALERTA DE LOSS";
+          lossSignEl.className = "safety-sign danger";
+          signHeaderIconEl.textContent = "⚠";
+          signHeaderTextEl.textContent = "RESET DE RISCO";
+          signPreTextEl.textContent = "O ÚLTIMO LOSS FOI";
+          signPosTextEl.textContent = "DIAS (HOJE)";
       } else {
-          lossSignEl.className = "stat-item safety-item safe";
-          lossSignTitleEl.textContent = "DIAS SEM LOSS";
+          lossSignEl.className = "safety-sign safe";
+          signHeaderIconEl.textContent = "⚡";
+          signHeaderTextEl.textContent = "Disciplina Operacional";
+          signPreTextEl.textContent = "ESTAMOS HÁ";
+          signPosTextEl.textContent = "DIAS SEM LOSS";
       }
+      // ----------------------------
 
       const regions = statsData.by_region || {};
       const regionHtml = Object.entries(regions).map(([reg, info]) => {
@@ -569,32 +480,20 @@
 
     async function fetchData() {
       try {
-        const [biasRes, statsRes] = await Promise.all([
-          fetch(API_URL, { cache: "no-store" }),
-          fetch(STATS_URL, { cache: "no-store" }),
-        ]);
-        
+        const [biasRes, statsRes] = await Promise.all([ fetch(API_URL, { cache: "no-store" }), fetch(STATS_URL, { cache: "no-store" }), ]);
         if (!biasRes.ok) throw new Error(`API Bias: ${biasRes.status}`);
-        
         const biasPayload = await biasRes.json();
         let statsPayload = null;
         if(statsRes.ok) statsPayload = await statsRes.json();
-
         biasData = biasPayload.regions || [];
         statsData = statsPayload;
-
         const dateObj = new Date(biasPayload.updated_at);
         updatedEl.textContent = `Atualizado: ${dateObj.toLocaleTimeString()} (${dateObj.toLocaleDateString()})`;
-        
-        errorEl.style.display = "none";
-        renderStats();
-        render();
+        errorEl.style.display = "none"; renderStats(); render();
       } catch (err) {
-        console.error(err);
-        updatedEl.textContent = "Offline / Reconectando...";
+        console.error(err); updatedEl.textContent = "Offline / Reconectando...";
       }
     }
-
     fetchData();
     setInterval(render, 1000);
     setInterval(fetchData, 60000);
