@@ -1,184 +1,6 @@
 {
-  "updated_at": "2025-12-17T13:16:00+00:00",
+  "updated_at": "2025-12-17T23:31:00+00:00",
   "regions": [
-    {
-      "region": "Asia",
-      "session_name": "ASIA",
-      "session_start": "16/12/2025 21:00",
-      "updated_at": "2025-12-16T23:31:00+00:00",
-      "versions": [
-        {
-          "region": "Asia",
-          "version": "1.2.1",
-          "vies": "FORA",
-          "score": 0.0,
-          "motivo": "USDJPY: FORA (score=0.0) | Tendência: Neutro (Slopes das EMAs estão próximos de zero (lateral).; Confirmação H1: EMA50 inclinada para baixo (-0.5).); Contexto: Favorável (Preço acima da VWAP intradiária (+1).; Preço acima da EMA50 (+0.5).) | Alertas: 192 gaps preenchidos (ffill <= 288).; Baixa volatilidade: range < 0.9x ATR.",
-          "hit": true,
-          "hit_ref_time": "2025-12-12T00:00:00",
-          "updated_at": "2025-12-16T23:31:00+00:00",
-          "symbol_results": [
-            {
-              "symbol": "USDJPY",
-              "vies": "FORA",
-              "score": 0.0,
-              "motivos": [
-                "Tendência: Neutro (Slopes das EMAs estão próximos de zero (lateral).; Confirmação H1: EMA50 inclinada para baixo (-0.5).)",
-                "Contexto: Favorável (Preço acima da VWAP intradiária (+1).; Preço acima da EMA50 (+0.5).)",
-                "Impulso: Moderado (ADX=11.6 entre 10-19 (+1).; Impulso segue a tendência (a favor da baixa).)",
-                "Mitigação: Atenção: mercado travado (Candle atual < 0.9x ATR (-1).)"
-              ],
-              "alertas": [
-                "192 gaps preenchidos (ffill <= 288).",
-                "Baixa volatilidade: range < 0.9x ATR."
-              ],
-              "blocos": {
-                "tendencia": {
-                  "score": -0.5,
-                  "status": "Neutro",
-                  "notas": [
-                    "Slopes das EMAs estão próximos de zero (lateral).",
-                    "Confirmação H1: EMA50 inclinada para baixo (-0.5)."
-                  ],
-                  "valores": {
-                    "slope_ema20": 0.00012308207308591953,
-                    "slope_ema50": -0.0016586380291671295,
-                    "preco": 154.77497,
-                    "ema20": 154.74102926537577,
-                    "ema50": 154.76205238794353
-                  }
-                },
-                "contexto": {
-                  "score": 1.5,
-                  "status": "Favorável",
-                  "notas": [
-                    "Preço acima da VWAP intradiária (+1).",
-                    "Preço acima da EMA50 (+0.5)."
-                  ],
-                  "valores": {
-                    "vwap": 154.76179666666667,
-                    "ema50": 154.76205238794353,
-                    "context_blocked": false
-                  }
-                },
-                "impulso": {
-                  "score": -1.0,
-                  "status": "Moderado",
-                  "notas": [
-                    "ADX=11.6 entre 10-19 (+1).",
-                    "Impulso segue a tendência (a favor da baixa)."
-                  ],
-                  "valores": {
-                    "adx": 11.644165602342184
-                  }
-                },
-                "mitigacao": {
-                  "score": -1.0,
-                  "status": "Atenção: mercado travado",
-                  "notas": [
-                    "Candle atual < 0.9x ATR (-1)."
-                  ],
-                  "valores": {
-                    "candle_range": 0.04192000000000462,
-                    "atr": 0.07398483291166684,
-                    "mitigation_blocked": false
-                  }
-                }
-              },
-              "hit": null,
-              "ref_time": "2025-12-16T23:15:00+00:00"
-            }
-          ],
-          "accuracy": 0.6761904761904762
-        },
-        {
-          "region": "Asia",
-          "version": "1.0.1",
-          "vies": "FORA",
-          "score": 0.0,
-          "motivo": "USDJPY: FORA (score=0.0) | Tendência: Neutro (Slopes das EMAs estão próximos de zero (lateral).; Confirmação H1: EMA50 inclinada para baixo (-0.5).); Contexto: Favorável (Preço acima da VWAP intradiária (+1).; Preço acima da EMA50 (+0.5).) | Alertas: 192 gaps preenchidos (ffill <= 288).; Baixa volatilidade: range < 0.7x ATR.",
-          "hit": true,
-          "hit_ref_time": "2025-12-12T00:00:00",
-          "updated_at": "2025-12-16T23:31:00+00:00",
-          "symbol_results": [
-            {
-              "symbol": "USDJPY",
-              "vies": "FORA",
-              "score": 0.0,
-              "motivos": [
-                "Tendência: Neutro (Slopes das EMAs estão próximos de zero (lateral).; Confirmação H1: EMA50 inclinada para baixo (-0.5).)",
-                "Contexto: Favorável (Preço acima da VWAP intradiária (+1).; Preço acima da EMA50 (+0.5).)",
-                "Impulso: Fraco (ADX=11.6 abaixo de 12 (0).; Impulso segue a tendência (a favor da baixa).)",
-                "Mitigação: Atenção: mercado travado (Candle atual < 0.7x ATR (-1).)"
-              ],
-              "alertas": [
-                "192 gaps preenchidos (ffill <= 288).",
-                "Baixa volatilidade: range < 0.7x ATR."
-              ],
-              "blocos": {
-                "tendencia": {
-                  "score": -0.5,
-                  "status": "Neutro",
-                  "notas": [
-                    "Slopes das EMAs estão próximos de zero (lateral).",
-                    "Confirmação H1: EMA50 inclinada para baixo (-0.5)."
-                  ],
-                  "valores": {
-                    "slope_ema20": 0.00012308207308591953,
-                    "slope_ema50": -0.0016586380291671295,
-                    "preco": 154.77497,
-                    "ema20": 154.74102926537577,
-                    "ema50": 154.76205238794353
-                  }
-                },
-                "contexto": {
-                  "score": 1.5,
-                  "status": "Favorável",
-                  "notas": [
-                    "Preço acima da VWAP intradiária (+1).",
-                    "Preço acima da EMA50 (+0.5)."
-                  ],
-                  "valores": {
-                    "vwap": 154.76179666666667,
-                    "ema50": 154.76205238794353,
-                    "context_blocked": false
-                  }
-                },
-                "impulso": {
-                  "score": -0.0,
-                  "status": "Fraco",
-                  "notas": [
-                    "ADX=11.6 abaixo de 12 (0).",
-                    "Impulso segue a tendência (a favor da baixa)."
-                  ],
-                  "valores": {
-                    "adx": 11.644165602342184
-                  }
-                },
-                "mitigacao": {
-                  "score": -1.0,
-                  "status": "Atenção: mercado travado",
-                  "notas": [
-                    "Candle atual < 0.7x ATR (-1)."
-                  ],
-                  "valores": {
-                    "candle_range": 0.04192000000000462,
-                    "atr": 0.07398483291166684,
-                    "mitigation_blocked": false
-                  }
-                }
-              },
-              "hit": null,
-              "ref_time": "2025-12-16T23:15:00+00:00"
-            }
-          ],
-          "accuracy": 0.65
-        }
-      ],
-      "best_version": {
-        "version": "1.2.1",
-        "accuracy": 0.6761904761904762
-      }
-    },
     {
       "region": "Europe",
       "session_name": "EUROPE",
@@ -549,6 +371,184 @@
       "best_version": {
         "version": "1.2.3",
         "accuracy": 0.88
+      }
+    },
+    {
+      "region": "Asia",
+      "session_name": "ASIA",
+      "session_start": "17/12/2025 21:00",
+      "updated_at": "2025-12-17T23:31:00+00:00",
+      "versions": [
+        {
+          "region": "Asia",
+          "version": "1.2.1",
+          "vies": "COMPRA",
+          "score": 2.0,
+          "motivo": "USDJPY: COMPRA (score=2.0) | Tendência: Alta moderada (EMAs apontando para cima, mas preço perdeu uma das médias.; Confirmação H1: EMA50 inclinada para cima (+0.5).); Contexto: Neutro (Preço abaixo da VWAP (-1).; Preço acima da EMA50 (+0.5).) | Alertas: 192 gaps preenchidos (ffill <= 288).; Baixa volatilidade: range < 0.9x ATR.",
+          "hit": true,
+          "hit_ref_time": "2025-12-12T00:00:00",
+          "updated_at": "2025-12-17T23:31:00+00:00",
+          "symbol_results": [
+            {
+              "symbol": "USDJPY",
+              "vies": "COMPRA",
+              "score": 2.0,
+              "motivos": [
+                "Tendência: Alta moderada (EMAs apontando para cima, mas preço perdeu uma das médias.; Confirmação H1: EMA50 inclinada para cima (+0.5).)",
+                "Contexto: Neutro (Preço abaixo da VWAP (-1).; Preço acima da EMA50 (+0.5).)",
+                "Impulso: Forte (ADX=20.4 acima de 19 (+2).; Impulso segue a tendência (a favor da alta).)",
+                "Mitigação: Atenção: mercado travado (Candle atual < 0.9x ATR (-1).)"
+              ],
+              "alertas": [
+                "192 gaps preenchidos (ffill <= 288).",
+                "Baixa volatilidade: range < 0.9x ATR."
+              ],
+              "blocos": {
+                "tendencia": {
+                  "score": 1.5,
+                  "status": "Alta moderada",
+                  "notas": [
+                    "EMAs apontando para cima, mas preço perdeu uma das médias.",
+                    "Confirmação H1: EMA50 inclinada para cima (+0.5)."
+                  ],
+                  "valores": {
+                    "slope_ema20": 0.005818786279176808,
+                    "slope_ema50": 0.006600536618408608,
+                    "preco": 155.60732,
+                    "ema20": 155.6413466690755,
+                    "ema50": 155.55992073365255
+                  }
+                },
+                "contexto": {
+                  "score": -0.5,
+                  "status": "Neutro",
+                  "notas": [
+                    "Preço abaixo da VWAP (-1).",
+                    "Preço acima da EMA50 (+0.5)."
+                  ],
+                  "valores": {
+                    "vwap": 155.61938999999998,
+                    "ema50": 155.55992073365255,
+                    "context_blocked": false
+                  }
+                },
+                "impulso": {
+                  "score": 2.0,
+                  "status": "Forte",
+                  "notas": [
+                    "ADX=20.4 acima de 19 (+2).",
+                    "Impulso segue a tendência (a favor da alta)."
+                  ],
+                  "valores": {
+                    "adx": 20.385824485840505
+                  }
+                },
+                "mitigacao": {
+                  "score": -1.0,
+                  "status": "Atenção: mercado travado",
+                  "notas": [
+                    "Candle atual < 0.9x ATR (-1)."
+                  ],
+                  "valores": {
+                    "candle_range": 0.03621000000001118,
+                    "atr": 0.05650237473366754,
+                    "mitigation_blocked": false
+                  }
+                }
+              },
+              "hit": null,
+              "ref_time": "2025-12-17T23:15:00+00:00"
+            }
+          ],
+          "accuracy": 0.6761904761904762
+        },
+        {
+          "region": "Asia",
+          "version": "1.0.1",
+          "vies": "COMPRA",
+          "score": 2.0,
+          "motivo": "USDJPY: COMPRA (score=2.0) | Tendência: Alta moderada (EMAs apontando para cima, mas preço perdeu uma das médias.; Confirmação H1: EMA50 inclinada para cima (+0.5).); Contexto: Neutro (Preço abaixo da VWAP (-1).; Preço acima da EMA50 (+0.5).) | Alertas: 192 gaps preenchidos (ffill <= 288).; Baixa volatilidade: range < 0.7x ATR.",
+          "hit": true,
+          "hit_ref_time": "2025-12-12T00:00:00",
+          "updated_at": "2025-12-17T23:31:00+00:00",
+          "symbol_results": [
+            {
+              "symbol": "USDJPY",
+              "vies": "COMPRA",
+              "score": 2.0,
+              "motivos": [
+                "Tendência: Alta moderada (EMAs apontando para cima, mas preço perdeu uma das médias.; Confirmação H1: EMA50 inclinada para cima (+0.5).)",
+                "Contexto: Neutro (Preço abaixo da VWAP (-1).; Preço acima da EMA50 (+0.5).)",
+                "Impulso: Forte (ADX=20.4 acima de 18 (+2).; Impulso segue a tendência (a favor da alta).)",
+                "Mitigação: Atenção: mercado travado (Candle atual < 0.7x ATR (-1).)"
+              ],
+              "alertas": [
+                "192 gaps preenchidos (ffill <= 288).",
+                "Baixa volatilidade: range < 0.7x ATR."
+              ],
+              "blocos": {
+                "tendencia": {
+                  "score": 1.5,
+                  "status": "Alta moderada",
+                  "notas": [
+                    "EMAs apontando para cima, mas preço perdeu uma das médias.",
+                    "Confirmação H1: EMA50 inclinada para cima (+0.5)."
+                  ],
+                  "valores": {
+                    "slope_ema20": 0.005818786279176808,
+                    "slope_ema50": 0.006600536618408608,
+                    "preco": 155.60732,
+                    "ema20": 155.6413466690755,
+                    "ema50": 155.55992073365255
+                  }
+                },
+                "contexto": {
+                  "score": -0.5,
+                  "status": "Neutro",
+                  "notas": [
+                    "Preço abaixo da VWAP (-1).",
+                    "Preço acima da EMA50 (+0.5)."
+                  ],
+                  "valores": {
+                    "vwap": 155.61938999999998,
+                    "ema50": 155.55992073365255,
+                    "context_blocked": false
+                  }
+                },
+                "impulso": {
+                  "score": 2.0,
+                  "status": "Forte",
+                  "notas": [
+                    "ADX=20.4 acima de 18 (+2).",
+                    "Impulso segue a tendência (a favor da alta)."
+                  ],
+                  "valores": {
+                    "adx": 20.385824485840505
+                  }
+                },
+                "mitigacao": {
+                  "score": -1.0,
+                  "status": "Atenção: mercado travado",
+                  "notas": [
+                    "Candle atual < 0.7x ATR (-1)."
+                  ],
+                  "valores": {
+                    "candle_range": 0.03621000000001118,
+                    "atr": 0.05650237473366754,
+                    "mitigation_blocked": false
+                  }
+                }
+              },
+              "hit": null,
+              "ref_time": "2025-12-17T23:15:00+00:00"
+            }
+          ],
+          "accuracy": 0.65
+        }
+      ],
+      "best_version": {
+        "version": "1.2.1",
+        "accuracy": 0.6761904761904762
       }
     }
   ]
