@@ -436,13 +436,25 @@
       const daysVal = typeof daysNoLoss === "number" ? daysNoLoss : 0;
       daysNoLossEl.textContent = String(daysVal).padStart(2, '0');
 
-      if (daysVal === 0) {
+if (daysVal < 3) {
+          // --- ESTADO DE ALERTA (0, 1 ou 2 dias) ---
           lossSignEl.className = "safety-sign danger";
           signHeaderIconEl.textContent = "⚠";
           signHeaderTextEl.textContent = "RESET DE RISCO";
-          signPreTextEl.textContent = "O ÚLTIMO LOSS FOI";
-          signPosTextEl.textContent = "DIAS (HOJE)";
+
+          // Condicional interna para ajustar o texto
+          if (daysVal === 0) {
+              signPreTextEl.textContent = "O ÚLTIMO LOSS FOI";
+              signPosTextEl.textContent = "DIAS (HOJE)"; 
+          } else {
+              // Dias 1 e 2
+              signPreTextEl.textContent = "O ÚLTIMO LOSS FOI HÁ";
+              // Verifica se é 1 para usar singular, senão plural
+              signPosTextEl.textContent = (daysVal === 1) ? "DIA" : "DIAS";
+          }
+
       } else {
+          // --- ESTADO SEGURO (3 dias ou mais) ---
           lossSignEl.className = "safety-sign safe";
           signHeaderIconEl.textContent = "⚡";
           signHeaderTextEl.textContent = "Disciplina";
@@ -483,3 +495,4 @@
   </script>
 </body>
 </html>
+
