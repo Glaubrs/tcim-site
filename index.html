@@ -265,6 +265,10 @@
           <div class="stat-label">Total de Sinais</div>
           <div class="stat-value" id="statsTotal">--</div>
         </div>
+        <div class="stat-item">
+          <div class="stat-label">Dias sem Loss</div>
+          <div class="stat-value" id="statsDaysNoLoss">--</div>
+        </div>
         <div class="stat-item" style="flex-grow: 1;">
            <div class="stat-label">Por Região</div>
            <div class="stat-value" id="statsByRegion" style="font-size: 1.25rem; font-weight: 600;">--</div>
@@ -296,6 +300,7 @@
     const errorEl = document.getElementById("error");
     const statsBox = document.getElementById("stats");
     const statsTotalEl = document.getElementById("statsTotal");
+    const statsDaysNoLossEl = document.getElementById("statsDaysNoLoss");
     const statsByRegionEl = document.getElementById("statsByRegion");
     const accuracyOverallEl = document.getElementById("accuracyOverall");
 
@@ -504,6 +509,8 @@
       const acc = typeof statsData.accuracy === "number" ? `${(statsData.accuracy * 100).toFixed(1)}%` : "--";
       accuracyOverallEl.textContent = acc;
       statsTotalEl.textContent = statsData.total || "--";
+      const daysNoLoss = statsData.days_without_loss;
+      statsDaysNoLossEl.textContent = typeof daysNoLoss === "number" ? String(daysNoLoss) : "--";
 
       const regions = statsData.by_region || {};
       const regionHtml = Object.entries(regions).map(([reg, info]) => {
