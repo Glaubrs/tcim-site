@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
     :root {
       /* Streamlit Dark Theme Palette */
@@ -83,88 +84,80 @@
 
     /* --- Stats Bar Layout --- */
     #stats { margin-bottom: 2rem; }
+    
     .stats-grid { 
         display: flex; 
-        gap: 1.5rem; 
+        gap: 2rem; /* Espaço entre os itens */
         flex-wrap: wrap; 
-        align-items: flex-start; /* Alinhamento topo */
+        align-items: center; /* Centraliza verticalmente com a placa */
     }
     
-    /* Stats Normais */
     .stat-item { 
-        display: flex; flex-direction: column; min-width: 140px; 
-        padding-top: 1rem; /* Alinhar visualmente com o corpo da placa */
+        display: flex; flex-direction: column; min-width: 120px; 
     }
-    .stat-label { font-size: 14px; color: var(--text-secondary); margin-bottom: 6px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.5px; }
+    .stat-label { font-size: 14px; color: var(--text-secondary); margin-bottom: 4px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.5px; }
     .stat-value { font-family: var(--font-body); font-size: 32px; font-weight: 700; color: var(--text-primary); }
     .stat-value.highlight { color: var(--color-buy); }
 
 
-    /* --- SAFETY SIGN (Estilo Placa Industrial) --- */
-    /* Adaptado do seu exemplo para Flexbox */
+    /* --- SAFETY SIGN (Versão Compacta) --- */
     .safety-sign {
       background: linear-gradient(180deg, #262730 0%, #1c1e24 100%);
       border: 1px solid var(--border-color);
-      border-radius: 12px;
+      border-radius: 8px;
       
-      /* Tamanho flexível mas imponente */
-      min-width: 280px;
-      flex-grow: 1; 
-      max-width: 400px; /* Limite para não ficar gigante em telas wide */
+      /* DIMENSÕES REDUZIDAS */
+      min-width: 180px;  /* Reduzido */
+      width: auto;       /* Não estica mais */
+      flex-grow: 0;      /* Importante: impede que ocupe espaço vazio */
       
       text-align: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
       position: relative;
       overflow: hidden;
       transition: all 0.3s ease;
+      margin-left: auto; /* Empurra a placa para o final da linha se tiver espaço */
     }
 
     .sign-header {
-      padding: 12px;
-      font-weight: 800;
+      padding: 6px 10px; /* Padding reduzido */
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+      font-size: 0.7rem; /* Fonte menor */
       border-bottom: 1px solid rgba(255,255,255,0.1);
-      display: flex; justify-content: center; align-items: center; gap: 8px;
+      display: flex; justify-content: center; align-items: center; gap: 6px;
     }
 
-    .sign-body { padding: 15px 20px; }
-    .sign-pre { color: var(--text-secondary); font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 5px; }
+    .sign-body { padding: 10px 15px; } /* Padding reduzido */
+    .sign-pre { color: var(--text-secondary); font-size: 0.65rem; letter-spacing: 1px; margin-bottom: 2px; }
     
     .sign-number {
       font-family: var(--font-digital);
-      font-size: 4rem; /* Ajustei levemente para encaixar melhor */
+      font-size: 2.5rem; /* Reduzido de 4rem para 2.5rem */
       font-weight: 700;
       line-height: 1;
-      margin: 10px 0;
-      text-shadow: 0 0 20px rgba(255,255,255,0.1);
+      margin: 4px 0;
+      text-shadow: 0 0 10px rgba(255,255,255,0.1);
     }
-    .sign-pos { font-weight: 600; font-size: 1rem; color: var(--text-primary); }
+    .sign-pos { font-weight: 600; font-size: 0.8rem; color: var(--text-primary); }
 
-    /* ESTADO: SEGURO (GREEN) */
-    .safety-sign.safe { border-color: var(--color-buy); box-shadow: 0 0 15px rgba(9, 171, 59, 0.15); }
+    /* Cores da Placa (Inalteradas) */
+    .safety-sign.safe { border-color: var(--color-buy); box-shadow: 0 0 10px rgba(9, 171, 59, 0.1); }
     .safety-sign.safe .sign-header { background-color: rgba(9, 171, 59, 0.15); color: var(--color-buy); border-bottom-color: var(--color-buy); }
-    .safety-sign.safe .sign-number { color: var(--color-buy); text-shadow: 0 0 20px rgba(9, 171, 59, 0.6); }
+    .safety-sign.safe .sign-number { color: var(--color-buy); text-shadow: 0 0 15px rgba(9, 171, 59, 0.5); }
     .safety-sign.safe .sign-pos { color: var(--text-primary); }
 
-    /* ESTADO: PERIGO (RED) */
-    .safety-sign.danger { border-color: var(--color-sell); box-shadow: 0 0 15px rgba(255, 75, 75, 0.15); }
+    .safety-sign.danger { border-color: var(--color-sell); box-shadow: 0 0 10px rgba(255, 75, 75, 0.1); }
     .safety-sign.danger .sign-header {
-      background: repeating-linear-gradient(
-        45deg,
-        #2d1b1b,
-        #2d1b1b 10px,
-        var(--color-sell) 10px,
-        var(--color-sell) 20px
-      );
+      background: repeating-linear-gradient(45deg, #2d1b1b, #2d1b1b 10px, var(--color-sell) 10px, var(--color-sell) 20px);
       color: white; text-shadow: 0 1px 2px black; border-bottom-color: var(--color-sell);
     }
-    .safety-sign.danger .sign-number { color: var(--color-sell); text-shadow: 0 0 20px rgba(255, 75, 75, 0.6); }
+    .safety-sign.danger .sign-number { color: var(--color-sell); text-shadow: 0 0 15px rgba(255, 75, 75, 0.5); }
     .safety-sign.danger .sign-pos { color: var(--color-sell); }
 
 
-    /* --- Grid & Cards (Abaixo) --- */
+    /* --- Grid & Cards --- */
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
     
     .card {
@@ -223,9 +216,9 @@
       .branding { width: 100%; justify-content: flex-start; }
       .header-info { text-align: left; align-items: flex-start; width: 100%; }
       .dash-button { width: 100%; }
-      .stats-grid { gap: 2rem; flex-direction: column; }
+      .stats-grid { gap: 2rem; flex-direction: column; align-items: flex-start; }
       .stat-item { width: 100%; }
-      .safety-sign { width: 100%; max-width: none; }
+      .safety-sign { width: 100%; margin-left: 0; }
     }
   </style>
 </head>
@@ -268,7 +261,7 @@
         <div class="safety-sign safe" id="lossSign">
            <div class="sign-header">
              <span id="signHeaderIcon">⚡</span> 
-             <span id="signHeaderText">Disciplina Operacional</span>
+             <span id="signHeaderText">Disciplina</span>
            </div>
            <div class="sign-body">
              <div class="sign-pre" id="signPreText">ESTAMOS HÁ</div>
@@ -305,7 +298,6 @@
     const accuracyOverallEl = document.getElementById("accuracyOverall");
     const statsByRegionEl = document.getElementById("statsByRegion");
 
-    // Elementos da Placa
     const lossSignEl = document.getElementById("lossSign");
     const daysNoLossEl = document.getElementById("statsDaysNoLoss");
     const signHeaderTextEl = document.getElementById("signHeaderText");
@@ -349,7 +341,6 @@
 
     function render() {
       const now = Date.now();
-      // 1. Prepara e Ordena as Sessões
       const sessionsWithStatus = sessions.map(sess => {
         const openUtc = parseUtcToday(sess.open);
         const closeUtc = parseUtcToday(sess.close);
@@ -365,19 +356,16 @@
         return a._timeTarget - b._timeTarget;
       });
 
-      // 2. Gera o HTML dos Cards
       cardsEl.innerHTML = sessionsWithStatus.map(sess => {
         const window = sess._window;
         const isOpen = sess._isOpen;
         const target = isOpen ? window.nextClose : window.nextOpen;
         const countdown = fmt(target - now);
         const label = isOpen ? "Fecha em" : "Abre em";
-
         const offsetMs = (sess.offset || 0) * 60 * 1000;
         const timeToOpen = window.nextOpen - now;
         const isPreMarket = !isOpen && timeToOpen <= offsetMs;
         const showData = isOpen || isPreMarket;
-
         const regionData = biasData.find(r => r.region === sess.id) || {};
         const versions = regionData.versions || [];
         const bestVersion = regionData.best_version?.version;
@@ -401,7 +389,6 @@
               let vHit = `<div class="hit-indicator" style="color:var(--text-muted)">- Último sinal gerado${refText}: Pendente</div>`;
               if(v.hit === true) vHit = `<div class="hit-indicator hit-success">✔ Último sinal gerado${refText}: Win</div>`;
               if(v.hit === false) vHit = `<div class="hit-indicator hit-fail">✖ Último sinal gerado${refText}: Loss</div>`;
-
               const blocos = sym.blocos || {};
               const tend = (blocos.tendencia && blocos.tendencia.status) ? blocos.tendencia.status : "-";
               const ctx = (blocos.contexto && blocos.contexto.status) ? blocos.contexto.status : "-";
@@ -445,11 +432,9 @@
       accuracyOverallEl.textContent = acc;
       statsTotalEl.textContent = statsData.total || "--";
       
-      // -- LÓGICA DA PLACA GRANDE --
       const daysNoLoss = statsData.days_without_loss;
       const daysVal = typeof daysNoLoss === "number" ? daysNoLoss : 0;
-      
-      daysNoLossEl.textContent = String(daysVal).padStart(2, '0'); // Garante 08, 00 etc.
+      daysNoLossEl.textContent = String(daysVal).padStart(2, '0');
 
       if (daysVal === 0) {
           lossSignEl.className = "safety-sign danger";
@@ -460,11 +445,10 @@
       } else {
           lossSignEl.className = "safety-sign safe";
           signHeaderIconEl.textContent = "⚡";
-          signHeaderTextEl.textContent = "Disciplina Operacional";
+          signHeaderTextEl.textContent = "Disciplina";
           signPreTextEl.textContent = "ESTAMOS HÁ";
           signPosTextEl.textContent = "DIAS SEM LOSS";
       }
-      // ----------------------------
 
       const regions = statsData.by_region || {};
       const regionHtml = Object.entries(regions).map(([reg, info]) => {
@@ -474,7 +458,6 @@
         const color = (info.accuracy >= 0.55) ? 'var(--color-buy)' : (info.accuracy < 0.45) ? 'var(--color-sell)' : 'var(--text-muted)';
         return `<span style="margin-right: 16px; white-space: nowrap; font-size: 0.9rem; font-family:var(--font-mono); color: var(--text-secondary);">${name} <strong style="color:${color}; font-size:1.1rem; margin-left:4px;">${accReg}</strong></span>`;
       }).join("");
-      
       statsByRegionEl.innerHTML = regionHtml;
     }
 
