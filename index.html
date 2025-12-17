@@ -31,7 +31,7 @@
       --color-flat: #808495;
       --color-flat-bg: rgba(128, 132, 149, 0.1);
       --color-warn: #FFBD45;    
-      --color-wait: #41444C; /* Cor para Aguarde */
+      --color-wait: #41444C; 
 
       /* Fontes */
       --font-body: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -55,11 +55,11 @@
       padding: 3rem 2rem;
     }
 
-    /* --- Header Ajustado para Logo --- */
+    /* --- Header --- */
     header {
       display: flex;
       justify-content: space-between;
-      align-items: center; /* Centraliza verticalmente */
+      align-items: center;
       margin-bottom: 2rem;
       border-bottom: 1px solid var(--border-color);
       padding-bottom: 1.5rem;
@@ -68,14 +68,14 @@
     .branding {
       display: flex;
       align-items: center;
-      gap: 1.5rem; /* Espaço entre logo e texto */
+      gap: 1.5rem;
     }
 
     .logo-img {
-      height: 60px; /* Ajuste a altura conforme necessário */
+      height: 60px;
       width: auto;
       object-fit: contain;
-      border-radius: 8px; /* Opcional: bordas arredondadas no logo */
+      border-radius: 8px;
     }
 
     .title-group h1 {
@@ -130,11 +130,60 @@
 
     /* --- Stats Bar --- */
     #stats { margin-bottom: 2rem; }
-    .stats-grid { display: flex; gap: 2rem; flex-wrap: wrap; }
-    .stat-item { display: flex; flex-direction: column; min-width: 120px; }
-    .stat-label { font-size: 14px; color: var(--text-secondary); margin-bottom: 4px; font-weight: 400; }
+    .stats-grid { 
+        display: flex; 
+        gap: 1.5rem; 
+        flex-wrap: wrap; 
+        align-items: stretch; /* Garante altura igual para os cards */
+    }
+    
+    .stat-item { 
+        display: flex; 
+        flex-direction: column; 
+        min-width: 140px; 
+        padding: 0.5rem 0; /* Espaço leve */
+    }
+
+    .stat-label { font-size: 14px; color: var(--text-secondary); margin-bottom: 6px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.5px; }
     .stat-value { font-family: var(--font-body); font-size: 32px; font-weight: 700; color: var(--text-primary); }
     .stat-value.highlight { color: var(--color-buy); }
+
+    /* --- SAFETY PLACA (Mini Card) --- */
+    .stat-item.safety-item {
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        padding: 0.8rem 1.2rem;
+        border-radius: 8px;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        min-width: 160px;
+    }
+
+    /* Estilo "SAFE" (Verde Neon) */
+    .safety-item.safe {
+        border-color: var(--color-buy);
+        box-shadow: 0 0 15px rgba(9, 171, 59, 0.1);
+    }
+    .safety-item.safe .stat-label { color: var(--color-buy); opacity: 0.9; font-weight: 600; }
+    .safety-item.safe .stat-value { color: var(--color-buy); text-shadow: 0 0 10px rgba(9, 171, 59, 0.4); }
+
+    /* Estilo "DANGER" (Vermelho Alerta) */
+    .safety-item.danger {
+        border-color: var(--color-sell);
+        box-shadow: 0 0 15px rgba(255, 75, 75, 0.1);
+        background: repeating-linear-gradient(
+            45deg,
+            var(--bg-card),
+            var(--bg-card) 10px,
+            rgba(255, 75, 75, 0.05) 10px,
+            rgba(255, 75, 75, 0.05) 20px
+        );
+    }
+    .safety-item.danger .stat-label { color: var(--color-sell); font-weight: 700; letter-spacing: 1px; }
+    .safety-item.danger .stat-value { color: var(--color-sell); text-shadow: 0 0 10px rgba(255, 75, 75, 0.4); }
+
 
     /* --- Grid & Cards --- */
     .grid {
@@ -153,7 +202,6 @@
       transition: transform 0.2s;
     }
 
-    /* Animação suave na troca de ordem */
     .card:hover { transform: translateY(-2px); }
 
     .card-header {
@@ -231,7 +279,9 @@
       .branding { width: 100%; justify-content: flex-start; }
       .header-info { text-align: left; align-items: flex-start; width: 100%; }
       .dash-button { width: 100%; }
-      .stats-grid { gap: 1.5rem; }
+      .stats-grid { gap: 1rem; flex-direction: column; }
+      .stat-item { width: 100%; }
+      .safety-item { width: 100%; }
     }
   </style>
 </head>
@@ -261,17 +311,20 @@
           <div class="stat-label">Acurácia Global</div>
           <div class="stat-value highlight" id="accuracyOverall">--</div>
         </div>
+        
         <div class="stat-item">
           <div class="stat-label">Total de Sinais</div>
           <div class="stat-value" id="statsTotal">--</div>
         </div>
-        <div class="stat-item">
-          <div class="stat-label">Dias sem Loss</div>
-          <div class="stat-value" id="statsDaysNoLoss">--</div>
-        </div>
+
         <div class="stat-item" style="flex-grow: 1;">
            <div class="stat-label">Por Região</div>
            <div class="stat-value" id="statsByRegion" style="font-size: 1.25rem; font-weight: 600;">--</div>
+        </div>
+
+        <div class="stat-item safety-item" id="lossSign">
+           <div class="stat-label" id="lossSignTitle">Dias sem Loss</div>
+           <div class="stat-value" id="statsDaysNoLoss">--</div>
         </div>
       </div>
     </div>
@@ -283,7 +336,6 @@
   </div>
 
   <script>
-    // Offset em minutos: quanto tempo antes da abertura mostrar os dados
     const sessions = [
       { id: "Asia", name: "Sessão Asiática - Sinal às 20:31 ", open: "00:00", close: "03:00", offset: 30 },
       { id: "Europe", name: "Sessão Europeia - Sinal às 03:46", open: "07:00", close: "10:00", offset: 15 },
@@ -303,6 +355,8 @@
     const statsDaysNoLossEl = document.getElementById("statsDaysNoLoss");
     const statsByRegionEl = document.getElementById("statsByRegion");
     const accuracyOverallEl = document.getElementById("accuracyOverall");
+    const lossSignEl = document.getElementById("lossSign");
+    const lossSignTitleEl = document.getElementById("lossSignTitle");
 
     function parseUtcToday(hhmm) {
       const [h, m] = hhmm.split(":").map(Number);
@@ -350,37 +404,24 @@
     function render() {
       const now = Date.now();
 
-      // 1. Prepara os dados calculando o status de cada sessão
+      // 1. Prepara e Ordena as Sessões
       const sessionsWithStatus = sessions.map(sess => {
         const openUtc = parseUtcToday(sess.open);
         const closeUtc = parseUtcToday(sess.close);
         const window = nextWindow(openUtc, closeUtc);
         const isOpen = window.status === "open" && now < window.nextClose;
-        
-        // Critério de ordenação:
-        // - Se aberto: usamos o horário de fechamento (para saber qual fecha primeiro, opcional)
-        // - Se fechado: usamos o nextOpen para saber qual abre primeiro
         const timeTarget = isOpen ? window.nextClose : window.nextOpen;
 
-        return {
-          ...sess,
-          _window: window, 
-          _isOpen: isOpen,
-          _timeTarget: timeTarget
-        };
+        return { ...sess, _window: window, _isOpen: isOpen, _timeTarget: timeTarget };
       });
 
-      // 2. Ordena a lista dinamicamente
       sessionsWithStatus.sort((a, b) => {
-        // Regra 1: Sessão ABERTA vem antes de FECHADA
         if (a._isOpen && !b._isOpen) return -1;
         if (!a._isOpen && b._isOpen) return 1;
-
-        // Regra 2: Menor tempo vence (ex: quem abre primeiro ou quem fecha primeiro)
         return a._timeTarget - b._timeTarget;
       });
 
-      // 3. Renderiza os cards na nova ordem
+      // 2. Gera o HTML dos Cards
       cardsEl.innerHTML = sessionsWithStatus.map(sess => {
         const window = sess._window;
         const isOpen = sess._isOpen;
@@ -389,11 +430,9 @@
         const countdown = fmt(target - now);
         const label = isOpen ? "Fecha em" : "Abre em";
 
-        // LÓGICA DE EXIBIÇÃO DO "AGUARDE"
         const offsetMs = (sess.offset || 0) * 60 * 1000;
         const timeToOpen = window.nextOpen - now;
         const isPreMarket = !isOpen && timeToOpen <= offsetMs;
-        
         const showData = isOpen || isPreMarket;
 
         const regionData = biasData.find(r => r.region === sess.id) || {};
@@ -404,7 +443,6 @@
         const versionCards = (versions || []).map(v => {
           let vbias = (v.vies || "AGUARDE").toUpperCase();
           let badge = vbias === "COMPRA" ? "badge-up" : vbias === "VENDA" ? "badge-down" : "badge-flat";
-          
           let contentHtml = "";
 
           if (showData) {
@@ -472,9 +510,7 @@
                 </div>
               `;
           }
-
           return `<div class="version-card">${contentHtml}</div>`;
-
         }).join("") || '<div class="version-body" style="padding:1rem; text-align:center;">Sem versões disponíveis.</div>';
 
         return `
@@ -485,15 +521,11 @@
                 <span class="version-tag">${versions.length || 0} versões ativas</span>
               </div>
             </div>
-            
             <div class="timer-container">
               <div class="timer-label">${label}</div>
               <div class="timer">${countdown}</div>
             </div>
-            
-            <div class="version-list">
-              ${versionCards}
-            </div>
+            <div class="version-list">${versionCards}</div>
           </div>
         `;
       }).join("");
@@ -509,17 +541,26 @@
       const acc = typeof statsData.accuracy === "number" ? `${(statsData.accuracy * 100).toFixed(1)}%` : "--";
       accuracyOverallEl.textContent = acc;
       statsTotalEl.textContent = statsData.total || "--";
+      
       const daysNoLoss = statsData.days_without_loss;
-      statsDaysNoLossEl.textContent = typeof daysNoLoss === "number" ? String(daysNoLoss) : "--";
+      const daysVal = typeof daysNoLoss === "number" ? daysNoLoss : 0;
+      statsDaysNoLossEl.textContent = daysVal;
+
+      // Lógica Visual da Placa de Segurança
+      if (daysVal === 0) {
+          lossSignEl.className = "stat-item safety-item danger";
+          lossSignTitleEl.textContent = "ALERTA DE LOSS";
+      } else {
+          lossSignEl.className = "stat-item safety-item safe";
+          lossSignTitleEl.textContent = "DIAS SEM LOSS";
+      }
 
       const regions = statsData.by_region || {};
       const regionHtml = Object.entries(regions).map(([reg, info]) => {
         const accReg = typeof info.accuracy === "number" ? `${(info.accuracy * 100).toFixed(0)}%` : "--";
         const nameMap = { "Asia": "Ásia", "Europe": "Europa", "America": "EUA" };
         const name = nameMap[reg] || reg;
-        
         const color = (info.accuracy >= 0.55) ? 'var(--color-buy)' : (info.accuracy < 0.45) ? 'var(--color-sell)' : 'var(--text-muted)';
-        
         return `<span style="margin-right: 16px; white-space: nowrap; font-size: 0.9rem; font-family:var(--font-mono); color: var(--text-secondary);">${name} <strong style="color:${color}; font-size:1.1rem; margin-left:4px;">${accReg}</strong></span>`;
       }).join("");
       
@@ -547,7 +588,6 @@
         
         errorEl.style.display = "none";
         renderStats();
-        // Força renderização imediatamente após carregar dados
         render();
       } catch (err) {
         console.error(err);
@@ -556,7 +596,6 @@
     }
 
     fetchData();
-    // Renderiza a cada 1s para o timer e a lógica de exibição
     setInterval(render, 1000);
     setInterval(fetchData, 60000);
   </script>
