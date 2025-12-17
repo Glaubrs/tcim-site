@@ -150,7 +150,11 @@
       display: flex;
       flex-direction: column;
       box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
     }
+
+    /* Animação suave na troca de ordem */
+    .card:hover { transform: translateY(-2px); }
 
     .card-header {
       margin-bottom: 1.5rem;
@@ -321,7 +325,6 @@
       if (!refStr) return "";
       const d = new Date(refStr);
       if (Number.isNaN(d.getTime())) return "";
-      // Apenas data
       return d.toLocaleDateString("pt-BR");
     }
 
@@ -341,18 +344,47 @@
 
     function render() {
       const now = Date.now();
-      cardsEl.innerHTML = sessions.map(sess => {
+
+      // 1. Prepara os dados calculando o status de cada sessão
+      const sessionsWithStatus = sessions.map(sess => {
         const openUtc = parseUtcToday(sess.open);
         const closeUtc = parseUtcToday(sess.close);
         const window = nextWindow(openUtc, closeUtc);
-        
         const isOpen = window.status === "open" && now < window.nextClose;
+        
+        // Critério de ordenação:
+        // - Se aberto: usamos o horário de fechamento (para saber qual fecha primeiro, opcional)
+        // - Se fechado: usamos o nextOpen para saber qual abre primeiro
+        const timeTarget = isOpen ? window.nextClose : window.nextOpen;
+
+        return {
+          ...sess,
+          _window: window, 
+          _isOpen: isOpen,
+          _timeTarget: timeTarget
+        };
+      });
+
+      // 2. Ordena a lista dinamicamente
+      sessionsWithStatus.sort((a, b) => {
+        // Regra 1: Sessão ABERTA vem antes de FECHADA
+        if (a._isOpen && !b._isOpen) return -1;
+        if (!a._isOpen && b._isOpen) return 1;
+
+        // Regra 2: Menor tempo vence (ex: quem abre primeiro ou quem fecha primeiro)
+        return a._timeTarget - b._timeTarget;
+      });
+
+      // 3. Renderiza os cards na nova ordem
+      cardsEl.innerHTML = sessionsWithStatus.map(sess => {
+        const window = sess._window;
+        const isOpen = sess._isOpen;
+        
         const target = isOpen ? window.nextClose : window.nextOpen;
         const countdown = fmt(target - now);
         const label = isOpen ? "Fecha em" : "Abre em";
 
-        // LÓGICA DE EXIBIÇÃO:
-        // Mostra dados SE (Está Aberto) OU (Falta menos que o Offset para abrir)
+        // LÓGICA DE EXIBIÇÃO DO "AGUARDE"
         const offsetMs = (sess.offset || 0) * 60 * 1000;
         const timeToOpen = window.nextOpen - now;
         const isPreMarket = !isOpen && timeToOpen <= offsetMs;
@@ -365,14 +397,12 @@
         const bestAcc = regionData.best_version?.accuracy;
 
         const versionCards = (versions || []).map(v => {
-          // Se showData for false, forçamos o AGUARDE e limpamos o conteúdo
           let vbias = (v.vies || "AGUARDE").toUpperCase();
           let badge = vbias === "COMPRA" ? "badge-up" : vbias === "VENDA" ? "badge-down" : "badge-flat";
           
           let contentHtml = "";
 
           if (showData) {
-              // RENDERIZAÇÃO NORMAL (DADOS VISÍVEIS)
               const accVal = (typeof v.accuracy === "number")
                 ? v.accuracy
                 : (bestVersion && v.version === bestVersion && typeof bestAcc === "number" ? bestAcc : null);
@@ -423,7 +453,6 @@
                 </div>
               `;
           } else {
-              // MODO AGUARDE (DADOS OCULTOS)
               badge = "badge-wait";
               vbias = "AGUARDE";
               contentHtml = `
