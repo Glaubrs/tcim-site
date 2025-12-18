@@ -433,7 +433,7 @@
                 </div>`;
           } else {
               badge = "badge-wait"; vbias = "AGUARDE";
-              const waitText = dataReady ? "Análise disponível em breve..." : "Aguardando atualização do JSON...";
+              const waitText = dataReady ? "Análise disponível em breve..." : "Aguardando atualização...";
               contentHtml = `<div class="version-header"><div><span class="version-label">v${v.version || "--"}</span></div><div class="version-badge ${badge}">${vbias}</div></div><div class="version-body"><div class="waiting-msg">${waitText}</div></div>`;
           }
           return `<div class="version-card">${contentHtml}</div>`;
