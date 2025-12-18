@@ -289,6 +289,7 @@
 
     let biasData = []; 
     let statsData = null;
+    let biasUpdatedAt = null;
 
     const cardsEl = document.getElementById("cards");
     const updatedEl = document.getElementById("updatedAt");
@@ -339,6 +340,22 @@
       return list.filter(item => !/gap|ffill/i.test(item));
     }
 
+    function parseSessionStartUtc(str) {
+      if (!str) return null;
+      const m = str.match(/^(\d{2})\/(\d{2})\/(\d{4})\s+(\d{2}):(\d{2})/);
+      if (!m) return null;
+      const [, dd, mm, yyyy, hh, min] = m;
+      return Date.UTC(Number(yyyy), Number(mm) - 1, Number(dd), Number(hh), Number(min));
+    }
+
+    function isDataReadyForSession(regionData, offsetMinutes) {
+      const updated = regionData?.updated_at ? new Date(regionData.updated_at) : biasUpdatedAt;
+      const sessionStartUtc = parseSessionStartUtc(regionData?.session_start);
+      if (!updated || Number.isNaN(updated.getTime()) || !sessionStartUtc) return true;
+      const releaseTime = sessionStartUtc - (offsetMinutes || 0) * 60 * 1000;
+      return updated.getTime() >= releaseTime;
+    }
+
     function render() {
       const now = Date.now();
       const sessionsWithStatus = sessions.map(sess => {
@@ -365,8 +382,9 @@
         const offsetMs = (sess.offset || 0) * 60 * 1000;
         const timeToOpen = window.nextOpen - now;
         const isPreMarket = !isOpen && timeToOpen <= offsetMs;
-        const showData = isOpen || isPreMarket;
         const regionData = biasData.find(r => r.region === sess.id) || {};
+        const dataReady = isDataReadyForSession(regionData, sess.offset || 0);
+        const showData = (isOpen || isPreMarket) && dataReady;
         const versions = regionData.versions || [];
         const bestVersion = regionData.best_version?.version;
         const bestAcc = regionData.best_version?.accuracy;
@@ -415,7 +433,8 @@
                 </div>`;
           } else {
               badge = "badge-wait"; vbias = "AGUARDE";
-              contentHtml = `<div class="version-header"><div><span class="version-label">v${v.version || "--"}</span></div><div class="version-badge ${badge}">${vbias}</div></div><div class="version-body"><div class="waiting-msg">Análise disponível em breve...</div></div>`;
+              const waitText = dataReady ? "Análise disponível em breve..." : "Aguardando atualização do JSON...";
+              contentHtml = `<div class="version-header"><div><span class="version-label">v${v.version || "--"}</span></div><div class="version-badge ${badge}">${vbias}</div></div><div class="version-body"><div class="waiting-msg">${waitText}</div></div>`;
           }
           return `<div class="version-card">${contentHtml}</div>`;
         }).join("") || '<div class="version-body" style="padding:1rem; text-align:center;">Sem versões disponíveis.</div>';
@@ -482,8 +501,13 @@ if (daysVal < 3) {
         if(statsRes.ok) statsPayload = await statsRes.json();
         biasData = biasPayload.regions || [];
         statsData = statsPayload;
-        const dateObj = new Date(biasPayload.updated_at);
-        updatedEl.textContent = `Atualizado: ${dateObj.toLocaleTimeString()} (${dateObj.toLocaleDateString()})`;
+        biasUpdatedAt = biasPayload.updated_at ? new Date(biasPayload.updated_at) : null;
+        const dateObj = biasUpdatedAt && !Number.isNaN(biasUpdatedAt.getTime()) ? biasUpdatedAt : null;
+        if (dateObj) {
+          updatedEl.textContent = `Atualizado: ${dateObj.toLocaleTimeString()} (${dateObj.toLocaleDateString()})`;
+        } else {
+          updatedEl.textContent = "Atualizado: --";
+        }
         errorEl.style.display = "none"; renderStats(); render();
       } catch (err) {
         console.error(err); updatedEl.textContent = "Offline / Reconectando...";
