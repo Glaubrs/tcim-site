@@ -1,183 +1,6 @@
 {
-  "updated_at": "2025-12-18T23:31:00+00:00",
+  "updated_at": "2025-12-19T06:46:00+00:00",
   "regions": [
-    {
-      "region": "Europe",
-      "session_name": "EUROPE",
-      "session_start": "18/12/2025 04:00",
-      "updated_at": "2025-12-18T06:46:00+00:00",
-      "versions": [
-        {
-          "region": "Europe",
-          "version": "1.2.2",
-          "vies": "FORA",
-          "score": 0.5,
-          "motivo": "EURUSD: FORA (score=0.5) | Tendência: Neutro (Slopes das EMAs estão próximos de zero (lateral).; Confirmação H1: slope neutro.); Contexto: Favorável (Preço acima da VWAP intradiária (+1).; Preço acima da EMA50 (+0.5).) | Alertas: 192 gaps preenchidos (ffill <= 288).; Baixa volatilidade: range < 0.9x ATR.",
-          "hit": true,
-          "hit_ref_time": "2025-12-15T00:00:00",
-          "updated_at": "2025-12-18T06:46:00+00:00",
-          "symbol_results": [
-            {
-              "symbol": "EURUSD",
-              "vies": "FORA",
-              "score": 0.5,
-              "motivos": [
-                "Tendência: Neutro (Slopes das EMAs estão próximos de zero (lateral).; Confirmação H1: slope neutro.)",
-                "Contexto: Favorável (Preço acima da VWAP intradiária (+1).; Preço acima da EMA50 (+0.5).)",
-                "Impulso: Neutro (ADX=13.8 abaixo de 18 (0).; Tendência neutra: impulso zerado (0).)",
-                "Mitigação: Atenção: mercado travado (Candle atual < 0.9x ATR (-1).)"
-              ],
-              "alertas": [
-                "192 gaps preenchidos (ffill <= 288).",
-                "Baixa volatilidade: range < 0.9x ATR."
-              ],
-              "blocos": {
-                "tendencia": {
-                  "score": 0.0,
-                  "status": "Neutro",
-                  "notas": [
-                    "Slopes das EMAs estão próximos de zero (lateral).",
-                    "Confirmação H1: slope neutro."
-                  ],
-                  "valores": {
-                    "slope_ema20": 5.432784923967557e-06,
-                    "slope_ema50": 4.903553173254162e-06,
-                    "preco": 1.17451,
-                    "ema20": 1.1742731431475024,
-                    "ema50": 1.1741437842895104
-                  }
-                },
-                "contexto": {
-                  "score": 1.5,
-                  "status": "Favorável",
-                  "notas": [
-                    "Preço acima da VWAP intradiária (+1).",
-                    "Preço acima da EMA50 (+0.5)."
-                  ],
-                  "valores": {
-                    "vwap": 1.1744700000000001,
-                    "ema50": 1.1741437842895104,
-                    "context_blocked": false
-                  }
-                },
-                "impulso": {
-                  "score": 0.0,
-                  "status": "Neutro",
-                  "notas": [
-                    "ADX=13.8 abaixo de 18 (0).",
-                    "Tendência neutra: impulso zerado (0)."
-                  ],
-                  "valores": {
-                    "adx": 13.800162002167285
-                  }
-                },
-                "mitigacao": {
-                  "score": -1.0,
-                  "status": "Atenção: mercado travado",
-                  "notas": [
-                    "Candle atual < 0.9x ATR (-1)."
-                  ],
-                  "valores": {
-                    "candle_range": 0.000220000000000109,
-                    "atr": 0.00031432568393949316,
-                    "mitigation_blocked": false
-                  }
-                }
-              },
-              "hit": null,
-              "ref_time": "2025-12-18T06:30:00+00:00"
-            }
-          ],
-          "accuracy": 0.9230769230769231
-        },
-        {
-          "region": "Europe",
-          "version": "1.0.2",
-          "vies": "COMPRA",
-          "score": 1.5,
-          "motivo": "EURUSD: COMPRA (score=1.5) | Tendência: Neutro (Slopes das EMAs estão próximos de zero (lateral).; Confirmação H1: slope neutro.); Contexto: Favoravel (Preço acima da VWAP intradiária (+1).; Preço acima da EMA50 (+0.5).) | Alertas: 192 gaps preenchidos (ffill <= 288).",
-          "hit": true,
-          "hit_ref_time": "2025-12-11T00:00:00",
-          "updated_at": "2025-12-18T06:46:00+00:00",
-          "symbol_results": [
-            {
-              "symbol": "EURUSD",
-              "vies": "COMPRA",
-              "score": 1.5,
-              "motivos": [
-                "Tendência: Neutro (Slopes das EMAs estão próximos de zero (lateral).; Confirmação H1: slope neutro.)",
-                "Contexto: Favoravel (Preço acima da VWAP intradiária (+1).; Preço acima da EMA50 (+0.5).)",
-                "Impulso: Neutro (ADX=13.8 abaixo de 20 (0).; Tendência neutra: impulso zerado (0).)",
-                "Mitigação: Sem alertas (Volatilidade dentro do intervalo esperado.)"
-              ],
-              "alertas": [
-                "192 gaps preenchidos (ffill <= 288)."
-              ],
-              "blocos": {
-                "tendencia": {
-                  "score": 0.0,
-                  "status": "Neutro",
-                  "notas": [
-                    "Slopes das EMAs estão próximos de zero (lateral).",
-                    "Confirmação H1: slope neutro."
-                  ],
-                  "valores": {
-                    "slope_ema20": 5.432784923967557e-06,
-                    "slope_ema50": 4.903553173254162e-06,
-                    "preco": 1.17451,
-                    "ema20": 1.1742731431475024,
-                    "ema50": 1.1741437842895104
-                  }
-                },
-                "contexto": {
-                  "score": 1.5,
-                  "status": "Favoravel",
-                  "notas": [
-                    "Preço acima da VWAP intradiária (+1).",
-                    "Preço acima da EMA50 (+0.5)."
-                  ],
-                  "valores": {
-                    "vwap": 1.1744700000000001,
-                    "ema50": 1.1741437842895104,
-                    "context_blocked": false
-                  }
-                },
-                "impulso": {
-                  "score": 0.0,
-                  "status": "Neutro",
-                  "notas": [
-                    "ADX=13.8 abaixo de 20 (0).",
-                    "Tendência neutra: impulso zerado (0)."
-                  ],
-                  "valores": {
-                    "adx": 13.800162002167285
-                  }
-                },
-                "mitigacao": {
-                  "score": 0.0,
-                  "status": "Sem alertas",
-                  "notas": [
-                    "Volatilidade dentro do intervalo esperado."
-                  ],
-                  "valores": {
-                    "candle_range": 0.000220000000000109,
-                    "atr": 0.00031432568393949316,
-                    "mitigation_blocked": false
-                  }
-                }
-              },
-              "hit": null,
-              "ref_time": "2025-12-18T06:30:00+00:00"
-            }
-          ],
-          "accuracy": 0.66
-        }
-      ],
-      "best_version": {
-        "version": "1.2.2",
-        "accuracy": 0.9230769230769231
-      }
-    },
     {
       "region": "America",
       "session_name": "AMERICA",
@@ -539,6 +362,192 @@
       "best_version": {
         "version": "1.2.1",
         "accuracy": 0.6792452830188679
+      }
+    },
+    {
+      "region": "Europe",
+      "session_name": "EUROPE",
+      "session_start": "19/12/2025 04:00",
+      "updated_at": "2025-12-19T06:46:00+00:00",
+      "versions": [
+        {
+          "region": "Europe",
+          "version": "1.2.2",
+          "vies": "FORA",
+          "score": 0.0,
+          "motivo": "EURUSD: FORA (score=0.0) | Tendência: Neutro (Slopes das EMAs estão próximos de zero (lateral).; Confirmação H1: slope neutro.); Contexto: Neutro (Preço abaixo da VWAP (-1).; Preço abaixo da EMA50 (-0.5).; Preco esticado > 1.6x ATR distante da EMA50 (penaliza para neutro).; Distancia > 2.5x ATR -> sinal vetado.) | Alertas: 192 gaps preenchidos (ffill <= 288).; Contexto: preco afastado demais da media (risco de correcao).",
+          "hit": true,
+          "hit_ref_time": "2025-12-15T00:00:00",
+          "updated_at": "2025-12-19T06:46:00+00:00",
+          "symbol_results": [
+            {
+              "symbol": "EURUSD",
+              "vies": "FORA",
+              "score": 0.0,
+              "motivos": [
+                "Tendência: Neutro (Slopes das EMAs estão próximos de zero (lateral).; Confirmação H1: slope neutro.)",
+                "Contexto: Neutro (Preço abaixo da VWAP (-1).; Preço abaixo da EMA50 (-0.5).; Preco esticado > 1.6x ATR distante da EMA50 (penaliza para neutro).; Distancia > 2.5x ATR -> sinal vetado.)",
+                "Impulso: Neutro (ADX=16.0 abaixo de 18 (0).; Tendência neutra: impulso zerado (0).)",
+                "Mitigação: Risco: volatilidade extrema (Candle atual > 1.5x ATR (Score penalizado em 2 pontos).)"
+              ],
+              "alertas": [
+                "192 gaps preenchidos (ffill <= 288).",
+                "Contexto: preco afastado demais da media (risco de correcao).",
+                "Contexto extremo: afastamento excedeu limite. Sinal cancelado.",
+                "Volatilidade excessiva detectada (candle > 1.5x ATR)."
+              ],
+              "blocos": {
+                "tendencia": {
+                  "score": 0.0,
+                  "status": "Neutro",
+                  "notas": [
+                    "Slopes das EMAs estão próximos de zero (lateral).",
+                    "Confirmação H1: slope neutro."
+                  ],
+                  "valores": {
+                    "slope_ema20": -2.7483878263497272e-05,
+                    "slope_ema50": -1.8971855153270806e-05,
+                    "preco": 1.17133,
+                    "ema20": 1.17202582515287,
+                    "ema50": 1.1722990439804255
+                  }
+                },
+                "contexto": {
+                  "score": -0.5,
+                  "status": "Neutro",
+                  "notas": [
+                    "Preço abaixo da VWAP (-1).",
+                    "Preço abaixo da EMA50 (-0.5).",
+                    "Preco esticado > 1.6x ATR distante da EMA50 (penaliza para neutro).",
+                    "Distancia > 2.5x ATR -> sinal vetado."
+                  ],
+                  "valores": {
+                    "vwap": 1.1715766666666667,
+                    "ema50": 1.1722990439804255,
+                    "context_blocked": true
+                  }
+                },
+                "impulso": {
+                  "score": 0.0,
+                  "status": "Neutro",
+                  "notas": [
+                    "ADX=16.0 abaixo de 18 (0).",
+                    "Tendência neutra: impulso zerado (0)."
+                  ],
+                  "valores": {
+                    "adx": 16.004759918273137
+                  }
+                },
+                "mitigacao": {
+                  "score": -2.0,
+                  "status": "Risco: volatilidade extrema",
+                  "notas": [
+                    "Candle atual > 1.5x ATR (Score penalizado em 2 pontos)."
+                  ],
+                  "valores": {
+                    "candle_range": 0.0007399999999999629,
+                    "atr": 0.00033601824946062506,
+                    "mitigation_blocked": false
+                  }
+                }
+              },
+              "hit": null,
+              "ref_time": "2025-12-19T06:30:00+00:00"
+            }
+          ],
+          "accuracy": 0.9230769230769231
+        },
+        {
+          "region": "Europe",
+          "version": "1.0.2",
+          "vies": "FORA",
+          "score": 0.0,
+          "motivo": "EURUSD: FORA (score=0.0) | Tendência: Neutro (Slopes das EMAs estão próximos de zero (lateral).; Confirmação H1: slope neutro.); Contexto: Neutro (Preço abaixo da VWAP (-1).; Preço abaixo da EMA50 (-0.5).; Preco esticado > 1.3x ATR distante da EMA50 (penaliza para neutro).; Distancia > 2.0x ATR -> sinal vetado.) | Alertas: 192 gaps preenchidos (ffill <= 288).; Contexto: preco afastado demais da media (risco de correcao).",
+          "hit": false,
+          "hit_ref_time": "2025-12-18T00:00:00",
+          "updated_at": "2025-12-19T06:46:00+00:00",
+          "symbol_results": [
+            {
+              "symbol": "EURUSD",
+              "vies": "FORA",
+              "score": 0.0,
+              "motivos": [
+                "Tendência: Neutro (Slopes das EMAs estão próximos de zero (lateral).; Confirmação H1: slope neutro.)",
+                "Contexto: Neutro (Preço abaixo da VWAP (-1).; Preço abaixo da EMA50 (-0.5).; Preco esticado > 1.3x ATR distante da EMA50 (penaliza para neutro).; Distancia > 2.0x ATR -> sinal vetado.)",
+                "Impulso: Neutro (ADX=16.0 abaixo de 26 (0).; Tendência neutra: impulso zerado (0).)",
+                "Mitigação: Risco: volatilidade extrema (Candle atual > 1.8x ATR (Score penalizado em 2 pontos).)"
+              ],
+              "alertas": [
+                "192 gaps preenchidos (ffill <= 288).",
+                "Contexto: preco afastado demais da media (risco de correcao).",
+                "Contexto extremo: afastamento excedeu limite. Sinal cancelado.",
+                "Volatilidade excessiva detectada (candle > 1.8x ATR)."
+              ],
+              "blocos": {
+                "tendencia": {
+                  "score": 0.0,
+                  "status": "Neutro",
+                  "notas": [
+                    "Slopes das EMAs estão próximos de zero (lateral).",
+                    "Confirmação H1: slope neutro."
+                  ],
+                  "valores": {
+                    "slope_ema20": -2.7483878263497272e-05,
+                    "slope_ema50": -1.8971855153270806e-05,
+                    "preco": 1.17133,
+                    "ema20": 1.17202582515287,
+                    "ema50": 1.1722990439804255
+                  }
+                },
+                "contexto": {
+                  "score": -0.5,
+                  "status": "Neutro",
+                  "notas": [
+                    "Preço abaixo da VWAP (-1).",
+                    "Preço abaixo da EMA50 (-0.5).",
+                    "Preco esticado > 1.3x ATR distante da EMA50 (penaliza para neutro).",
+                    "Distancia > 2.0x ATR -> sinal vetado."
+                  ],
+                  "valores": {
+                    "vwap": 1.1715766666666667,
+                    "ema50": 1.1722990439804255,
+                    "context_blocked": true
+                  }
+                },
+                "impulso": {
+                  "score": 0.0,
+                  "status": "Neutro",
+                  "notas": [
+                    "ADX=16.0 abaixo de 26 (0).",
+                    "Tendência neutra: impulso zerado (0)."
+                  ],
+                  "valores": {
+                    "adx": 16.004759918273137
+                  }
+                },
+                "mitigacao": {
+                  "score": -2.0,
+                  "status": "Risco: volatilidade extrema",
+                  "notas": [
+                    "Candle atual > 1.8x ATR (Score penalizado em 2 pontos)."
+                  ],
+                  "valores": {
+                    "candle_range": 0.0007399999999999629,
+                    "atr": 0.00033601824946062506,
+                    "mitigation_blocked": false
+                  }
+                }
+              },
+              "hit": null,
+              "ref_time": "2025-12-19T06:30:00+00:00"
+            }
+          ],
+          "accuracy": 0.6896551724137931
+        }
+      ],
+      "best_version": {
+        "version": "1.2.2",
+        "accuracy": 0.9230769230769231
       }
     }
   ]
