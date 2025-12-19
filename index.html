@@ -312,12 +312,33 @@
       return Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), h, m, 0);
     }
 
+    function isWeekend(ts) {
+      const day = new Date(ts).getUTCDay(); // 0=Dom, 6=Sab
+      return day === 0 || day === 6;
+    }
+
+    function rollToNextWeekday(ts) {
+      const oneDay = 24 * 3600 * 1000;
+      let t = ts;
+      while (isWeekend(t)) t += oneDay;
+      return t;
+    }
+
     function nextWindow(openUtc, closeUtc) {
       const now = Date.now();
-      if (now < openUtc) return { status: "closed", nextOpen: openUtc, nextClose: closeUtc };
-      if (now >= openUtc && now < closeUtc) return { status: "open", nextOpen: openUtc, nextClose: closeUtc };
       const oneDay = 24 * 3600 * 1000;
-      return { status: "closed", nextOpen: openUtc + oneDay, nextClose: closeUtc + oneDay };
+
+      // Garante que a janela esteja em um dia útil; se hoje for fim de semana, pula para segunda.
+      let openDay = rollToNextWeekday(openUtc);
+      let closeDay = closeUtc + (openDay - openUtc); // mantém a duração original
+
+      if (now < openDay) return { status: "closed", nextOpen: openDay, nextClose: closeDay };
+      if (now >= openDay && now < closeDay) return { status: "open", nextOpen: openDay, nextClose: closeDay };
+
+      // Pula fim de semana quando for calcular o próximo ciclo.
+      let nextOpen = rollToNextWeekday(openDay + oneDay);
+      let nextClose = closeDay + (nextOpen - openDay);
+      return { status: "closed", nextOpen, nextClose };
     }
 
     function fmt(ms) {
