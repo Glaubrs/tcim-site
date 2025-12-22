@@ -1,183 +1,6 @@
 {
-  "updated_at": "2025-12-22T06:46:00+00:00",
+  "updated_at": "2025-12-22T13:16:00+00:00",
   "regions": [
-    {
-      "region": "America",
-      "session_name": "AMERICA",
-      "session_start": "19/12/2025 10:30",
-      "updated_at": "2025-12-19T13:16:00+00:00",
-      "versions": [
-        {
-          "region": "America",
-          "version": "1.2.3",
-          "vies": "COMPRA",
-          "score": 3.0,
-          "motivo": "XAUUSD: COMPRA (score=3.0) | Tendência: Alta (Slope EMA20/EMA50 positivos e preço sustentado acima das médias.; Confirmação H1: EMA50 inclinada para baixo (-0.5).); Contexto: Favoravel (Preço acima da VWAP intradiária (+1).; Preço acima da EMA50 (+0.5).) | Alertas: 96 gaps preenchidos (ffill <= 288).",
-          "hit": true,
-          "hit_ref_time": "2025-12-08T00:00:00",
-          "updated_at": "2025-12-19T13:16:00+00:00",
-          "symbol_results": [
-            {
-              "symbol": "XAUUSD",
-              "vies": "COMPRA",
-              "score": 3.0,
-              "motivos": [
-                "Tendência: Alta (Slope EMA20/EMA50 positivos e preço sustentado acima das médias.; Confirmação H1: EMA50 inclinada para baixo (-0.5).)",
-                "Contexto: Favoravel (Preço acima da VWAP intradiária (+1).; Preço acima da EMA50 (+0.5).)",
-                "Impulso: Fraco (ADX=10.7 abaixo de 24 (0).; Impulso segue a tendência (a favor da alta).)",
-                "Mitigação: Sem alertas (Volatilidade dentro do intervalo esperado.)"
-              ],
-              "alertas": [
-                "96 gaps preenchidos (ffill <= 288)."
-              ],
-              "blocos": {
-                "tendencia": {
-                  "score": 1.5,
-                  "status": "Alta",
-                  "notas": [
-                    "Slope EMA20/EMA50 positivos e preço sustentado acima das médias.",
-                    "Confirmação H1: EMA50 inclinada para baixo (-0.5)."
-                  ],
-                  "valores": {
-                    "slope_ema20": 0.12014381972665591,
-                    "slope_ema50": 0.03917932144763534,
-                    "preco": 4330.4299,
-                    "ema20": 4327.026006788852,
-                    "ema50": 4326.860019633366
-                  }
-                },
-                "contexto": {
-                  "score": 1.5,
-                  "status": "Favoravel",
-                  "notas": [
-                    "Preço acima da VWAP intradiária (+1).",
-                    "Preço acima da EMA50 (+0.5)."
-                  ],
-                  "valores": {
-                    "vwap": 4330.226983333333,
-                    "ema50": 4326.860019633366,
-                    "context_blocked": false
-                  }
-                },
-                "impulso": {
-                  "score": 0.0,
-                  "status": "Fraco",
-                  "notas": [
-                    "ADX=10.7 abaixo de 24 (0).",
-                    "Impulso segue a tendência (a favor da alta)."
-                  ],
-                  "valores": {
-                    "adx": 10.706337477403563
-                  }
-                },
-                "mitigacao": {
-                  "score": 0.0,
-                  "status": "Sem alertas",
-                  "notas": [
-                    "Volatilidade dentro do intervalo esperado."
-                  ],
-                  "valores": {
-                    "candle_range": 6.287750000000415,
-                    "atr": 4.010387770415287,
-                    "mitigation_blocked": false
-                  }
-                }
-              },
-              "hit": null,
-              "ref_time": "2025-12-19T13:00:00+00:00"
-            }
-          ],
-          "accuracy": 0.9107142857142857
-        },
-        {
-          "region": "America",
-          "version": "1.0.3",
-          "vies": "COMPRA",
-          "score": 1.0,
-          "motivo": "XAUUSD: COMPRA (score=1.0) | Tendência: Alta (Slope EMA20/EMA50 positivos e preço sustentado acima das médias.; Confirmação H1: EMA50 inclinada para baixo (-0.5).); Contexto: Favoravel (Preço acima da VWAP intradiária (+1).; Preço acima da EMA50 (+0.5).) | Alertas: 96 gaps preenchidos (ffill <= 288).; Volatilidade excessiva detectada (candle > 0.9x ATR).",
-          "hit": true,
-          "hit_ref_time": "2025-12-18T00:00:00",
-          "updated_at": "2025-12-19T13:16:00+00:00",
-          "symbol_results": [
-            {
-              "symbol": "XAUUSD",
-              "vies": "COMPRA",
-              "score": 1.0,
-              "motivos": [
-                "Tendência: Alta (Slope EMA20/EMA50 positivos e preço sustentado acima das médias.; Confirmação H1: EMA50 inclinada para baixo (-0.5).)",
-                "Contexto: Favoravel (Preço acima da VWAP intradiária (+1).; Preço acima da EMA50 (+0.5).)",
-                "Impulso: Fraco (ADX=10.7 abaixo de 20 (0).; Impulso segue a tendência (a favor da alta).)",
-                "Mitigação: Risco: volatilidade extrema (Candle atual > 0.9x ATR (Score penalizado em 2 pontos).)"
-              ],
-              "alertas": [
-                "96 gaps preenchidos (ffill <= 288).",
-                "Volatilidade excessiva detectada (candle > 0.9x ATR)."
-              ],
-              "blocos": {
-                "tendencia": {
-                  "score": 1.5,
-                  "status": "Alta",
-                  "notas": [
-                    "Slope EMA20/EMA50 positivos e preço sustentado acima das médias.",
-                    "Confirmação H1: EMA50 inclinada para baixo (-0.5)."
-                  ],
-                  "valores": {
-                    "slope_ema20": 0.12014381972665591,
-                    "slope_ema50": 0.03917932144763534,
-                    "preco": 4330.4299,
-                    "ema20": 4327.026006788852,
-                    "ema50": 4326.860019633366
-                  }
-                },
-                "contexto": {
-                  "score": 1.5,
-                  "status": "Favoravel",
-                  "notas": [
-                    "Preço acima da VWAP intradiária (+1).",
-                    "Preço acima da EMA50 (+0.5)."
-                  ],
-                  "valores": {
-                    "vwap": 4330.226983333333,
-                    "ema50": 4326.860019633366,
-                    "context_blocked": false
-                  }
-                },
-                "impulso": {
-                  "score": 0.0,
-                  "status": "Fraco",
-                  "notas": [
-                    "ADX=10.7 abaixo de 20 (0).",
-                    "Impulso segue a tendência (a favor da alta)."
-                  ],
-                  "valores": {
-                    "adx": 10.706337477403563
-                  }
-                },
-                "mitigacao": {
-                  "score": -2.0,
-                  "status": "Risco: volatilidade extrema",
-                  "notas": [
-                    "Candle atual > 0.9x ATR (Score penalizado em 2 pontos)."
-                  ],
-                  "valores": {
-                    "candle_range": 6.287750000000415,
-                    "atr": 4.010387770415287,
-                    "mitigation_blocked": false
-                  }
-                }
-              },
-              "hit": null,
-              "ref_time": "2025-12-19T13:00:00+00:00"
-            }
-          ],
-          "accuracy": 0.75
-        }
-      ],
-      "best_version": {
-        "version": "1.2.3",
-        "accuracy": 0.9107142857142857
-      }
-    },
     {
       "region": "Asia",
       "session_name": "ASIA",
@@ -537,6 +360,196 @@
       "best_version": {
         "version": "1.2.2",
         "accuracy": 0.9230769230769231
+      }
+    },
+    {
+      "region": "America",
+      "session_name": "AMERICA",
+      "session_start": "22/12/2025 10:30",
+      "updated_at": "2025-12-22T13:16:00+00:00",
+      "versions": [
+        {
+          "region": "America",
+          "version": "1.2.3",
+          "vies": "FORA",
+          "score": 0.0,
+          "motivo": "XAUUSD: FORA (score=0.0) | Tendência: Alta (Slope EMA20/EMA50 positivos e preço sustentado acima das médias.; Confirmação H1: EMA50 inclinada para cima (+0.5).); Contexto: Neutro (Preço acima da VWAP intradiária (+1).; Preço acima da EMA50 (+0.5).; Preco esticado > 1.4x ATR distante da EMA50 (penaliza para neutro).; Distancia > 2.5x ATR -> sinal vetado.) | Alertas: 96 gaps preenchidos (ffill <= 288).; Contexto: preco afastado demais da media (risco de correcao).",
+          "hit": true,
+          "hit_ref_time": "2025-12-19T00:00:00",
+          "updated_at": "2025-12-22T13:16:00+00:00",
+          "symbol_results": [
+            {
+              "symbol": "XAUUSD",
+              "vies": "FORA",
+              "score": 0.0,
+              "motivos": [
+                "Tendência: Alta (Slope EMA20/EMA50 positivos e preço sustentado acima das médias.; Confirmação H1: EMA50 inclinada para cima (+0.5).)",
+                "Contexto: Neutro (Preço acima da VWAP intradiária (+1).; Preço acima da EMA50 (+0.5).; Preco esticado > 1.4x ATR distante da EMA50 (penaliza para neutro).; Distancia > 2.5x ATR -> sinal vetado.)",
+                "Impulso: Forte (ADX=56.8 acima de 34 (+2).; Impulso segue a tendência (a favor da alta).)",
+                "Mitigação: Risco: volatilidade extrema (Candle atual > 1.6x ATR (Score penalizado em 2 pontos).; Mitigação forte: vol extrema + ADX alto. Vetado.)"
+              ],
+              "alertas": [
+                "96 gaps preenchidos (ffill <= 288).",
+                "Contexto: preco afastado demais da media (risco de correcao).",
+                "Contexto extremo: afastamento excedeu limite. Sinal cancelado.",
+                "Volatilidade excessiva detectada (candle > 1.6x ATR).",
+                "Sinal vetado (vol extrema + tendência forte)."
+              ],
+              "blocos": {
+                "tendencia": {
+                  "score": 2.0,
+                  "status": "Alta",
+                  "notas": [
+                    "Slope EMA20/EMA50 positivos e preço sustentado acima das médias.",
+                    "Confirmação H1: EMA50 inclinada para cima (+0.5)."
+                  ],
+                  "valores": {
+                    "slope_ema20": 0.3227093855587549,
+                    "slope_ema50": 0.7855295249257516,
+                    "preco": 4424.46105,
+                    "ema20": 4410.767371992649,
+                    "ema50": 4397.975696204894
+                  }
+                },
+                "contexto": {
+                  "score": 0.5,
+                  "status": "Neutro",
+                  "notas": [
+                    "Preço acima da VWAP intradiária (+1).",
+                    "Preço acima da EMA50 (+0.5).",
+                    "Preco esticado > 1.4x ATR distante da EMA50 (penaliza para neutro).",
+                    "Distancia > 2.5x ATR -> sinal vetado."
+                  ],
+                  "valores": {
+                    "vwap": 4422.063556666667,
+                    "ema50": 4397.975696204894,
+                    "context_blocked": true
+                  }
+                },
+                "impulso": {
+                  "score": 2.0,
+                  "status": "Forte",
+                  "notas": [
+                    "ADX=56.8 acima de 34 (+2).",
+                    "Impulso segue a tendência (a favor da alta)."
+                  ],
+                  "valores": {
+                    "adx": 56.84243898064358
+                  }
+                },
+                "mitigacao": {
+                  "score": -2.0,
+                  "status": "Risco: volatilidade extrema",
+                  "notas": [
+                    "Candle atual > 1.6x ATR (Score penalizado em 2 pontos).",
+                    "Mitigação forte: vol extrema + ADX alto. Vetado."
+                  ],
+                  "valores": {
+                    "candle_range": 10.348120000000563,
+                    "atr": 4.6479465764026635,
+                    "mitigation_blocked": true
+                  }
+                }
+              },
+              "hit": null,
+              "ref_time": "2025-12-22T13:00:00+00:00"
+            }
+          ],
+          "accuracy": 0.9122807017543859
+        },
+        {
+          "region": "America",
+          "version": "1.0.3",
+          "vies": "FORA",
+          "score": 0.0,
+          "motivo": "XAUUSD: FORA (score=0.0) | Tendência: Alta (Slope EMA20/EMA50 positivos e preço sustentado acima das médias.; Confirmação H1: EMA50 inclinada para cima (+0.5).); Contexto: Neutro (Preço acima da VWAP intradiária (+1).; Preço acima da EMA50 (+0.5).; Preco esticado > 1.0x ATR distante da EMA50 (penaliza para neutro).; Distancia > 4.5x ATR -> sinal vetado.) | Alertas: 96 gaps preenchidos (ffill <= 288).; Contexto: preco afastado demais da media (risco de correcao).",
+          "hit": true,
+          "hit_ref_time": "2025-12-19T00:00:00",
+          "updated_at": "2025-12-22T13:16:00+00:00",
+          "symbol_results": [
+            {
+              "symbol": "XAUUSD",
+              "vies": "FORA",
+              "score": 0.0,
+              "motivos": [
+                "Tendência: Alta (Slope EMA20/EMA50 positivos e preço sustentado acima das médias.; Confirmação H1: EMA50 inclinada para cima (+0.5).)",
+                "Contexto: Neutro (Preço acima da VWAP intradiária (+1).; Preço acima da EMA50 (+0.5).; Preco esticado > 1.0x ATR distante da EMA50 (penaliza para neutro).; Distancia > 4.5x ATR -> sinal vetado.)",
+                "Impulso: Forte (ADX=56.8 acima de 33 (+2).; Impulso segue a tendência (a favor da alta).)",
+                "Mitigação: Risco: volatilidade extrema (Candle atual > 0.9x ATR (Score penalizado em 2 pontos).; Mitigação forte: vol extrema + ADX alto. Vetado.)"
+              ],
+              "alertas": [
+                "96 gaps preenchidos (ffill <= 288).",
+                "Contexto: preco afastado demais da media (risco de correcao).",
+                "Contexto extremo: afastamento excedeu limite. Sinal cancelado.",
+                "Volatilidade excessiva detectada (candle > 0.9x ATR).",
+                "Sinal vetado (vol extrema + tendência forte)."
+              ],
+              "blocos": {
+                "tendencia": {
+                  "score": 2.0,
+                  "status": "Alta",
+                  "notas": [
+                    "Slope EMA20/EMA50 positivos e preço sustentado acima das médias.",
+                    "Confirmação H1: EMA50 inclinada para cima (+0.5)."
+                  ],
+                  "valores": {
+                    "slope_ema20": 0.3227093855587549,
+                    "slope_ema50": 0.7855295249257516,
+                    "preco": 4424.46105,
+                    "ema20": 4410.767371992649,
+                    "ema50": 4397.975696204894
+                  }
+                },
+                "contexto": {
+                  "score": 0.5,
+                  "status": "Neutro",
+                  "notas": [
+                    "Preço acima da VWAP intradiária (+1).",
+                    "Preço acima da EMA50 (+0.5).",
+                    "Preco esticado > 1.0x ATR distante da EMA50 (penaliza para neutro).",
+                    "Distancia > 4.5x ATR -> sinal vetado."
+                  ],
+                  "valores": {
+                    "vwap": 4422.063556666667,
+                    "ema50": 4397.975696204894,
+                    "context_blocked": true
+                  }
+                },
+                "impulso": {
+                  "score": 2.0,
+                  "status": "Forte",
+                  "notas": [
+                    "ADX=56.8 acima de 33 (+2).",
+                    "Impulso segue a tendência (a favor da alta)."
+                  ],
+                  "valores": {
+                    "adx": 56.84243898064358
+                  }
+                },
+                "mitigacao": {
+                  "score": -2.0,
+                  "status": "Risco: volatilidade extrema",
+                  "notas": [
+                    "Candle atual > 0.9x ATR (Score penalizado em 2 pontos).",
+                    "Mitigação forte: vol extrema + ADX alto. Vetado."
+                  ],
+                  "valores": {
+                    "candle_range": 10.348120000000563,
+                    "atr": 4.6479465764026635,
+                    "mitigation_blocked": true
+                  }
+                }
+              },
+              "hit": null,
+              "ref_time": "2025-12-22T13:00:00+00:00"
+            }
+          ],
+          "accuracy": 0.7534246575342466
+        }
+      ],
+      "best_version": {
+        "version": "1.2.3",
+        "accuracy": 0.9122807017543859
       }
     }
   ]
