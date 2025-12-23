@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-12-22T23:31:03.700279+00:00",
+  "generated_at": "2025-12-23T06:46:03.198446+00:00",
   "accuracy": 0.7638888888888888,
   "total": 432,
   "by_region": {
@@ -16,5 +16,5 @@
       "total": 151
     }
   },
-  "days_without_loss": 0
+  "days_without_loss": 1
 }
