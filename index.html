@@ -56,6 +56,20 @@
       padding: 3rem 2rem;
     }
 
+    /* --- Manutenção --- */
+    #maintenance-screen {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 80vh;
+      text-align: center;
+      padding: 2rem;
+    }
+    .maintenance-icon { font-size: 5rem; margin-bottom: 1.5rem; }
+    #maintenance-screen h2 { color: var(--color-warn); font-size: 2.5rem; margin-bottom: 1rem; }
+    #maintenance-screen p { color: var(--text-secondary); font-size: 1.2rem; max-width: 600px; line-height: 1.6; }
+
     /* --- Header --- */
     header {
       display: flex;
@@ -87,9 +101,9 @@
     
     .stats-grid { 
         display: flex; 
-        gap: 2rem; /* Espaço entre os itens */
+        gap: 2rem; 
         flex-wrap: wrap; 
-        align-items: center; /* Centraliza verticalmente com a placa */
+        align-items: center; 
     }
     
     .stat-item { 
@@ -100,41 +114,38 @@
     .stat-value.highlight { color: var(--color-buy); }
 
 
-    /* --- SAFETY SIGN (Versão Compacta) --- */
+    /* --- SAFETY SIGN --- */
     .safety-sign {
       background: linear-gradient(180deg, #262730 0%, #1c1e24 100%);
       border: 1px solid var(--border-color);
       border-radius: 8px;
-      
-      /* DIMENSÕES REDUZIDAS */
-      min-width: 180px;  /* Reduzido */
-      width: auto;       /* Não estica mais */
-      flex-grow: 0;      /* Importante: impede que ocupe espaço vazio */
-      
+      min-width: 180px;
+      width: auto;
+      flex-grow: 0;
       text-align: center;
       box-shadow: 0 5px 15px rgba(0,0,0,0.3);
       position: relative;
       overflow: hidden;
       transition: all 0.3s ease;
-      margin-left: auto; /* Empurra a placa para o final da linha se tiver espaço */
+      margin-left: auto;
     }
 
     .sign-header {
-      padding: 6px 10px; /* Padding reduzido */
+      padding: 6px 10px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      font-size: 0.7rem; /* Fonte menor */
+      font-size: 0.7rem;
       border-bottom: 1px solid rgba(255,255,255,0.1);
       display: flex; justify-content: center; align-items: center; gap: 6px;
     }
 
-    .sign-body { padding: 10px 15px; } /* Padding reduzido */
+    .sign-body { padding: 10px 15px; }
     .sign-pre { color: var(--text-secondary); font-size: 0.65rem; letter-spacing: 1px; margin-bottom: 2px; }
     
     .sign-number {
       font-family: var(--font-digital);
-      font-size: 2.5rem; /* Reduzido de 4rem para 2.5rem */
+      font-size: 2.5rem;
       font-weight: 700;
       line-height: 1;
       margin: 4px 0;
@@ -142,7 +153,6 @@
     }
     .sign-pos { font-weight: 600; font-size: 0.8rem; color: var(--text-primary); }
 
-    /* Cores da Placa (Inalteradas) */
     .safety-sign.safe { border-color: var(--color-buy); box-shadow: 0 0 10px rgba(9, 171, 59, 0.1); }
     .safety-sign.safe .sign-header { background-color: rgba(9, 171, 59, 0.15); color: var(--color-buy); border-bottom-color: var(--color-buy); }
     .safety-sign.safe .sign-number { color: var(--color-buy); text-shadow: 0 0 15px rgba(9, 171, 59, 0.5); }
@@ -224,319 +234,338 @@
 </head>
 <body>
 
-  <div class="app-container">
-    <header>
-      <div class="branding">
-        <img src="logo.png" alt="TCIM Logo" class="logo-img">
-        <div class="title-group">
-          <h1>TCIM</h1>
-          <div class="sub">Monitoramento de Viés</div>
+  <div id="maintenance-screen">
+    <div class="maintenance-icon">🚧</div>
+    <h2>Em Manutenção</h2>
+    <p>Estamos realizando melhorias técnicas em nossos servidores. O monitoramento de viés voltará a ficar disponível em breve.</p>
+  </div>
+
+  <div id="main-content">
+    <div class="app-container">
+      <header>
+        <div class="branding">
+          <img src="logo.png" alt="TCIM Logo" class="logo-img">
+          <div class="title-group">
+            <h1>TCIM</h1>
+            <div class="sub">Monitoramento de Viés</div>
+          </div>
+        </div>
+        <div class="header-info">
+          <a class="dash-button" href="https://tcim-dashboard.streamlit.app/" target="_blank" rel="noopener">
+            Abrir Dashboard
+          </a>
+          <div class="meta-info" id="updatedAt">Aguardando...</div>
+        </div>
+      </header>
+
+      <div id="stats">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-label">Acurácia Global</div>
+            <div class="stat-value highlight" id="accuracyOverall">--</div>
+          </div>
+          
+          <div class="stat-item">
+            <div class="stat-label">Total de Sinais</div>
+            <div class="stat-value" id="statsTotal">--</div>
+          </div>
+
+          <div class="stat-item" style="flex-grow: 1;">
+             <div class="stat-label">Por Região</div>
+             <div class="stat-value" id="statsByRegion" style="font-size: 1.25rem; font-weight: 600;">--</div>
+          </div>
+
+          <div class="safety-sign safe" id="lossSign">
+             <div class="sign-header">
+               <span id="signHeaderIcon">⚡</span> 
+               <span id="signHeaderText">Disciplina</span>
+             </div>
+             <div class="sign-body">
+               <div class="sign-pre" id="signPreText">ESTAMOS HÁ</div>
+               <div class="sign-number" id="statsDaysNoLoss">--</div>
+               <div class="sign-pos" id="signPosText">DIAS SEM LOSS</div>
+             </div>
+          </div>
+
         </div>
       </div>
-      <div class="header-info">
-        <a class="dash-button" href="https://tcim-dashboard.streamlit.app/" target="_blank" rel="noopener">
-          Abrir Dashboard
-        </a>
-        <div class="meta-info" id="updatedAt">Aguardando...</div>
-      </div>
-    </header>
 
-    <div id="stats">
-      <div class="stats-grid">
-        <div class="stat-item">
-          <div class="stat-label">Acurácia Global</div>
-          <div class="stat-value highlight" id="accuracyOverall">--</div>
-        </div>
-        
-        <div class="stat-item">
-          <div class="stat-label">Total de Sinais</div>
-          <div class="stat-value" id="statsTotal">--</div>
-        </div>
-
-        <div class="stat-item" style="flex-grow: 1;">
-           <div class="stat-label">Por Região</div>
-           <div class="stat-value" id="statsByRegion" style="font-size: 1.25rem; font-weight: 600;">--</div>
-        </div>
-
-        <div class="safety-sign safe" id="lossSign">
-           <div class="sign-header">
-             <span id="signHeaderIcon">⚡</span> 
-             <span id="signHeaderText">Disciplina</span>
-           </div>
-           <div class="sign-body">
-             <div class="sign-pre" id="signPreText">ESTAMOS HÁ</div>
-             <div class="sign-number" id="statsDaysNoLoss">--</div>
-             <div class="sign-pos" id="signPosText">DIAS SEM LOSS</div>
-           </div>
-        </div>
-
-      </div>
+      <div id="error" class="error" style="display:none;"></div>
+      
+      <div class="grid" id="cards"></div>
     </div>
-
-    <div id="error" class="error" style="display:none;"></div>
-    
-    <div class="grid" id="cards"></div>
   </div>
 
   <script>
-    const sessions = [
-      { id: "Asia", name: "Sessão Asiática - Sinal às 20:31 ", open: "00:00", close: "03:00", offset: 28 },
-      { id: "Europe", name: "Sessão Europeia - Sinal às 03:46", open: "07:00", close: "10:00", offset: 13 },
-      { id: "America", name: "Sessão Americana - Sinal às 10:16", open: "13:30", close: "16:30", offset: 13 },
-    ];
-    const API_URL = "latest_bias.json";
-    const STATS_URL = "backtest_stats.json";
+    // FLAG DE MANUTENÇÃO: Altere para true para travar o site
+    const IS_MAINTENANCE = true;
 
-    let biasData = []; 
-    let statsData = null;
-    let biasUpdatedAt = null;
+    // Elementos de controle de visibilidade
+    const mainContent = document.getElementById("main-content");
+    const maintenanceScreen = document.getElementById("maintenance-screen");
 
-    const cardsEl = document.getElementById("cards");
-    const updatedEl = document.getElementById("updatedAt");
-    const errorEl = document.getElementById("error");
-    const statsBox = document.getElementById("stats");
-    const statsTotalEl = document.getElementById("statsTotal");
-    const accuracyOverallEl = document.getElementById("accuracyOverall");
-    const statsByRegionEl = document.getElementById("statsByRegion");
-
-    const lossSignEl = document.getElementById("lossSign");
-    const daysNoLossEl = document.getElementById("statsDaysNoLoss");
-    const signHeaderTextEl = document.getElementById("signHeaderText");
-    const signHeaderIconEl = document.getElementById("signHeaderIcon");
-    const signPreTextEl = document.getElementById("signPreText");
-    const signPosTextEl = document.getElementById("signPosText");
-
-    function parseUtcToday(hhmm) {
-      const [h, m] = hhmm.split(":").map(Number);
-      const now = new Date();
-      return Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), h, m, 0);
-    }
-
-    function isWeekend(ts) {
-      const day = new Date(ts).getUTCDay(); // 0=Dom, 6=Sab
-      return day === 0 || day === 6;
-    }
-
-    function rollToNextWeekday(ts) {
-      const oneDay = 24 * 3600 * 1000;
-      let t = ts;
-      while (isWeekend(t)) t += oneDay;
-      return t;
-    }
-
-    function nextWindow(openUtc, closeUtc) {
-      const now = Date.now();
-      const oneDay = 24 * 3600 * 1000;
-
-      // Garante que a janela esteja em um dia útil; se hoje for fim de semana, pula para segunda.
-      let openDay = rollToNextWeekday(openUtc);
-      let closeDay = closeUtc + (openDay - openUtc); // mantém a duração original
-
-      if (now < openDay) return { status: "closed", nextOpen: openDay, nextClose: closeDay };
-      if (now >= openDay && now < closeDay) return { status: "open", nextOpen: openDay, nextClose: closeDay };
-
-      // Pula fim de semana quando for calcular o próximo ciclo.
-      let nextOpen = rollToNextWeekday(openDay + oneDay);
-      let nextClose = closeDay + (nextOpen - openDay);
-      return { status: "closed", nextOpen, nextClose };
-    }
-
-    function fmt(ms) {
-      const s = Math.max(0, Math.floor(ms / 1000));
-      const h = String(Math.floor(s / 3600)).padStart(2, "0");
-      const m = String(Math.floor((s % 3600) / 60)).padStart(2, "0");
-      const sec = String(s % 60).padStart(2, "0");
-      return `${h}:${m}:${sec}`;
-    }
-
-    function formatRefTime(refStr) {
-      if (!refStr) return "";
-      const d = new Date(refStr);
-      if (Number.isNaN(d.getTime())) return "";
-      return d.toLocaleDateString("pt-BR");
-    }
-
-    function filterGapAlerts(list) {
-      if (!Array.isArray(list)) return [];
-      return list.filter(item => !/gap|ffill/i.test(item));
-    }
-
-    function parseSessionStartUtc(str) {
-      if (!str) return null;
-      const m = str.match(/^(\d{2})\/(\d{2})\/(\d{4})\s+(\d{2}):(\d{2})/);
-      if (!m) return null;
-      const [, dd, mm, yyyy, hh, min] = m;
-      return Date.UTC(Number(yyyy), Number(mm) - 1, Number(dd), Number(hh), Number(min));
-    }
-
-    function isDataReadyForSession(regionData, offsetMinutes) {
-      const updated = regionData?.updated_at ? new Date(regionData.updated_at) : biasUpdatedAt;
-      const sessionStartUtc = parseSessionStartUtc(regionData?.session_start);
-      if (!updated || Number.isNaN(updated.getTime()) || !sessionStartUtc) return true;
-      const releaseTime = sessionStartUtc - (offsetMinutes || 0) * 60 * 1000;
-      return updated.getTime() >= releaseTime;
-    }
-
-    function render() {
-      const now = Date.now();
-      const sessionsWithStatus = sessions.map(sess => {
-        const openUtc = parseUtcToday(sess.open);
-        const closeUtc = parseUtcToday(sess.close);
-        const window = nextWindow(openUtc, closeUtc);
-        const isOpen = window.status === "open" && now < window.nextClose;
-        const timeTarget = isOpen ? window.nextClose : window.nextOpen;
-        return { ...sess, _window: window, _isOpen: isOpen, _timeTarget: timeTarget };
-      });
-
-      sessionsWithStatus.sort((a, b) => {
-        if (a._isOpen && !b._isOpen) return -1;
-        if (!a._isOpen && b._isOpen) return 1;
-        return a._timeTarget - b._timeTarget;
-      });
-
-      cardsEl.innerHTML = sessionsWithStatus.map(sess => {
-        const window = sess._window;
-        const isOpen = sess._isOpen;
-        const target = isOpen ? window.nextClose : window.nextOpen;
-        const countdown = fmt(target - now);
-        const label = isOpen ? "Fecha em" : "Abre em";
-        const offsetMs = (sess.offset || 0) * 60 * 1000;
-        const timeToOpen = window.nextOpen - now;
-        const isPreMarket = !isOpen && timeToOpen <= offsetMs;
-        const regionData = biasData.find(r => r.region === sess.id) || {};
-        const dataReady = isDataReadyForSession(regionData, sess.offset || 0);
-        const showData = (isOpen || isPreMarket) && dataReady;
-        const versions = regionData.versions || [];
-        const bestVersion = regionData.best_version?.version;
-        const bestAcc = regionData.best_version?.accuracy;
-
-        const versionCards = (versions || []).map(v => {
-          let vbias = (v.vies || "AGUARDE").toUpperCase();
-          let badge = vbias === "COMPRA" ? "badge-up" : vbias === "VENDA" ? "badge-down" : "badge-flat";
-          let contentHtml = "";
-
-          if (showData) {
-              const accVal = (typeof v.accuracy === "number")
-                ? v.accuracy
-                : (bestVersion && v.version === bestVersion && typeof bestAcc === "number" ? bestAcc : null);
-              const vAcc = (typeof accVal === "number") ? `${(accVal * 100).toFixed(0)}%` : "--";
-              const vScore = (typeof v.score === "number") ? `Score: ${v.score.toFixed(1)}` : "";
-              const sym = (v.symbol_results && v.symbol_results[0]) || {};
-              const hitRef = v.hit_ref_time || sym.ref_time;
-              const refLabel = formatRefTime(hitRef);
-              const refText = refLabel ? ` em ${refLabel}` : "";
-              let vHit = `<div class="hit-indicator" style="color:var(--text-muted)">- Último sinal gerado${refText}: Pendente</div>`;
-              if(v.hit === true) vHit = `<div class="hit-indicator hit-success">✔ Último sinal gerado${refText}: Win</div>`;
-              if(v.hit === false) vHit = `<div class="hit-indicator hit-fail">✖ Último sinal gerado${refText}: Loss</div>`;
-              const blocos = sym.blocos || {};
-              const tend = (blocos.tendencia && blocos.tendencia.status) ? blocos.tendencia.status : "-";
-              const ctx = (blocos.contexto && blocos.contexto.status) ? blocos.contexto.status : "-";
-              const imp = (blocos.impulso && blocos.impulso.status) ? blocos.impulso.status : "-";
-              const mit = (blocos.mitigacao && blocos.mitigacao.status) ? blocos.mitigacao.status : "-";
-              const mitClass = mit.toLowerCase().includes('risco') || mit.toLowerCase().includes('alerta') ? 'v-stat-value highlight-risk' : 'v-stat-value';
-              const alerts = filterGapAlerts(Array.isArray(sym.alertas) ? sym.alertas : []);
-              const alertsHtml = alerts.length ? `<div class="version-alerts">⚠ Alertas:<ul>${alerts.slice(0,3).map(a => `<li>${a}</li>`).join("")}</ul></div>` : "";
-
-              contentHtml = `
-                <div class="version-header">
-                    <div><span class="version-label">v${v.version || "--"}</span><span class="version-acc" style="margin-left:8px">Acc: ${vAcc}</span><span class="version-acc" style="margin-left:8px">${vScore}</span></div>
-                    <div class="version-badge ${badge}">${vbias}</div>
-                </div>
-                <div class="version-body">
-                    <div class="version-stats-grid">
-                       <div class="v-stat-item"><span class="v-stat-label">Tendência</span><span class="v-stat-value">${tend}</span></div>
-                       <div class="v-stat-item"><span class="v-stat-label">Contexto</span><span class="v-stat-value">${ctx}</span></div>
-                       <div class="v-stat-item"><span class="v-stat-label">Impulso</span><span class="v-stat-value">${imp}</span></div>
-                       <div class="v-stat-item"><span class="v-stat-label">Mitigação</span><span class="${mitClass}">${mit}</span></div>
-                    </div>
-                    ${alertsHtml}
-                    ${vHit}
-                </div>`;
-          } else {
-              badge = "badge-wait"; vbias = "AGUARDE";
-              const waitText = dataReady ? "Análise disponível em breve..." : "Aguardando atualização...";
-              contentHtml = `<div class="version-header"><div><span class="version-label">v${v.version || "--"}</span></div><div class="version-badge ${badge}">${vbias}</div></div><div class="version-body"><div class="waiting-msg">${waitText}</div></div>`;
-          }
-          return `<div class="version-card">${contentHtml}</div>`;
-        }).join("") || '<div class="version-body" style="padding:1rem; text-align:center;">Sem versões disponíveis.</div>';
-
-        return `<div class="card"><div class="card-header"><div><div class="session-name">${sess.name}</div><span class="version-tag">${versions.length || 0} versões ativas</span></div></div><div class="timer-container"><div class="timer-label">${label}</div><div class="timer">${countdown}</div></div><div class="version-list">${versionCards}</div></div>`;
-      }).join("");
-    }
-
-    function renderStats() {
-      if (!statsData) { statsBox.style.display = "none"; return; }
-      statsBox.style.display = "block";
-      
-      const acc = typeof statsData.accuracy === "number" ? `${(statsData.accuracy * 100).toFixed(1)}%` : "--";
-      accuracyOverallEl.textContent = acc;
-      statsTotalEl.textContent = statsData.total || "--";
-      
-      const daysNoLoss = statsData.days_without_loss;
-      const daysVal = typeof daysNoLoss === "number" ? daysNoLoss : 0;
-      daysNoLossEl.textContent = String(daysVal).padStart(2, '0');
-
-if (daysVal < 3) {
-          // --- ESTADO DE ALERTA (0, 1 ou 2 dias) ---
-          lossSignEl.className = "safety-sign danger";
-          signHeaderIconEl.textContent = "⚠";
-          signHeaderTextEl.textContent = "RESET DE RISCO";
-
-          // Condicional interna para ajustar o texto
-          if (daysVal === 0) {
-              signPreTextEl.textContent = "O ÚLTIMO LOSS FOI";
-              signPosTextEl.textContent = "DIAS (HOJE)"; 
-          } else {
-              // Dias 1 e 2
-              signPreTextEl.textContent = "O ÚLTIMO LOSS FOI HÁ";
-              // Verifica se é 1 para usar singular, senão plural
-              signPosTextEl.textContent = (daysVal === 1) ? "DIA" : "DIAS";
-          }
-
+    function checkMaintenance() {
+      if (IS_MAINTENANCE) {
+        mainContent.style.display = "none";
+        maintenanceScreen.style.display = "flex";
+        return true;
       } else {
-          // --- ESTADO SEGURO (3 dias ou mais) ---
-          lossSignEl.className = "safety-sign safe";
-          signHeaderIconEl.textContent = "⚡";
-          signHeaderTextEl.textContent = "Disciplina";
-          signPreTextEl.textContent = "ESTAMOS HÁ";
-          signPosTextEl.textContent = "DIAS SEM LOSS";
+        mainContent.style.display = "block";
+        maintenanceScreen.style.display = "none";
+        return false;
       }
-
-      const regions = statsData.by_region || {};
-      const regionHtml = Object.entries(regions).map(([reg, info]) => {
-        const accReg = typeof info.accuracy === "number" ? `${(info.accuracy * 100).toFixed(0)}%` : "--";
-        const nameMap = { "Asia": "Ásia", "Europe": "Europa", "America": "EUA" };
-        const name = nameMap[reg] || reg;
-        const color = (info.accuracy >= 0.55) ? 'var(--color-buy)' : (info.accuracy < 0.45) ? 'var(--color-sell)' : 'var(--text-muted)';
-        return `<span style="margin-right: 16px; white-space: nowrap; font-size: 0.9rem; font-family:var(--font-mono); color: var(--text-secondary);">${name} <strong style="color:${color}; font-size:1.1rem; margin-left:4px;">${accReg}</strong></span>`;
-      }).join("");
-      statsByRegionEl.innerHTML = regionHtml;
     }
 
-    async function fetchData() {
-      try {
-        const [biasRes, statsRes] = await Promise.all([ fetch(API_URL, { cache: "no-store" }), fetch(STATS_URL, { cache: "no-store" }), ]);
-        if (!biasRes.ok) throw new Error(`API Bias: ${biasRes.status}`);
-        const biasPayload = await biasRes.json();
-        let statsPayload = null;
-        if(statsRes.ok) statsPayload = await statsRes.json();
-        biasData = biasPayload.regions || [];
-        statsData = statsPayload;
-        biasUpdatedAt = biasPayload.updated_at ? new Date(biasPayload.updated_at) : null;
-        const dateObj = biasUpdatedAt && !Number.isNaN(biasUpdatedAt.getTime()) ? biasUpdatedAt : null;
-        if (dateObj) {
-          updatedEl.textContent = `Atualizado: ${dateObj.toLocaleTimeString()} (${dateObj.toLocaleDateString()})`;
+    // Só executa o resto se NÃO estiver em manutenção
+    if (!checkMaintenance()) {
+      const sessions = [
+        { id: "Asia", name: "Sessão Asiática - Sinal às 20:31 ", open: "00:00", close: "03:00", offset: 28 },
+        { id: "Europe", name: "Sessão Europeia - Sinal às 03:46", open: "07:00", close: "10:00", offset: 13 },
+        { id: "America", name: "Sessão Americana - Sinal às 10:16", open: "13:30", close: "16:30", offset: 13 },
+      ];
+      const API_URL = "latest_bias.json";
+      const STATS_URL = "backtest_stats.json";
+
+      let biasData = []; 
+      let statsData = null;
+      let biasUpdatedAt = null;
+
+      const cardsEl = document.getElementById("cards");
+      const updatedEl = document.getElementById("updatedAt");
+      const errorEl = document.getElementById("error");
+      const statsBox = document.getElementById("stats");
+      const statsTotalEl = document.getElementById("statsTotal");
+      const accuracyOverallEl = document.getElementById("accuracyOverall");
+      const statsByRegionEl = document.getElementById("statsByRegion");
+
+      const lossSignEl = document.getElementById("lossSign");
+      const daysNoLossEl = document.getElementById("statsDaysNoLoss");
+      const signHeaderTextEl = document.getElementById("signHeaderText");
+      const signHeaderIconEl = document.getElementById("signHeaderIcon");
+      const signPreTextEl = document.getElementById("signPreText");
+      const signPosTextEl = document.getElementById("signPosText");
+
+      function parseUtcToday(hhmm) {
+        const [h, m] = hhmm.split(":").map(Number);
+        const now = new Date();
+        return Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), h, m, 0);
+      }
+
+      function isWeekend(ts) {
+        const day = new Date(ts).getUTCDay();
+        return day === 0 || day === 6;
+      }
+
+      function rollToNextWeekday(ts) {
+        const oneDay = 24 * 3600 * 1000;
+        let t = ts;
+        while (isWeekend(t)) t += oneDay;
+        return t;
+      }
+
+      function nextWindow(openUtc, closeUtc) {
+        const now = Date.now();
+        const oneDay = 24 * 3600 * 1000;
+        let openDay = rollToNextWeekday(openUtc);
+        let closeDay = closeUtc + (openDay - openUtc);
+        if (now < openDay) return { status: "closed", nextOpen: openDay, nextClose: closeDay };
+        if (now >= openDay && now < closeDay) return { status: "open", nextOpen: openDay, nextClose: closeDay };
+        let nextOpen = rollToNextWeekday(openDay + oneDay);
+        let nextClose = closeDay + (nextOpen - openDay);
+        return { status: "closed", nextOpen, nextClose };
+      }
+
+      function fmt(ms) {
+        const s = Math.max(0, Math.floor(ms / 1000));
+        const h = String(Math.floor(s / 3600)).padStart(2, "0");
+        const m = String(Math.floor((s % 3600) / 60)).padStart(2, "0");
+        const sec = String(s % 60).padStart(2, "0");
+        return `${h}:${m}:${sec}`;
+      }
+
+      function formatRefTime(refStr) {
+        if (!refStr) return "";
+        const d = new Date(refStr);
+        if (Number.isNaN(d.getTime())) return "";
+        return d.toLocaleDateString("pt-BR");
+      }
+
+      function filterGapAlerts(list) {
+        if (!Array.isArray(list)) return [];
+        return list.filter(item => !/gap|ffill/i.test(item));
+      }
+
+      function parseSessionStartUtc(str) {
+        if (!str) return null;
+        const m = str.match(/^(\d{2})\/(\d{2})\/(\d{4})\s+(\d{2}):(\d{2})/);
+        if (!m) return null;
+        const [, dd, mm, yyyy, hh, min] = m;
+        return Date.UTC(Number(yyyy), Number(mm) - 1, Number(dd), Number(hh), Number(min));
+      }
+
+      function isDataReadyForSession(regionData, offsetMinutes) {
+        const updated = regionData?.updated_at ? new Date(regionData.updated_at) : biasUpdatedAt;
+        const sessionStartUtc = parseSessionStartUtc(regionData?.session_start);
+        if (!updated || Number.isNaN(updated.getTime()) || !sessionStartUtc) return true;
+        const releaseTime = sessionStartUtc - (offsetMinutes || 0) * 60 * 1000;
+        return updated.getTime() >= releaseTime;
+      }
+
+      function render() {
+        const now = Date.now();
+        const sessionsWithStatus = sessions.map(sess => {
+          const openUtc = parseUtcToday(sess.open);
+          const closeUtc = parseUtcToday(sess.close);
+          const window = nextWindow(openUtc, closeUtc);
+          const isOpen = window.status === "open" && now < window.nextClose;
+          const timeTarget = isOpen ? window.nextClose : window.nextOpen;
+          return { ...sess, _window: window, _isOpen: isOpen, _timeTarget: timeTarget };
+        });
+
+        sessionsWithStatus.sort((a, b) => {
+          if (a._isOpen && !b._isOpen) return -1;
+          if (!a._isOpen && b._isOpen) return 1;
+          return a._timeTarget - b._timeTarget;
+        });
+
+        cardsEl.innerHTML = sessionsWithStatus.map(sess => {
+          const window = sess._window;
+          const isOpen = sess._isOpen;
+          const target = isOpen ? window.nextClose : window.nextOpen;
+          const countdown = fmt(target - now);
+          const label = isOpen ? "Fecha em" : "Abre em";
+          const offsetMs = (sess.offset || 0) * 60 * 1000;
+          const timeToOpen = window.nextOpen - now;
+          const isPreMarket = !isOpen && timeToOpen <= offsetMs;
+          const regionData = biasData.find(r => r.region === sess.id) || {};
+          const dataReady = isDataReadyForSession(regionData, sess.offset || 0);
+          const showData = (isOpen || isPreMarket) && dataReady;
+          const versions = regionData.versions || [];
+          const bestVersion = regionData.best_version?.version;
+          const bestAcc = regionData.best_version?.accuracy;
+
+          const versionCards = (versions || []).map(v => {
+            let vbias = (v.vies || "AGUARDE").toUpperCase();
+            let badge = vbias === "COMPRA" ? "badge-up" : vbias === "VENDA" ? "badge-down" : "badge-flat";
+            let contentHtml = "";
+
+            if (showData) {
+                const accVal = (typeof v.accuracy === "number")
+                  ? v.accuracy
+                  : (bestVersion && v.version === bestVersion && typeof bestAcc === "number" ? bestAcc : null);
+                const vAcc = (typeof accVal === "number") ? `${(accVal * 100).toFixed(0)}%` : "--";
+                const vScore = (typeof v.score === "number") ? `Score: ${v.score.toFixed(1)}` : "";
+                const sym = (v.symbol_results && v.symbol_results[0]) || {};
+                const hitRef = v.hit_ref_time || sym.ref_time;
+                const refLabel = formatRefTime(hitRef);
+                const refText = refLabel ? ` em ${refLabel}` : "";
+                let vHit = `<div class="hit-indicator" style="color:var(--text-muted)">- Último sinal gerado${refText}: Pendente</div>`;
+                if(v.hit === true) vHit = `<div class="hit-indicator hit-success">✔ Último sinal gerado${refText}: Win</div>`;
+                if(v.hit === false) vHit = `<div class="hit-indicator hit-fail">✖ Último sinal gerado${refText}: Loss</div>`;
+                const blocos = sym.blocos || {};
+                const tend = (blocos.tendencia && blocos.tendencia.status) ? blocos.tendencia.status : "-";
+                const ctx = (blocos.contexto && blocos.contexto.status) ? blocos.contexto.status : "-";
+                const imp = (blocos.impulso && blocos.impulso.status) ? blocos.impulso.status : "-";
+                const mit = (blocos.mitigacao && blocos.mitigacao.status) ? blocos.mitigacao.status : "-";
+                const mitClass = mit.toLowerCase().includes('risco') || mit.toLowerCase().includes('alerta') ? 'v-stat-value highlight-risk' : 'v-stat-value';
+                const alerts = filterGapAlerts(Array.isArray(sym.alertas) ? sym.alertas : []);
+                const alertsHtml = alerts.length ? `<div class="version-alerts">⚠ Alertas:<ul>${alerts.slice(0,3).map(a => `<li>${a}</li>`).join("")}</ul></div>` : "";
+
+                contentHtml = `
+                  <div class="version-header">
+                      <div><span class="version-label">v${v.version || "--"}</span><span class="version-acc" style="margin-left:8px">Acc: ${vAcc}</span><span class="version-acc" style="margin-left:8px">${vScore}</span></div>
+                      <div class="version-badge ${badge}">${vbias}</div>
+                  </div>
+                  <div class="version-body">
+                      <div class="version-stats-grid">
+                         <div class="v-stat-item"><span class="v-stat-label">Tendência</span><span class="v-stat-value">${tend}</span></div>
+                         <div class="v-stat-item"><span class="v-stat-label">Contexto</span><span class="v-stat-value">${ctx}</span></div>
+                         <div class="v-stat-item"><span class="v-stat-label">Impulso</span><span class="v-stat-value">${imp}</span></div>
+                         <div class="v-stat-item"><span class="v-stat-label">Mitigação</span><span class="${mitClass}">${mit}</span></div>
+                      </div>
+                      ${alertsHtml}
+                      ${vHit}
+                  </div>`;
+            } else {
+                badge = "badge-wait"; vbias = "AGUARDE";
+                const waitText = dataReady ? "Análise disponível em breve..." : "Aguardando atualização...";
+                contentHtml = `<div class="version-header"><div><span class="version-label">v${v.version || "--"}</span></div><div class="version-badge ${badge}">${vbias}</div></div><div class="version-body"><div class="waiting-msg">${waitText}</div></div>`;
+            }
+            return `<div class="version-card">${contentHtml}</div>`;
+          }).join("") || '<div class="version-body" style="padding:1rem; text-align:center;">Sem versões disponíveis.</div>';
+
+          return `<div class="card"><div class="card-header"><div><div class="session-name">${sess.name}</div><span class="version-tag">${versions.length || 0} versões ativas</span></div></div><div class="timer-container"><div class="timer-label">${label}</div><div class="timer">${countdown}</div></div><div class="version-list">${versionCards}</div></div>`;
+        }).join("");
+      }
+
+      function renderStats() {
+        if (!statsData) { statsBox.style.display = "none"; return; }
+        statsBox.style.display = "block";
+        
+        const acc = typeof statsData.accuracy === "number" ? `${(statsData.accuracy * 100).toFixed(1)}%` : "--";
+        accuracyOverallEl.textContent = acc;
+        statsTotalEl.textContent = statsData.total || "--";
+        
+        const daysNoLoss = statsData.days_without_loss;
+        const daysVal = typeof daysNoLoss === "number" ? daysNoLoss : 0;
+        daysNoLossEl.textContent = String(daysVal).padStart(2, '0');
+
+        if (daysVal < 3) {
+            lossSignEl.className = "safety-sign danger";
+            signHeaderIconEl.textContent = "⚠";
+            signHeaderTextEl.textContent = "RESET DE RISCO";
+            if (daysVal === 0) {
+                signPreTextEl.textContent = "O ÚLTIMO LOSS FOI";
+                signPosTextEl.textContent = "DIAS (HOJE)"; 
+            } else {
+                signPreTextEl.textContent = "O ÚLTIMO LOSS FOI HÁ";
+                signPosTextEl.textContent = (daysVal === 1) ? "DIA" : "DIAS";
+            }
         } else {
-          updatedEl.textContent = "Atualizado: --";
+            lossSignEl.className = "safety-sign safe";
+            signHeaderIconEl.textContent = "⚡";
+            signHeaderTextEl.textContent = "Disciplina";
+            signPreTextEl.textContent = "ESTAMOS HÁ";
+            signPosTextEl.textContent = "DIAS SEM LOSS";
         }
-        errorEl.style.display = "none"; renderStats(); render();
-      } catch (err) {
-        console.error(err); updatedEl.textContent = "Offline / Reconectando...";
+
+        const regions = statsData.by_region || {};
+        const regionHtml = Object.entries(regions).map(([reg, info]) => {
+          const accReg = typeof info.accuracy === "number" ? `${(info.accuracy * 100).toFixed(0)}%` : "--";
+          const nameMap = { "Asia": "Ásia", "Europe": "Europa", "America": "EUA" };
+          const name = nameMap[reg] || reg;
+          const color = (info.accuracy >= 0.55) ? 'var(--color-buy)' : (info.accuracy < 0.45) ? 'var(--color-sell)' : 'var(--text-muted)';
+          return `<span style="margin-right: 16px; white-space: nowrap; font-size: 0.9rem; font-family:var(--font-mono); color: var(--text-secondary);">${name} <strong style="color:${color}; font-size:1.1rem; margin-left:4px;">${accReg}</strong></span>`;
+        }).join("");
+        statsByRegionEl.innerHTML = regionHtml;
       }
+
+      async function fetchData() {
+        try {
+          const [biasRes, statsRes] = await Promise.all([ fetch(API_URL, { cache: "no-store" }), fetch(STATS_URL, { cache: "no-store" }), ]);
+          if (!biasRes.ok) throw new Error(`API Bias: ${biasRes.status}`);
+          const biasPayload = await biasRes.json();
+          let statsPayload = null;
+          if(statsRes.ok) statsPayload = await statsRes.json();
+          biasData = biasPayload.regions || [];
+          statsData = statsPayload;
+          biasUpdatedAt = biasPayload.updated_at ? new Date(biasPayload.updated_at) : null;
+          const dateObj = biasUpdatedAt && !Number.isNaN(biasUpdatedAt.getTime()) ? biasUpdatedAt : null;
+          if (dateObj) {
+            updatedEl.textContent = `Atualizado: ${dateObj.toLocaleTimeString()} (${dateObj.toLocaleDateString()})`;
+          } else {
+            updatedEl.textContent = "Atualizado: --";
+          }
+          errorEl.style.display = "none"; renderStats(); render();
+        } catch (err) {
+          console.error(err); updatedEl.textContent = "Offline / Reconectando...";
+        }
+      }
+
+      fetchData();
+      setInterval(render, 1000);
+      setInterval(fetchData, 60000);
     }
-    fetchData();
-    setInterval(render, 1000);
-    setInterval(fetchData, 60000);
   </script>
 </body>
 </html>
