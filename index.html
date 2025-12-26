@@ -403,10 +403,18 @@
         return Date.UTC(Number(yyyy), Number(mm) - 1, Number(dd), Number(hh), Number(min));
       }
 
+      function isSameLocalDate(a, b) {
+        return a.getFullYear() === b.getFullYear()
+          && a.getMonth() === b.getMonth()
+          && a.getDate() === b.getDate();
+      }
+
       function isDataReadyForSession(regionData, offsetMinutes) {
         const updated = regionData?.updated_at ? new Date(regionData.updated_at) : biasUpdatedAt;
         const sessionStartUtc = parseSessionStartUtc(regionData?.session_start);
-        if (!updated || Number.isNaN(updated.getTime()) || !sessionStartUtc) return true;
+        if (!updated || Number.isNaN(updated.getTime())) return false;
+        if (!isSameLocalDate(updated, new Date())) return false;
+        if (!sessionStartUtc) return true;
         const releaseTime = sessionStartUtc - (offsetMinutes || 0) * 60 * 1000;
         return updated.getTime() >= releaseTime;
       }
