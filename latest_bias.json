@@ -1,192 +1,6 @@
 {
-  "updated_at": "2025-12-23T13:16:00+00:00",
+  "updated_at": "2025-12-28T23:31:00+00:00",
   "regions": [
-    {
-      "region": "Asia",
-      "session_name": "ASIA",
-      "session_start": "22/12/2025 21:00",
-      "updated_at": "2025-12-22T23:31:00+00:00",
-      "versions": [
-        {
-          "region": "Asia",
-          "version": "1.2.1",
-          "vies": "FORA",
-          "score": 0.0,
-          "motivo": "USDJPY: FORA (score=0.0) | Tendência: Neutro (Slopes das EMAs estão próximos de zero (lateral).; Confirmação H1: EMA50 inclinada para cima (+0.5).); Contexto: Neutro (Preço abaixo da VWAP (-1).; Preço abaixo da EMA50 (-0.5).; Preco esticado > 1.1x ATR distante da EMA50 (penaliza para neutro).; Distancia > 2.5x ATR -> sinal vetado.) | Alertas: 192 gaps preenchidos (ffill <= 288).; Contexto: preco afastado demais da media (risco de correcao).",
-          "hit": false,
-          "hit_ref_time": "2025-12-22T00:00:00",
-          "updated_at": "2025-12-22T23:31:00+00:00",
-          "symbol_results": [
-            {
-              "symbol": "USDJPY",
-              "vies": "FORA",
-              "score": 0.0,
-              "motivos": [
-                "Tendência: Neutro (Slopes das EMAs estão próximos de zero (lateral).; Confirmação H1: EMA50 inclinada para cima (+0.5).)",
-                "Contexto: Neutro (Preço abaixo da VWAP (-1).; Preço abaixo da EMA50 (-0.5).; Preco esticado > 1.1x ATR distante da EMA50 (penaliza para neutro).; Distancia > 2.5x ATR -> sinal vetado.)",
-                "Impulso: Forte (ADX=34.0 acima de 19 (+2).; Impulso segue a tendência (a favor da alta).)",
-                "Mitigação: Risco: volatilidade extrema (Candle atual > 0.9x ATR (Score penalizado em 2 pontos).)"
-              ],
-              "alertas": [
-                "192 gaps preenchidos (ffill <= 288).",
-                "Contexto: preco afastado demais da media (risco de correcao).",
-                "Contexto extremo: afastamento excedeu limite. Sinal cancelado.",
-                "Volatilidade excessiva detectada (candle > 0.9x ATR)."
-              ],
-              "blocos": {
-                "tendencia": {
-                  "score": 0.5,
-                  "status": "Neutro",
-                  "notas": [
-                    "Slopes das EMAs estão próximos de zero (lateral).",
-                    "Confirmação H1: EMA50 inclinada para cima (+0.5)."
-                  ],
-                  "valores": {
-                    "slope_ema20": 0.00022557443634070915,
-                    "slope_ema50": -0.004520657180696168,
-                    "preco": 156.88105,
-                    "ema20": 156.983076963157,
-                    "ema50": 157.06151358843084
-                  }
-                },
-                "contexto": {
-                  "score": -0.5,
-                  "status": "Neutro",
-                  "notas": [
-                    "Preço abaixo da VWAP (-1).",
-                    "Preço abaixo da EMA50 (-0.5).",
-                    "Preco esticado > 1.1x ATR distante da EMA50 (penaliza para neutro).",
-                    "Distancia > 2.5x ATR -> sinal vetado."
-                  ],
-                  "valores": {
-                    "vwap": 156.90518333333333,
-                    "ema50": 157.06151358843084,
-                    "context_blocked": true
-                  }
-                },
-                "impulso": {
-                  "score": 2.0,
-                  "status": "Forte",
-                  "notas": [
-                    "ADX=34.0 acima de 19 (+2).",
-                    "Impulso segue a tendência (a favor da alta)."
-                  ],
-                  "valores": {
-                    "adx": 34.04230541438403
-                  }
-                },
-                "mitigacao": {
-                  "score": -2.0,
-                  "status": "Risco: volatilidade extrema",
-                  "notas": [
-                    "Candle atual > 0.9x ATR (Score penalizado em 2 pontos)."
-                  ],
-                  "valores": {
-                    "candle_range": 0.09399999999999409,
-                    "atr": 0.06926222593314568,
-                    "mitigation_blocked": false
-                  }
-                }
-              },
-              "hit": null,
-              "ref_time": "2025-12-22T23:15:00+00:00"
-            }
-          ],
-          "accuracy": 0.6666666666666666
-        },
-        {
-          "region": "Asia",
-          "version": "1.0.1",
-          "vies": "FORA",
-          "score": 0.0,
-          "motivo": "USDJPY: FORA (score=0.0) | Tendência: Neutro (Slopes das EMAs estão próximos de zero (lateral).; Confirmação H1: EMA50 inclinada para cima (+0.5).); Contexto: Neutro (Preço abaixo da VWAP (-1).; Preço abaixo da EMA50 (-0.5).; Preco esticado > 1.4x ATR distante da EMA50 (penaliza para neutro).; Distancia > 1.0x ATR -> sinal vetado.) | Alertas: 192 gaps preenchidos (ffill <= 288).; Contexto: preco afastado demais da media (risco de correcao).",
-          "hit": false,
-          "hit_ref_time": "2025-12-22T00:00:00",
-          "updated_at": "2025-12-22T23:31:00+00:00",
-          "symbol_results": [
-            {
-              "symbol": "USDJPY",
-              "vies": "FORA",
-              "score": 0.0,
-              "motivos": [
-                "Tendência: Neutro (Slopes das EMAs estão próximos de zero (lateral).; Confirmação H1: EMA50 inclinada para cima (+0.5).)",
-                "Contexto: Neutro (Preço abaixo da VWAP (-1).; Preço abaixo da EMA50 (-0.5).; Preco esticado > 1.4x ATR distante da EMA50 (penaliza para neutro).; Distancia > 1.0x ATR -> sinal vetado.)",
-                "Impulso: Forte (ADX=34.0 acima de 18 (+2).; Impulso segue a tendência (a favor da alta).)",
-                "Mitigação: Risco: volatilidade extrema (Candle atual > 1.0x ATR (Score penalizado em 2 pontos).)"
-              ],
-              "alertas": [
-                "192 gaps preenchidos (ffill <= 288).",
-                "Contexto: preco afastado demais da media (risco de correcao).",
-                "Contexto extremo: afastamento excedeu limite. Sinal cancelado.",
-                "Volatilidade excessiva detectada (candle > 1.0x ATR)."
-              ],
-              "blocos": {
-                "tendencia": {
-                  "score": 0.5,
-                  "status": "Neutro",
-                  "notas": [
-                    "Slopes das EMAs estão próximos de zero (lateral).",
-                    "Confirmação H1: EMA50 inclinada para cima (+0.5)."
-                  ],
-                  "valores": {
-                    "slope_ema20": 0.00022557443634070915,
-                    "slope_ema50": -0.004520657180696168,
-                    "preco": 156.88105,
-                    "ema20": 156.983076963157,
-                    "ema50": 157.06151358843084
-                  }
-                },
-                "contexto": {
-                  "score": -0.5,
-                  "status": "Neutro",
-                  "notas": [
-                    "Preço abaixo da VWAP (-1).",
-                    "Preço abaixo da EMA50 (-0.5).",
-                    "Preco esticado > 1.4x ATR distante da EMA50 (penaliza para neutro).",
-                    "Distancia > 1.0x ATR -> sinal vetado."
-                  ],
-                  "valores": {
-                    "vwap": 156.90518333333333,
-                    "ema50": 157.06151358843084,
-                    "context_blocked": true
-                  }
-                },
-                "impulso": {
-                  "score": 2.0,
-                  "status": "Forte",
-                  "notas": [
-                    "ADX=34.0 acima de 18 (+2).",
-                    "Impulso segue a tendência (a favor da alta)."
-                  ],
-                  "valores": {
-                    "adx": 34.04230541438403
-                  }
-                },
-                "mitigacao": {
-                  "score": -2.0,
-                  "status": "Risco: volatilidade extrema",
-                  "notas": [
-                    "Candle atual > 1.0x ATR (Score penalizado em 2 pontos)."
-                  ],
-                  "valores": {
-                    "candle_range": 0.09399999999999409,
-                    "atr": 0.06926222593314568,
-                    "mitigation_blocked": false
-                  }
-                }
-              },
-              "hit": null,
-              "ref_time": "2025-12-22T23:15:00+00:00"
-            }
-          ],
-          "accuracy": 0.627906976744186
-        }
-      ],
-      "best_version": {
-        "version": "1.2.1",
-        "accuracy": 0.6666666666666666
-      }
-    },
     {
       "region": "Europe",
       "session_name": "EUROPE",
@@ -555,6 +369,68 @@
       "best_version": {
         "version": "1.2.3",
         "accuracy": 0.9122807017543859
+      }
+    },
+    {
+      "region": "Asia",
+      "session_name": "ASIA",
+      "session_start": "28/12/2025 21:00",
+      "updated_at": "2025-12-28T23:31:00+00:00",
+      "versions": [
+        {
+          "region": "Asia",
+          "version": "1.2.1",
+          "vies": "FORA",
+          "score": 0.0,
+          "motivo": "USDJPY: FORA (score=0.0) | Alertas: Erro ao obter dados de USDJPY: yfinance nao esta instalado: No module named 'yfinance'",
+          "hit": true,
+          "hit_ref_time": "2025-12-26T00:00:00",
+          "updated_at": "2025-12-28T23:31:00+00:00",
+          "symbol_results": [
+            {
+              "symbol": "USDJPY",
+              "vies": "FORA",
+              "score": 0.0,
+              "motivos": [],
+              "alertas": [
+                "Erro ao obter dados de USDJPY: yfinance nao esta instalado: No module named 'yfinance'"
+              ],
+              "blocos": {},
+              "hit": null,
+              "ref_time": null
+            }
+          ],
+          "accuracy": 0.6869565217391305
+        },
+        {
+          "region": "Asia",
+          "version": "1.0.1",
+          "vies": "FORA",
+          "score": 0.0,
+          "motivo": "USDJPY: FORA (score=0.0) | Alertas: Erro ao obter dados de USDJPY: yfinance nao esta instalado: No module named 'yfinance'",
+          "hit": true,
+          "hit_ref_time": "2025-12-26T00:00:00",
+          "updated_at": "2025-12-28T23:31:00+00:00",
+          "symbol_results": [
+            {
+              "symbol": "USDJPY",
+              "vies": "FORA",
+              "score": 0.0,
+              "motivos": [],
+              "alertas": [
+                "Erro ao obter dados de USDJPY: yfinance nao esta instalado: No module named 'yfinance'"
+              ],
+              "blocos": {},
+              "hit": null,
+              "ref_time": null
+            }
+          ],
+          "accuracy": 0.7123287671232876
+        }
+      ],
+      "best_version": {
+        "version": "1.0.1",
+        "accuracy": 0.7123287671232876
       }
     }
   ]
