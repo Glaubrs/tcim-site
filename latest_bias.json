@@ -1,191 +1,6 @@
 {
-  "updated_at": "2025-12-28T23:31:00+00:00",
+  "updated_at": "2025-12-29T06:46:00+00:00",
   "regions": [
-    {
-      "region": "Europe",
-      "session_name": "EUROPE",
-      "session_start": "23/12/2025 04:00",
-      "updated_at": "2025-12-23T06:46:00+00:00",
-      "versions": [
-        {
-          "region": "Europe",
-          "version": "1.2.2",
-          "vies": "FORA",
-          "score": 0.0,
-          "motivo": "EURUSD: FORA (score=0.0) | Tendência: Neutro (Slopes das EMAs estão próximos de zero (lateral).; Confirmação H1: EMA50 inclinada para cima (+0.5).); Contexto: Favorável (Preço acima da VWAP intradiária (+1).; Preço acima da EMA50 (+0.5).) | Alertas: 192 gaps preenchidos (ffill <= 288).; Volatilidade excessiva detectada (candle > 1.5x ATR).",
-          "hit": false,
-          "hit_ref_time": "2025-12-22T00:00:00",
-          "updated_at": "2025-12-23T06:46:00+00:00",
-          "symbol_results": [
-            {
-              "symbol": "EURUSD",
-              "vies": "FORA",
-              "score": 0.0,
-              "motivos": [
-                "Tendência: Neutro (Slopes das EMAs estão próximos de zero (lateral).; Confirmação H1: EMA50 inclinada para cima (+0.5).)",
-                "Contexto: Favorável (Preço acima da VWAP intradiária (+1).; Preço acima da EMA50 (+0.5).)",
-                "Impulso: Forte (ADX=31.3 acima de 21 (+2).; Impulso segue a tendência (a favor da alta).)",
-                "Mitigação: Risco: volatilidade extrema (Candle atual > 1.5x ATR (Score penalizado em 2 pontos).; Mitigação forte: vol extrema + ADX alto. Vetado.)"
-              ],
-              "alertas": [
-                "192 gaps preenchidos (ffill <= 288).",
-                "Volatilidade excessiva detectada (candle > 1.5x ATR).",
-                "Sinal vetado (vol extrema + tendência forte)."
-              ],
-              "blocos": {
-                "tendencia": {
-                  "score": 0.5,
-                  "status": "Neutro",
-                  "notas": [
-                    "Slopes das EMAs estão próximos de zero (lateral).",
-                    "Confirmação H1: EMA50 inclinada para cima (+0.5)."
-                  ],
-                  "valores": {
-                    "slope_ema20": 4.7494670892624315e-05,
-                    "slope_ema50": 5.222315565824455e-05,
-                    "preco": 1.17728,
-                    "ema20": 1.1774424528624028,
-                    "ema50": 1.1767648230170167
-                  }
-                },
-                "contexto": {
-                  "score": 1.5,
-                  "status": "Favorável",
-                  "notas": [
-                    "Preço acima da VWAP intradiária (+1).",
-                    "Preço acima da EMA50 (+0.5)."
-                  ],
-                  "valores": {
-                    "vwap": 1.1771733333333334,
-                    "ema50": 1.1767648230170167,
-                    "context_blocked": false
-                  }
-                },
-                "impulso": {
-                  "score": 2.0,
-                  "status": "Forte",
-                  "notas": [
-                    "ADX=31.3 acima de 21 (+2).",
-                    "Impulso segue a tendência (a favor da alta)."
-                  ],
-                  "valores": {
-                    "adx": 31.347412971213622
-                  }
-                },
-                "mitigacao": {
-                  "score": -2.0,
-                  "status": "Risco: volatilidade extrema",
-                  "notas": [
-                    "Candle atual > 1.5x ATR (Score penalizado em 2 pontos).",
-                    "Mitigação forte: vol extrema + ADX alto. Vetado."
-                  ],
-                  "valores": {
-                    "candle_range": 0.0005599999999998939,
-                    "atr": 0.00033586179449563786,
-                    "mitigation_blocked": true
-                  }
-                }
-              },
-              "hit": null,
-              "ref_time": "2025-12-23T06:30:00+00:00"
-            }
-          ],
-          "accuracy": 0.9130434782608695
-        },
-        {
-          "region": "Europe",
-          "version": "1.0.2",
-          "vies": "FORA",
-          "score": 0.0,
-          "motivo": "EURUSD: FORA (score=0.0) | Tendência: Neutro (Slopes das EMAs estão próximos de zero (lateral).; Confirmação H1: EMA50 inclinada para cima (+0.5).); Contexto: Neutro (Preço acima da VWAP intradiária (+1).; Preço acima da EMA50 (+0.5).; Preco esticado > 1.3x ATR distante da EMA50 (penaliza para neutro).) | Alertas: 192 gaps preenchidos (ffill <= 288).; Contexto: preco afastado demais da media (risco de correcao).",
-          "hit": false,
-          "hit_ref_time": "2025-12-22T00:00:00",
-          "updated_at": "2025-12-23T06:46:00+00:00",
-          "symbol_results": [
-            {
-              "symbol": "EURUSD",
-              "vies": "FORA",
-              "score": 0.0,
-              "motivos": [
-                "Tendência: Neutro (Slopes das EMAs estão próximos de zero (lateral).; Confirmação H1: EMA50 inclinada para cima (+0.5).)",
-                "Contexto: Neutro (Preço acima da VWAP intradiária (+1).; Preço acima da EMA50 (+0.5).; Preco esticado > 1.3x ATR distante da EMA50 (penaliza para neutro).)",
-                "Impulso: Moderado (ADX=31.3 entre 26-33 (+1).; Impulso segue a tendência (a favor da alta).)",
-                "Mitigação: Atencao: pavio exagerado (Volatilidade dentro do intervalo esperado.; Pavio exagerado no candle atual (-1).; Veto: pavio exagerado + preco afastado.)"
-              ],
-              "alertas": [
-                "192 gaps preenchidos (ffill <= 288).",
-                "Contexto: preco afastado demais da media (risco de correcao).",
-                "Mitigacao: pavio exagerado.",
-                "Sinal vetado (pavio + afastamento)."
-              ],
-              "blocos": {
-                "tendencia": {
-                  "score": 0.5,
-                  "status": "Neutro",
-                  "notas": [
-                    "Slopes das EMAs estão próximos de zero (lateral).",
-                    "Confirmação H1: EMA50 inclinada para cima (+0.5)."
-                  ],
-                  "valores": {
-                    "slope_ema20": 4.7494670892624315e-05,
-                    "slope_ema50": 5.222315565824455e-05,
-                    "preco": 1.17728,
-                    "ema20": 1.1774424528624028,
-                    "ema50": 1.1767648230170167
-                  }
-                },
-                "contexto": {
-                  "score": 0.5,
-                  "status": "Neutro",
-                  "notas": [
-                    "Preço acima da VWAP intradiária (+1).",
-                    "Preço acima da EMA50 (+0.5).",
-                    "Preco esticado > 1.3x ATR distante da EMA50 (penaliza para neutro)."
-                  ],
-                  "valores": {
-                    "vwap": 1.1771733333333334,
-                    "ema50": 1.1767648230170167,
-                    "context_blocked": false
-                  }
-                },
-                "impulso": {
-                  "score": 1.0,
-                  "status": "Moderado",
-                  "notas": [
-                    "ADX=31.3 entre 26-33 (+1).",
-                    "Impulso segue a tendência (a favor da alta)."
-                  ],
-                  "valores": {
-                    "adx": 31.347412971213622
-                  }
-                },
-                "mitigacao": {
-                  "score": -1.0,
-                  "status": "Atencao: pavio exagerado",
-                  "notas": [
-                    "Volatilidade dentro do intervalo esperado.",
-                    "Pavio exagerado no candle atual (-1).",
-                    "Veto: pavio exagerado + preco afastado."
-                  ],
-                  "valores": {
-                    "candle_range": 0.0005599999999998939,
-                    "atr": 0.00033586179449563786,
-                    "mitigation_blocked": true
-                  }
-                }
-              },
-              "hit": null,
-              "ref_time": "2025-12-23T06:30:00+00:00"
-            }
-          ],
-          "accuracy": 0.6779661016949152
-        }
-      ],
-      "best_version": {
-        "version": "1.2.2",
-        "accuracy": 0.9130434782608695
-      }
-    },
     {
       "region": "America",
       "session_name": "AMERICA",
@@ -431,6 +246,194 @@
       "best_version": {
         "version": "1.0.1",
         "accuracy": 0.7123287671232876
+      }
+    },
+    {
+      "region": "Europe",
+      "session_name": "EUROPE",
+      "session_start": "29/12/2025 04:00",
+      "updated_at": "2025-12-29T06:46:00+00:00",
+      "versions": [
+        {
+          "region": "Europe",
+          "version": "1.2.2",
+          "vies": "FORA",
+          "score": 0.0,
+          "motivo": "EURUSD: FORA (score=0.0) | Tendencia: Alta (H4: slopes EMA20/EMA50 positivos e preco acima das medias.; D1: preco acima da EMA20 (+0.5).); Contexto: Favoravel (D1: preco acima da EMA20 (+1).; D1: preco acima da EMA50 (+0.5).) | Alertas: Baixa volatilidade: range < 1.0x ATR.; EuropeSafety: mercado travado (range/ATR baixo).",
+          "hit": true,
+          "hit_ref_time": "2025-12-26T00:00:00",
+          "updated_at": "2025-12-29T06:46:00+00:00",
+          "symbol_results": [
+            {
+              "symbol": "EURUSD",
+              "vies": "FORA",
+              "score": 0.0,
+              "motivos": [
+                "Tendencia: Alta (H4: slopes EMA20/EMA50 positivos e preco acima das medias.; D1: preco acima da EMA20 (+0.5).)",
+                "Contexto: Favoravel (D1: preco acima da EMA20 (+1).; D1: preco acima da EMA50 (+0.5).)",
+                "Impulso: Forte (ADX=32.7 acima de 29 (+2).; Impulso segue a tendência (a favor da alta).)",
+                "Mitigação: Atenção: mercado travado (Candle atual < 1.0x ATR (-1).)",
+                "EuropeSafety: mercado travado (range/ATR baixo)."
+              ],
+              "alertas": [
+                "Baixa volatilidade: range < 1.0x ATR.",
+                "EuropeSafety: mercado travado (range/ATR baixo)."
+              ],
+              "blocos": {
+                "tendencia": {
+                  "score": 2.0,
+                  "status": "Alta",
+                  "notas": [
+                    "H4: slopes EMA20/EMA50 positivos e preco acima das medias.",
+                    "D1: preco acima da EMA20 (+0.5)."
+                  ],
+                  "valores": {
+                    "timeframe": "H4",
+                    "slope_ema20": 0.0002414571013837059,
+                    "slope_ema50": 0.00017848890941058663,
+                    "preco": 1.17743,
+                    "ema20": 1.1772026896188417,
+                    "ema50": 1.1751996779472338
+                  }
+                },
+                "contexto": {
+                  "score": 1.5,
+                  "status": "Favoravel",
+                  "notas": [
+                    "D1: preco acima da EMA20 (+1).",
+                    "D1: preco acima da EMA50 (+0.5)."
+                  ],
+                  "valores": {
+                    "timeframe": "D1",
+                    "vwap": 1.1771617224994062,
+                    "ema20": 1.1710478104046884,
+                    "ema50": 1.1662092401308524,
+                    "atr": 0.0047724538723242895,
+                    "context_blocked": false
+                  }
+                },
+                "impulso": {
+                  "score": 2.0,
+                  "status": "Forte",
+                  "notas": [
+                    "ADX=32.7 acima de 29 (+2).",
+                    "Impulso segue a tendência (a favor da alta)."
+                  ],
+                  "valores": {
+                    "adx": 32.69474057618291
+                  }
+                },
+                "mitigacao": {
+                  "score": -1.0,
+                  "status": "Atenção: mercado travado",
+                  "notas": [
+                    "Candle atual < 1.0x ATR (-1)."
+                  ],
+                  "valores": {
+                    "candle_range": 0.00029999999999996696,
+                    "atr": 0.000430324329876974,
+                    "mitigation_blocked": false
+                  }
+                }
+              },
+              "hit": null,
+              "ref_time": "2025-12-29T06:30:00+00:00"
+            }
+          ],
+          "accuracy": 0.9375
+        },
+        {
+          "region": "Europe",
+          "version": "1.0.2",
+          "vies": "FORA",
+          "score": 0.0,
+          "motivo": "EURUSD: FORA (score=0.0) | Tendencia: Alta (H4: slopes EMA20/EMA50 positivos e preco acima das medias.; D1: preco acima da EMA20 (+0.5).); Contexto: Favoravel (D1: preco acima da EMA20 (+1).; D1: preco acima da EMA50 (+0.5).) | Alertas: Baixa volatilidade: range < 0.9x ATR.; EuropeSafety: mercado travado (range/ATR baixo).",
+          "hit": false,
+          "hit_ref_time": "2025-12-26T00:00:00",
+          "updated_at": "2025-12-29T06:46:00+00:00",
+          "symbol_results": [
+            {
+              "symbol": "EURUSD",
+              "vies": "FORA",
+              "score": 0.0,
+              "motivos": [
+                "Tendencia: Alta (H4: slopes EMA20/EMA50 positivos e preco acima das medias.; D1: preco acima da EMA20 (+0.5).)",
+                "Contexto: Favoravel (D1: preco acima da EMA20 (+1).; D1: preco acima da EMA50 (+0.5).)",
+                "Impulso: Forte (ADX=32.7 acima de 29 (+2).; Impulso segue a tendência (a favor da alta).)",
+                "Mitigação: Atenção: mercado travado (Candle atual < 0.9x ATR (-1).)",
+                "EuropeSafety: mercado travado (range/ATR baixo)."
+              ],
+              "alertas": [
+                "Baixa volatilidade: range < 0.9x ATR.",
+                "EuropeSafety: mercado travado (range/ATR baixo)."
+              ],
+              "blocos": {
+                "tendencia": {
+                  "score": 2.0,
+                  "status": "Alta",
+                  "notas": [
+                    "H4: slopes EMA20/EMA50 positivos e preco acima das medias.",
+                    "D1: preco acima da EMA20 (+0.5)."
+                  ],
+                  "valores": {
+                    "timeframe": "H4",
+                    "slope_ema20": 0.0002414571013837059,
+                    "slope_ema50": 0.00017848890941058663,
+                    "preco": 1.17743,
+                    "ema20": 1.1772026896188417,
+                    "ema50": 1.1751996779472338
+                  }
+                },
+                "contexto": {
+                  "score": 1.5,
+                  "status": "Favoravel",
+                  "notas": [
+                    "D1: preco acima da EMA20 (+1).",
+                    "D1: preco acima da EMA50 (+0.5)."
+                  ],
+                  "valores": {
+                    "timeframe": "D1",
+                    "vwap": 1.1771617224994062,
+                    "ema20": 1.1710478104046884,
+                    "ema50": 1.1662092401308524,
+                    "atr": 0.0047724538723242895,
+                    "context_blocked": false
+                  }
+                },
+                "impulso": {
+                  "score": 2.0,
+                  "status": "Forte",
+                  "notas": [
+                    "ADX=32.7 acima de 29 (+2).",
+                    "Impulso segue a tendência (a favor da alta)."
+                  ],
+                  "valores": {
+                    "adx": 32.69474057618291
+                  }
+                },
+                "mitigacao": {
+                  "score": -1.0,
+                  "status": "Atenção: mercado travado",
+                  "notas": [
+                    "Candle atual < 0.9x ATR (-1)."
+                  ],
+                  "valores": {
+                    "candle_range": 0.00029999999999996696,
+                    "atr": 0.000430324329876974,
+                    "mitigation_blocked": false
+                  }
+                }
+              },
+              "hit": null,
+              "ref_time": "2025-12-29T06:30:00+00:00"
+            }
+          ],
+          "accuracy": 0.7702702702702703
+        }
+      ],
+      "best_version": {
+        "version": "1.2.2",
+        "accuracy": 0.9375
       }
     }
   ]
