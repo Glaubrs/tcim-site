@@ -1,68 +1,6 @@
 {
-  "updated_at": "2025-12-29T13:16:00+00:00",
+  "updated_at": "2025-12-29T23:31:00+00:00",
   "regions": [
-    {
-      "region": "Asia",
-      "session_name": "ASIA",
-      "session_start": "28/12/2025 21:00",
-      "updated_at": "2025-12-28T23:31:00+00:00",
-      "versions": [
-        {
-          "region": "Asia",
-          "version": "1.2.1",
-          "vies": "FORA",
-          "score": 0.0,
-          "motivo": "USDJPY: FORA (score=0.0) | Alertas: Erro ao obter dados de USDJPY: yfinance nao esta instalado: No module named 'yfinance'",
-          "hit": true,
-          "hit_ref_time": "2025-12-26T00:00:00",
-          "updated_at": "2025-12-28T23:31:00+00:00",
-          "symbol_results": [
-            {
-              "symbol": "USDJPY",
-              "vies": "FORA",
-              "score": 0.0,
-              "motivos": [],
-              "alertas": [
-                "Erro ao obter dados de USDJPY: yfinance nao esta instalado: No module named 'yfinance'"
-              ],
-              "blocos": {},
-              "hit": null,
-              "ref_time": null
-            }
-          ],
-          "accuracy": 0.6869565217391305
-        },
-        {
-          "region": "Asia",
-          "version": "1.0.1",
-          "vies": "FORA",
-          "score": 0.0,
-          "motivo": "USDJPY: FORA (score=0.0) | Alertas: Erro ao obter dados de USDJPY: yfinance nao esta instalado: No module named 'yfinance'",
-          "hit": true,
-          "hit_ref_time": "2025-12-26T00:00:00",
-          "updated_at": "2025-12-28T23:31:00+00:00",
-          "symbol_results": [
-            {
-              "symbol": "USDJPY",
-              "vies": "FORA",
-              "score": 0.0,
-              "motivos": [],
-              "alertas": [
-                "Erro ao obter dados de USDJPY: yfinance nao esta instalado: No module named 'yfinance'"
-              ],
-              "blocos": {},
-              "hit": null,
-              "ref_time": null
-            }
-          ],
-          "accuracy": 0.7123287671232876
-        }
-      ],
-      "best_version": {
-        "version": "1.0.1",
-        "accuracy": 0.7123287671232876
-      }
-    },
     {
       "region": "Europe",
       "session_name": "EUROPE",
@@ -444,6 +382,190 @@
       "best_version": {
         "version": "1.2.3",
         "accuracy": 0.9054054054054054
+      }
+    },
+    {
+      "region": "Asia",
+      "session_name": "ASIA",
+      "session_start": "29/12/2025 21:00",
+      "updated_at": "2025-12-29T23:31:00+00:00",
+      "versions": [
+        {
+          "region": "Asia",
+          "version": "1.2.1",
+          "vies": "COMPRA",
+          "score": 1.74,
+          "motivo": "USDJPY: COMPRA (score=1.74) | Tendencia: Neutro (H4: slopes das EMAs proximos de zero.; D1: preco acima da EMA20 (+0.5).); Contexto: Favoravel (D1: preco acima da EMA20 (+1).; D1: preco acima da EMA50 (+0.5).) | Alertas: Volatilidade excessiva detectada (candle > 1.0x ATR).",
+          "hit": true,
+          "hit_ref_time": "2025-12-29T00:00:00",
+          "updated_at": "2025-12-29T23:31:00+00:00",
+          "symbol_results": [
+            {
+              "symbol": "USDJPY",
+              "vies": "COMPRA",
+              "score": 1.74,
+              "motivos": [
+                "Tendencia: Neutro (H4: slopes das EMAs proximos de zero.; D1: preco acima da EMA20 (+0.5).)",
+                "Contexto: Favoravel (D1: preco acima da EMA20 (+1).; D1: preco acima da EMA50 (+0.5).)",
+                "Impulso: Forte (ADX=19.8 acima de 14 (+2).; Impulso segue a tendência (a favor da alta).)",
+                "Mitigação: Risco: volatilidade extrema (Candle atual > 1.0x ATR (Score penalizado em 2 pontos).)"
+              ],
+              "alertas": [
+                "Volatilidade excessiva detectada (candle > 1.0x ATR)."
+              ],
+              "blocos": {
+                "tendencia": {
+                  "score": 0.5,
+                  "status": "Neutro",
+                  "notas": [
+                    "H4: slopes das EMAs proximos de zero.",
+                    "D1: preco acima da EMA20 (+0.5)."
+                  ],
+                  "valores": {
+                    "timeframe": "H4",
+                    "slope_ema20": -0.011316814844384378,
+                    "slope_ema50": 0.0021212884354753206,
+                    "preco": 156.03768,
+                    "ema20": 156.26910779932376,
+                    "ema50": 156.19110451137436
+                  }
+                },
+                "contexto": {
+                  "score": 1.5,
+                  "status": "Favoravel",
+                  "notas": [
+                    "D1: preco acima da EMA20 (+1).",
+                    "D1: preco acima da EMA50 (+0.5)."
+                  ],
+                  "valores": {
+                    "timeframe": "D1",
+                    "vwap": 156.22742811072365,
+                    "ema20": 155.9443384684953,
+                    "ema50": 155.1833749565096,
+                    "atr": 1.0722904795333768,
+                    "context_blocked": false
+                  }
+                },
+                "impulso": {
+                  "score": 2.0,
+                  "status": "Forte",
+                  "notas": [
+                    "ADX=19.8 acima de 14 (+2).",
+                    "Impulso segue a tendência (a favor da alta)."
+                  ],
+                  "valores": {
+                    "adx": 19.759193873985453
+                  }
+                },
+                "mitigacao": {
+                  "score": -2.0,
+                  "status": "Risco: volatilidade extrema",
+                  "notas": [
+                    "Candle atual > 1.0x ATR (Score penalizado em 2 pontos)."
+                  ],
+                  "valores": {
+                    "candle_range": 0.11779999999998836,
+                    "atr": 0.06839155869916258,
+                    "mitigation_blocked": false
+                  }
+                }
+              },
+              "hit": null,
+              "ref_time": "2025-12-29T23:15:00+00:00"
+            }
+          ],
+          "accuracy": 0.6991150442477876
+        },
+        {
+          "region": "Asia",
+          "version": "1.0.1",
+          "vies": "COMPRA",
+          "score": 1.74,
+          "motivo": "USDJPY: COMPRA (score=1.74) | Tendencia: Neutro (H4: slopes das EMAs proximos de zero.; D1: preco acima da EMA20 (+0.5).); Contexto: Favoravel (D1: preco acima da EMA20 (+1).; D1: preco acima da EMA50 (+0.5).) | Alertas: Volatilidade excessiva detectada (candle > 0.8x ATR).",
+          "hit": true,
+          "hit_ref_time": "2025-12-29T00:00:00",
+          "updated_at": "2025-12-29T23:31:00+00:00",
+          "symbol_results": [
+            {
+              "symbol": "USDJPY",
+              "vies": "COMPRA",
+              "score": 1.74,
+              "motivos": [
+                "Tendencia: Neutro (H4: slopes das EMAs proximos de zero.; D1: preco acima da EMA20 (+0.5).)",
+                "Contexto: Favoravel (D1: preco acima da EMA20 (+1).; D1: preco acima da EMA50 (+0.5).)",
+                "Impulso: Forte (ADX=19.8 acima de 13 (+2).; Impulso segue a tendência (a favor da alta).)",
+                "Mitigação: Risco: volatilidade extrema (Candle atual > 0.8x ATR (Score penalizado em 2 pontos).)"
+              ],
+              "alertas": [
+                "Volatilidade excessiva detectada (candle > 0.8x ATR)."
+              ],
+              "blocos": {
+                "tendencia": {
+                  "score": 0.5,
+                  "status": "Neutro",
+                  "notas": [
+                    "H4: slopes das EMAs proximos de zero.",
+                    "D1: preco acima da EMA20 (+0.5)."
+                  ],
+                  "valores": {
+                    "timeframe": "H4",
+                    "slope_ema20": -0.011316814844384378,
+                    "slope_ema50": 0.0021212884354753206,
+                    "preco": 156.03768,
+                    "ema20": 156.26910779932376,
+                    "ema50": 156.19110451137436
+                  }
+                },
+                "contexto": {
+                  "score": 1.5,
+                  "status": "Favoravel",
+                  "notas": [
+                    "D1: preco acima da EMA20 (+1).",
+                    "D1: preco acima da EMA50 (+0.5)."
+                  ],
+                  "valores": {
+                    "timeframe": "D1",
+                    "vwap": 156.22742811072365,
+                    "ema20": 155.9443384684953,
+                    "ema50": 155.1833749565096,
+                    "atr": 1.0722904795333768,
+                    "context_blocked": false
+                  }
+                },
+                "impulso": {
+                  "score": 2.0,
+                  "status": "Forte",
+                  "notas": [
+                    "ADX=19.8 acima de 13 (+2).",
+                    "Impulso segue a tendência (a favor da alta)."
+                  ],
+                  "valores": {
+                    "adx": 19.759193873985453
+                  }
+                },
+                "mitigacao": {
+                  "score": -2.0,
+                  "status": "Risco: volatilidade extrema",
+                  "notas": [
+                    "Candle atual > 0.8x ATR (Score penalizado em 2 pontos)."
+                  ],
+                  "valores": {
+                    "candle_range": 0.11779999999998836,
+                    "atr": 0.06839155869916258,
+                    "mitigation_blocked": false
+                  }
+                }
+              },
+              "hit": null,
+              "ref_time": "2025-12-29T23:15:00+00:00"
+            }
+          ],
+          "accuracy": 0.7162162162162162
+        }
+      ],
+      "best_version": {
+        "version": "1.0.1",
+        "accuracy": 0.7162162162162162
       }
     }
   ]
