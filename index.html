@@ -474,8 +474,15 @@
                 const tend = (blocos.tendencia && blocos.tendencia.status) ? blocos.tendencia.status : "-";
                 const ctx = (blocos.contexto && blocos.contexto.status) ? blocos.contexto.status : "-";
                 const imp = (blocos.impulso && blocos.impulso.status) ? blocos.impulso.status : "-";
-                const mit = (blocos.mitigacao && blocos.mitigacao.status) ? blocos.mitigacao.status : "-";
-                const mitClass = mit.toLowerCase().includes('risco') || mit.toLowerCase().includes('alerta') ? 'v-stat-value highlight-risk' : 'v-stat-value';
+                const mitInfo = blocos.mitigacao || {};
+                const mitVals = mitInfo.valores || {};
+                const mitBlocked = mitVals.mitigation_blocked === true;
+                const mitScore = (typeof mitInfo.score === "number") ? mitInfo.score : 0;
+                let mit = "-";
+                if (mitBlocked) mit = "Vetado";
+                else if (mitScore < 0) mit = "Penalizado";
+                else mit = "Sem penalidade";
+                const mitClass = (mit === "Vetado" || mit === "Penalizado") ? 'v-stat-value highlight-risk' : 'v-stat-value';
                 const alerts = filterGapAlerts(Array.isArray(sym.alertas) ? sym.alertas : []);
                 const alertsHtml = alerts.length ? `<div class="version-alerts">⚠ Alertas:<ul>${alerts.slice(0,3).map(a => `<li>${a}</li>`).join("")}</ul></div>` : "";
 
