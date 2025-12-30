@@ -395,6 +395,17 @@
         return list.filter(item => !/gap|ffill/i.test(item));
       }
 
+      function normalizeAlertText(text) {
+        if (!text) return text;
+        if (/^Volatilidade excessiva detectada/i.test(text)) {
+          return "Volatilidade excessiva detectada";
+        }
+        if (/^Baixa volatilidade/i.test(text)) {
+          return "Baixa volatilidade";
+        }
+        return text;
+      }
+
       function parseSessionStartUtc(str) {
         if (!str) return null;
         const m = str.match(/^(\d{2})\/(\d{2})\/(\d{4})\s+(\d{2}):(\d{2})/);
@@ -479,12 +490,13 @@
                 const mitBlocked = mitVals.mitigation_blocked === true;
                 const mitScore = (typeof mitInfo.score === "number") ? mitInfo.score : 0;
                 let mit = "-";
-                if (mitBlocked) mit = "Vetado";
-                else if (mitScore < 0) mit = "Penalizado";
+                if (mitBlocked) mit = "Sinal Vetado";
+                else if (mitScore < 0) mit = "Sinal Penalizado";
                 else mit = "Sem penalidade";
-                const mitClass = (mit === "Vetado" || mit === "Penalizado") ? 'v-stat-value highlight-risk' : 'v-stat-value';
+                const mitClass = (mit === "Sinal Vetado" || mit === "Sinal Penalizado") ? 'v-stat-value highlight-risk' : 'v-stat-value';
                 const alerts = filterGapAlerts(Array.isArray(sym.alertas) ? sym.alertas : []);
-                const alertsHtml = alerts.length ? `<div class="version-alerts">⚠ Alertas:<ul>${alerts.slice(0,3).map(a => `<li>${a}</li>`).join("")}</ul></div>` : "";
+                const alertsDisplay = alerts.map(normalizeAlertText);
+                const alertsHtml = alertsDisplay.length ? `<div class="version-alerts">⚠ Alertas:<ul>${alertsDisplay.slice(0,3).map(a => `<li>${a}</li>`).join("")}</ul></div>` : "";
 
                 contentHtml = `
                   <div class="version-header">
