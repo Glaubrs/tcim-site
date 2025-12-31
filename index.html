@@ -489,13 +489,18 @@
                 const mitVals = mitInfo.valores || {};
                 const mitBlocked = mitVals.mitigation_blocked === true;
                 const mitScore = (typeof mitInfo.score === "number") ? mitInfo.score : 0;
+                const alerts = filterGapAlerts(Array.isArray(sym.alertas) ? sym.alertas : []);
+                const alertsDisplay = alerts.map(normalizeAlertText);
+                const vetoFromAlerts = alertsDisplay.some(a => {
+                  if (!a) return false;
+                  if (/^(EuropeSafety|AmericaSoft|AsiaSafety):/i.test(a)) return true;
+                  return /veto|vetado|cancelado/i.test(a);
+                });
                 let mit = "-";
-                if (mitBlocked) mit = "Sinal Vetado";
+                if (mitBlocked || vetoFromAlerts) mit = "Sinal Vetado";
                 else if (mitScore < 0) mit = "Sinal Penalizado";
                 else mit = "Sem penalidade";
                 const mitClass = (mit === "Sinal Vetado" || mit === "Sinal Penalizado") ? 'v-stat-value highlight-risk' : 'v-stat-value';
-                const alerts = filterGapAlerts(Array.isArray(sym.alertas) ? sym.alertas : []);
-                const alertsDisplay = alerts.map(normalizeAlertText);
                 const alertsHtml = alertsDisplay.length ? `<div class="version-alerts">⚠ Alertas:<ul>${alertsDisplay.slice(0,3).map(a => `<li>${a}</li>`).join("")}</ul></div>` : "";
 
                 contentHtml = `
