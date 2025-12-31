@@ -1,201 +1,6 @@
 {
-  "updated_at": "2025-12-31T06:46:00+00:00",
+  "updated_at": "2025-12-31T13:16:00+00:00",
   "regions": [
-    {
-      "region": "America",
-      "session_name": "AMERICA",
-      "session_start": "30/12/2025 10:30",
-      "updated_at": "2025-12-30T13:16:00+00:00",
-      "versions": [
-        {
-          "region": "America",
-          "version": "1.2.3",
-          "vies": "FORA",
-          "score": 0.0,
-          "motivo": "XAUUSD: FORA (score=0.0) | Tendencia: Alta moderada (H4: slopes positivos, mas preco perdeu uma media.; D1 indisponivel para confirmacao de tendencia.); Contexto: Neutro (Preco acima da VWAP intradiaria (+1).; Preco acima da EMA50 (+0.5).; Preco esticado > 1.4x ATR distante da EMA50 (penaliza para neutro).; Distancia > 2.0x ATR -> sinal vetado.) | Alertas: D1: dados vazios apos tratamento.; Contexto: preco afastado demais da media (risco de correcao).",
-          "hit": true,
-          "hit_ref_time": "2025-12-26T00:00:00",
-          "updated_at": "2025-12-30T13:16:00+00:00",
-          "symbol_results": [
-            {
-              "symbol": "XAUUSD",
-              "vies": "FORA",
-              "score": 0.0,
-              "motivos": [
-                "Tendencia: Alta moderada (H4: slopes positivos, mas preco perdeu uma media.; D1 indisponivel para confirmacao de tendencia.)",
-                "Contexto: Neutro (Preco acima da VWAP intradiaria (+1).; Preco acima da EMA50 (+0.5).; Preco esticado > 1.4x ATR distante da EMA50 (penaliza para neutro).; Distancia > 2.0x ATR -> sinal vetado.)",
-                "Impulso: Moderado (ADX=30.6 entre 20-41 (+1).; Impulso segue a tendência (a favor da alta).)",
-                "Mitigação: Sem alertas (Volatilidade dentro do intervalo esperado.)"
-              ],
-              "alertas": [
-                "D1: dados vazios apos tratamento.",
-                "Contexto: preco afastado demais da media (risco de correcao).",
-                "Contexto extremo: afastamento excedeu limite. Sinal cancelado.",
-                "Sinal vetado por preco afastado e score baixo."
-              ],
-              "blocos": {
-                "tendencia": {
-                  "score": 1.0,
-                  "status": "Alta moderada",
-                  "notas": [
-                    "H4: slopes positivos, mas preco perdeu uma media.",
-                    "D1 indisponivel para confirmacao de tendencia."
-                  ],
-                  "valores": {
-                    "timeframe": "H4",
-                    "slope_ema20": 2.938851870478398,
-                    "slope_ema50": 3.8250864543776673,
-                    "preco": 4384.51743,
-                    "ema20": 4423.115379558589,
-                    "ema50": 4389.8122229736155
-                  }
-                },
-                "contexto": {
-                  "score": 0.5,
-                  "status": "Neutro",
-                  "notas": [
-                    "Preco acima da VWAP intradiaria (+1).",
-                    "Preco acima da EMA50 (+0.5).",
-                    "Preco esticado > 1.4x ATR distante da EMA50 (penaliza para neutro).",
-                    "Distancia > 2.0x ATR -> sinal vetado.",
-                    "Veto: preco afastado e score < 3.5."
-                  ],
-                  "valores": {
-                    "timeframe": "M15",
-                    "vwap": 4360.391667070049,
-                    "ema20": 4385.0530675780765,
-                    "ema50": 4377.286914146099,
-                    "atr": 7.488629591504055,
-                    "context_blocked": true
-                  }
-                },
-                "impulso": {
-                  "score": 1.0,
-                  "status": "Moderado",
-                  "notas": [
-                    "ADX=30.6 entre 20-41 (+1).",
-                    "Impulso segue a tendência (a favor da alta)."
-                  ],
-                  "valores": {
-                    "adx": 30.59459334512126
-                  }
-                },
-                "mitigacao": {
-                  "score": 0.0,
-                  "status": "Sem alertas",
-                  "notas": [
-                    "Volatilidade dentro do intervalo esperado."
-                  ],
-                  "valores": {
-                    "candle_range": 7.19553999999971,
-                    "atr": 7.488629591504055,
-                    "mitigation_blocked": false
-                  }
-                }
-              },
-              "hit": null,
-              "ref_time": "2025-12-30T13:00:00+00:00"
-            }
-          ],
-          "accuracy": 0.9054054054054054
-        },
-        {
-          "region": "America",
-          "version": "1.0.3",
-          "vies": "FORA",
-          "score": 0.0,
-          "motivo": "XAUUSD: FORA (score=0.0) | Tendencia: Alta moderada (H4: slopes positivos, mas preco perdeu uma media.; D1 indisponivel para confirmacao de tendencia.); Contexto: Neutro (Preco acima da VWAP intradiaria (+1).; Preco acima da EMA50 (+0.5).; Preco esticado > 0.4x ATR distante da EMA50 (penaliza para neutro).) | Alertas: D1: dados vazios apos tratamento.; Contexto: preco afastado demais da media (risco de correcao).",
-          "hit": true,
-          "hit_ref_time": "2025-12-26T00:00:00",
-          "updated_at": "2025-12-30T13:16:00+00:00",
-          "symbol_results": [
-            {
-              "symbol": "XAUUSD",
-              "vies": "FORA",
-              "score": 0.0,
-              "motivos": [
-                "Tendencia: Alta moderada (H4: slopes positivos, mas preco perdeu uma media.; D1 indisponivel para confirmacao de tendencia.)",
-                "Contexto: Neutro (Preco acima da VWAP intradiaria (+1).; Preco acima da EMA50 (+0.5).; Preco esticado > 0.4x ATR distante da EMA50 (penaliza para neutro).)",
-                "Impulso: Moderado (ADX=30.6 entre 15-32 (+1).; Impulso segue a tendência (a favor da alta).)",
-                "Mitigação: Risco: volatilidade extrema (Candle atual > 0.9x ATR (Score penalizado em 2 pontos).)",
-                "AmericaSoft: vol extrema + ctx neutro e |score|<1.5 (veto)."
-              ],
-              "alertas": [
-                "D1: dados vazios apos tratamento.",
-                "Contexto: preco afastado demais da media (risco de correcao).",
-                "Volatilidade excessiva detectada (candle > 0.9x ATR).",
-                "AmericaSoft: vol extrema + ctx neutro e |score|<1.5 (veto)."
-              ],
-              "blocos": {
-                "tendencia": {
-                  "score": 1.0,
-                  "status": "Alta moderada",
-                  "notas": [
-                    "H4: slopes positivos, mas preco perdeu uma media.",
-                    "D1 indisponivel para confirmacao de tendencia."
-                  ],
-                  "valores": {
-                    "timeframe": "H4",
-                    "slope_ema20": 2.938851870478398,
-                    "slope_ema50": 3.8250864543776673,
-                    "preco": 4384.51743,
-                    "ema20": 4423.115379558589,
-                    "ema50": 4389.8122229736155
-                  }
-                },
-                "contexto": {
-                  "score": 0.5,
-                  "status": "Neutro",
-                  "notas": [
-                    "Preco acima da VWAP intradiaria (+1).",
-                    "Preco acima da EMA50 (+0.5).",
-                    "Preco esticado > 0.4x ATR distante da EMA50 (penaliza para neutro)."
-                  ],
-                  "valores": {
-                    "timeframe": "M15",
-                    "vwap": 4360.391667070049,
-                    "ema20": 4385.0530675780765,
-                    "ema50": 4377.286914146099,
-                    "atr": 7.488629591504055,
-                    "context_blocked": false
-                  }
-                },
-                "impulso": {
-                  "score": 1.0,
-                  "status": "Moderado",
-                  "notas": [
-                    "ADX=30.6 entre 15-32 (+1).",
-                    "Impulso segue a tendência (a favor da alta)."
-                  ],
-                  "valores": {
-                    "adx": 30.59459334512126
-                  }
-                },
-                "mitigacao": {
-                  "score": -2.0,
-                  "status": "Risco: volatilidade extrema",
-                  "notas": [
-                    "Candle atual > 0.9x ATR (Score penalizado em 2 pontos)."
-                  ],
-                  "valores": {
-                    "candle_range": 7.19553999999971,
-                    "atr": 7.488629591504055,
-                    "mitigation_blocked": false
-                  }
-                }
-              },
-              "hit": null,
-              "ref_time": "2025-12-30T13:00:00+00:00"
-            }
-          ],
-          "accuracy": 0.7846153846153846
-        }
-      ],
-      "best_version": {
-        "version": "1.2.3",
-        "accuracy": 0.9054054054054054
-      }
-    },
     {
       "region": "Asia",
       "session_name": "ASIA",
@@ -564,6 +369,196 @@
       "best_version": {
         "version": "1.2.2",
         "accuracy": 0.9384615384615385
+      }
+    },
+    {
+      "region": "America",
+      "session_name": "AMERICA",
+      "session_start": "31/12/2025 10:30",
+      "updated_at": "2025-12-31T13:16:00+00:00",
+      "versions": [
+        {
+          "region": "America",
+          "version": "1.2.3",
+          "vies": "FORA",
+          "score": 0.0,
+          "motivo": "XAUUSD: FORA (score=0.0) | Tendencia: Neutro (H4: slopes das EMAs proximos de zero.; D1 indisponivel para confirmacao de tendencia.); Contexto: Neutro (Preco abaixo da VWAP (-1).; Preco abaixo da EMA50 (-0.5).; Preco esticado > 1.4x ATR distante da EMA50 (penaliza para neutro).) | Alertas: D1: dados vazios apos tratamento.; Contexto: preco afastado demais da media (risco de correcao).",
+          "hit": true,
+          "hit_ref_time": "2025-12-26T00:00:00",
+          "updated_at": "2025-12-31T13:16:00+00:00",
+          "symbol_results": [
+            {
+              "symbol": "XAUUSD",
+              "vies": "FORA",
+              "score": 0.0,
+              "motivos": [
+                "Tendencia: Neutro (H4: slopes das EMAs proximos de zero.; D1 indisponivel para confirmacao de tendencia.)",
+                "Contexto: Neutro (Preco abaixo da VWAP (-1).; Preco abaixo da EMA50 (-0.5).; Preco esticado > 1.4x ATR distante da EMA50 (penaliza para neutro).)",
+                "Impulso: Neutro (ADX=21.6 entre 20-41 (+1).; Tendência neutra: impulso zerado (0).)",
+                "Mitigação: Sem alertas (Volatilidade dentro do intervalo esperado.)"
+              ],
+              "alertas": [
+                "D1: dados vazios apos tratamento.",
+                "Contexto: preco afastado demais da media (risco de correcao).",
+                "Sinal vetado por preco afastado e score baixo."
+              ],
+              "blocos": {
+                "tendencia": {
+                  "score": 0.0,
+                  "status": "Neutro",
+                  "notas": [
+                    "H4: slopes das EMAs proximos de zero.",
+                    "D1 indisponivel para confirmacao de tendencia."
+                  ],
+                  "valores": {
+                    "timeframe": "H4",
+                    "slope_ema20": -2.2420386369233762,
+                    "slope_ema50": 1.3713473991764284,
+                    "preco": 4311.2298,
+                    "ema20": 4389.013706545022,
+                    "ema50": 4379.1599691962065
+                  }
+                },
+                "contexto": {
+                  "score": -0.5,
+                  "status": "Neutro",
+                  "notas": [
+                    "Preco abaixo da VWAP (-1).",
+                    "Preco abaixo da EMA50 (-0.5).",
+                    "Preco esticado > 1.4x ATR distante da EMA50 (penaliza para neutro).",
+                    "Veto: preco afastado e score < 3.5."
+                  ],
+                  "valores": {
+                    "timeframe": "M15",
+                    "vwap": 4342.108228766516,
+                    "ema20": 4316.893472309767,
+                    "ema50": 4328.98471000253,
+                    "atr": 9.147489651948309,
+                    "context_blocked": false
+                  }
+                },
+                "impulso": {
+                  "score": 0.0,
+                  "status": "Neutro",
+                  "notas": [
+                    "ADX=21.6 entre 20-41 (+1).",
+                    "Tendência neutra: impulso zerado (0)."
+                  ],
+                  "valores": {
+                    "adx": 21.56856995791364
+                  }
+                },
+                "mitigacao": {
+                  "score": 0.0,
+                  "status": "Sem alertas",
+                  "notas": [
+                    "Volatilidade dentro do intervalo esperado."
+                  ],
+                  "valores": {
+                    "candle_range": 7.2059199999994235,
+                    "atr": 9.147489651948309,
+                    "mitigation_blocked": false
+                  }
+                }
+              },
+              "hit": null,
+              "ref_time": "2025-12-31T12:45:00+00:00"
+            }
+          ],
+          "accuracy": 0.9054054054054054
+        },
+        {
+          "region": "America",
+          "version": "1.0.3",
+          "vies": "FORA",
+          "score": -0.63,
+          "motivo": "XAUUSD: FORA (score=-0.63) | Tendencia: Neutro (H4: slopes das EMAs proximos de zero.; D1 indisponivel para confirmacao de tendencia.); Contexto: Neutro (Preco abaixo da VWAP (-1).; Preco abaixo da EMA50 (-0.5).; Preco esticado > 0.4x ATR distante da EMA50 (penaliza para neutro).) | Alertas: D1: dados vazios apos tratamento.; Contexto: preco afastado demais da media (risco de correcao).",
+          "hit": true,
+          "hit_ref_time": "2025-12-26T00:00:00",
+          "updated_at": "2025-12-31T13:16:00+00:00",
+          "symbol_results": [
+            {
+              "symbol": "XAUUSD",
+              "vies": "FORA",
+              "score": -0.63,
+              "motivos": [
+                "Tendencia: Neutro (H4: slopes das EMAs proximos de zero.; D1 indisponivel para confirmacao de tendencia.)",
+                "Contexto: Neutro (Preco abaixo da VWAP (-1).; Preco abaixo da EMA50 (-0.5).; Preco esticado > 0.4x ATR distante da EMA50 (penaliza para neutro).)",
+                "Impulso: Neutro (ADX=21.6 entre 15-32 (+1).; Tendência neutra: impulso zerado (0).)",
+                "Mitigação: Sem alertas (Volatilidade dentro do intervalo esperado.)"
+              ],
+              "alertas": [
+                "D1: dados vazios apos tratamento.",
+                "Contexto: preco afastado demais da media (risco de correcao)."
+              ],
+              "blocos": {
+                "tendencia": {
+                  "score": 0.0,
+                  "status": "Neutro",
+                  "notas": [
+                    "H4: slopes das EMAs proximos de zero.",
+                    "D1 indisponivel para confirmacao de tendencia."
+                  ],
+                  "valores": {
+                    "timeframe": "H4",
+                    "slope_ema20": -2.2420386369233762,
+                    "slope_ema50": 1.3713473991764284,
+                    "preco": 4311.2298,
+                    "ema20": 4389.013706545022,
+                    "ema50": 4379.1599691962065
+                  }
+                },
+                "contexto": {
+                  "score": -0.5,
+                  "status": "Neutro",
+                  "notas": [
+                    "Preco abaixo da VWAP (-1).",
+                    "Preco abaixo da EMA50 (-0.5).",
+                    "Preco esticado > 0.4x ATR distante da EMA50 (penaliza para neutro)."
+                  ],
+                  "valores": {
+                    "timeframe": "M15",
+                    "vwap": 4342.108228766516,
+                    "ema20": 4316.893472309767,
+                    "ema50": 4328.98471000253,
+                    "atr": 9.147489651948309,
+                    "context_blocked": false
+                  }
+                },
+                "impulso": {
+                  "score": 0.0,
+                  "status": "Neutro",
+                  "notas": [
+                    "ADX=21.6 entre 15-32 (+1).",
+                    "Tendência neutra: impulso zerado (0)."
+                  ],
+                  "valores": {
+                    "adx": 21.56856995791364
+                  }
+                },
+                "mitigacao": {
+                  "score": 0.0,
+                  "status": "Sem alertas",
+                  "notas": [
+                    "Volatilidade dentro do intervalo esperado."
+                  ],
+                  "valores": {
+                    "candle_range": 7.2059199999994235,
+                    "atr": 9.147489651948309,
+                    "mitigation_blocked": false
+                  }
+                }
+              },
+              "hit": null,
+              "ref_time": "2025-12-31T12:45:00+00:00"
+            }
+          ],
+          "accuracy": 0.7846153846153846
+        }
+      ],
+      "best_version": {
+        "version": "1.2.3",
+        "accuracy": 0.9054054054054054
       }
     }
   ]
