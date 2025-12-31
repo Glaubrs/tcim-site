@@ -1,190 +1,6 @@
 {
-  "updated_at": "2025-12-31T13:16:00+00:00",
+  "updated_at": "2025-12-31T23:31:00+00:00",
   "regions": [
-    {
-      "region": "Asia",
-      "session_name": "ASIA",
-      "session_start": "30/12/2025 21:00",
-      "updated_at": "2025-12-30T23:31:00+00:00",
-      "versions": [
-        {
-          "region": "Asia",
-          "version": "1.2.1",
-          "vies": "COMPRA",
-          "score": 3.74,
-          "motivo": "USDJPY: COMPRA (score=3.74) | Tendencia: Neutro (H4: slopes das EMAs proximos de zero.; D1: preco acima da EMA20 (+0.5).); Contexto: Favoravel (D1: preco acima da EMA20 (+1).; D1: preco acima da EMA50 (+0.5).) | Alertas: Nenhum alerta crítico.",
-          "hit": true,
-          "hit_ref_time": "2025-12-29T00:00:00",
-          "updated_at": "2025-12-30T23:31:00+00:00",
-          "symbol_results": [
-            {
-              "symbol": "USDJPY",
-              "vies": "COMPRA",
-              "score": 3.74,
-              "motivos": [
-                "Tendencia: Neutro (H4: slopes das EMAs proximos de zero.; D1: preco acima da EMA20 (+0.5).)",
-                "Contexto: Favoravel (D1: preco acima da EMA20 (+1).; D1: preco acima da EMA50 (+0.5).)",
-                "Impulso: Forte (ADX=28.4 acima de 10 (+2).; Impulso segue a tendência (a favor da alta).)",
-                "Mitigação: Sem alertas (Volatilidade dentro do intervalo esperado.)"
-              ],
-              "alertas": [
-                "Nenhum alerta crítico."
-              ],
-              "blocos": {
-                "tendencia": {
-                  "score": 0.5,
-                  "status": "Neutro",
-                  "notas": [
-                    "H4: slopes das EMAs proximos de zero.",
-                    "D1: preco acima da EMA20 (+0.5)."
-                  ],
-                  "valores": {
-                    "timeframe": "H4",
-                    "slope_ema20": -0.00438942245389056,
-                    "slope_ema50": 0.0006133764196368439,
-                    "preco": 156.5232,
-                    "ema20": 156.24028829437805,
-                    "ema50": 156.22393429484805
-                  }
-                },
-                "contexto": {
-                  "score": 1.5,
-                  "status": "Favoravel",
-                  "notas": [
-                    "D1: preco acima da EMA20 (+1).",
-                    "D1: preco acima da EMA50 (+0.5)."
-                  ],
-                  "valores": {
-                    "timeframe": "D1",
-                    "vwap": 156.18541220673578,
-                    "ema20": 155.94273274321026,
-                    "ema50": 155.06929657835073,
-                    "atr": 1.0611340034129948,
-                    "context_blocked": false
-                  }
-                },
-                "impulso": {
-                  "score": 2.0,
-                  "status": "Forte",
-                  "notas": [
-                    "ADX=28.4 acima de 10 (+2).",
-                    "Impulso segue a tendência (a favor da alta)."
-                  ],
-                  "valores": {
-                    "adx": 28.375093635464637
-                  }
-                },
-                "mitigacao": {
-                  "score": 0.0,
-                  "status": "Sem alertas",
-                  "notas": [
-                    "Volatilidade dentro do intervalo esperado."
-                  ],
-                  "valores": {
-                    "candle_range": 0.047100000000000364,
-                    "atr": 0.052140539542598875,
-                    "mitigation_blocked": false
-                  }
-                }
-              },
-              "hit": null,
-              "ref_time": "2025-12-30T23:15:00+00:00"
-            }
-          ],
-          "accuracy": 0.7156862745098039
-        },
-        {
-          "region": "Asia",
-          "version": "1.0.1",
-          "vies": "COMPRA",
-          "score": 1.74,
-          "motivo": "USDJPY: COMPRA (score=1.74) | Tendencia: Neutro (H4: slopes das EMAs proximos de zero.; D1: preco acima da EMA20 (+0.5).); Contexto: Favoravel (D1: preco acima da EMA20 (+1).; D1: preco acima da EMA50 (+0.5).) | Alertas: Volatilidade excessiva detectada (candle > 0.8x ATR).",
-          "hit": true,
-          "hit_ref_time": "2025-12-30T00:00:00",
-          "updated_at": "2025-12-30T23:31:00+00:00",
-          "symbol_results": [
-            {
-              "symbol": "USDJPY",
-              "vies": "COMPRA",
-              "score": 1.74,
-              "motivos": [
-                "Tendencia: Neutro (H4: slopes das EMAs proximos de zero.; D1: preco acima da EMA20 (+0.5).)",
-                "Contexto: Favoravel (D1: preco acima da EMA20 (+1).; D1: preco acima da EMA50 (+0.5).)",
-                "Impulso: Forte (ADX=28.4 acima de 13 (+2).; Impulso segue a tendência (a favor da alta).)",
-                "Mitigação: Risco: volatilidade extrema (Candle atual > 0.8x ATR (Score penalizado em 2 pontos).)"
-              ],
-              "alertas": [
-                "Volatilidade excessiva detectada (candle > 0.8x ATR)."
-              ],
-              "blocos": {
-                "tendencia": {
-                  "score": 0.5,
-                  "status": "Neutro",
-                  "notas": [
-                    "H4: slopes das EMAs proximos de zero.",
-                    "D1: preco acima da EMA20 (+0.5)."
-                  ],
-                  "valores": {
-                    "timeframe": "H4",
-                    "slope_ema20": -0.00438942245389056,
-                    "slope_ema50": 0.0006133764196368439,
-                    "preco": 156.5232,
-                    "ema20": 156.24028829437805,
-                    "ema50": 156.22393429484805
-                  }
-                },
-                "contexto": {
-                  "score": 1.5,
-                  "status": "Favoravel",
-                  "notas": [
-                    "D1: preco acima da EMA20 (+1).",
-                    "D1: preco acima da EMA50 (+0.5)."
-                  ],
-                  "valores": {
-                    "timeframe": "D1",
-                    "vwap": 156.18541220673578,
-                    "ema20": 155.94273274321026,
-                    "ema50": 155.06929657835073,
-                    "atr": 1.0611340034129948,
-                    "context_blocked": false
-                  }
-                },
-                "impulso": {
-                  "score": 2.0,
-                  "status": "Forte",
-                  "notas": [
-                    "ADX=28.4 acima de 13 (+2).",
-                    "Impulso segue a tendência (a favor da alta)."
-                  ],
-                  "valores": {
-                    "adx": 28.375093635464637
-                  }
-                },
-                "mitigacao": {
-                  "score": -2.0,
-                  "status": "Risco: volatilidade extrema",
-                  "notas": [
-                    "Candle atual > 0.8x ATR (Score penalizado em 2 pontos)."
-                  ],
-                  "valores": {
-                    "candle_range": 0.047100000000000364,
-                    "atr": 0.052140539542598875,
-                    "mitigation_blocked": false
-                  }
-                }
-              },
-              "hit": null,
-              "ref_time": "2025-12-30T23:15:00+00:00"
-            }
-          ],
-          "accuracy": 0.72
-        }
-      ],
-      "best_version": {
-        "version": "1.0.1",
-        "accuracy": 0.72
-      }
-    },
     {
       "region": "Europe",
       "session_name": "EUROPE",
@@ -559,6 +375,68 @@
       "best_version": {
         "version": "1.2.3",
         "accuracy": 0.9054054054054054
+      }
+    },
+    {
+      "region": "Asia",
+      "session_name": "ASIA",
+      "session_start": "31/12/2025 21:00",
+      "updated_at": "2025-12-31T23:31:00+00:00",
+      "versions": [
+        {
+          "region": "Asia",
+          "version": "1.2.1",
+          "vies": "FORA",
+          "score": 0.0,
+          "motivo": "USDJPY: FORA (score=0.0) | Alertas: Dados de USDJPY estao defasados 630.0 min (limite 10 min). Verifique API/conexao.",
+          "hit": true,
+          "hit_ref_time": "2025-12-31T00:00:00",
+          "updated_at": "2025-12-31T23:31:00+00:00",
+          "symbol_results": [
+            {
+              "symbol": "USDJPY",
+              "vies": "FORA",
+              "score": 0.0,
+              "motivos": [],
+              "alertas": [
+                "Dados de USDJPY estao defasados 630.0 min (limite 10 min). Verifique API/conexao."
+              ],
+              "blocos": {},
+              "hit": null,
+              "ref_time": null
+            }
+          ],
+          "accuracy": 0.7184466019417476
+        },
+        {
+          "region": "Asia",
+          "version": "1.0.1",
+          "vies": "FORA",
+          "score": 0.0,
+          "motivo": "USDJPY: FORA (score=0.0) | Alertas: Dados de USDJPY estao defasados 630.0 min (limite 10 min). Verifique API/conexao.",
+          "hit": true,
+          "hit_ref_time": "2025-12-31T00:00:00",
+          "updated_at": "2025-12-31T23:31:00+00:00",
+          "symbol_results": [
+            {
+              "symbol": "USDJPY",
+              "vies": "FORA",
+              "score": 0.0,
+              "motivos": [],
+              "alertas": [
+                "Dados de USDJPY estao defasados 630.0 min (limite 10 min). Verifique API/conexao."
+              ],
+              "blocos": {},
+              "hit": null,
+              "ref_time": null
+            }
+          ],
+          "accuracy": 0.7236842105263158
+        }
+      ],
+      "best_version": {
+        "version": "1.0.1",
+        "accuracy": 0.7236842105263158
       }
     }
   ]
