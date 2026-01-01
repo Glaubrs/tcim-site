@@ -323,6 +323,11 @@
         { id: "Europe", name: "Sessão Europeia - Sinal às 03:46", open: "07:00", close: "10:00", offset: 13 },
         { id: "America", name: "Sessão Americana - Sinal às 10:16", open: "13:30", close: "16:30", offset: 13 },
       ];
+      const HOLIDAYS_BY_REGION = {
+        America: ["2024-12-25", "2025-01-01", "2025-12-25"],
+        Europe: ["2024-12-25", "2025-01-01", "2025-12-25"],
+        Asia: ["2024-12-25", "2025-01-01", "2025-12-25"],
+      };
       const API_URL = "latest_bias.json";
       const STATS_URL = "backtest_stats.json";
 
@@ -356,21 +361,33 @@
         return day === 0 || day === 6;
       }
 
-      function rollToNextWeekday(ts) {
+      function isHoliday(ts, regionId) {
+        const d = new Date(ts);
+        if (Number.isNaN(d.getTime())) return false;
+        const yyyy = d.getUTCFullYear();
+        const mm = String(d.getUTCMonth() + 1).padStart(2, "0");
+        const dd = String(d.getUTCDate()).padStart(2, "0");
+        const keyFull = `${yyyy}-${mm}-${dd}`;
+        const keyMD = `${mm}-${dd}`;
+        const list = (HOLIDAYS_BY_REGION[regionId] || []);
+        return list.some(item => item === keyFull || item.slice(5) === keyMD);
+      }
+
+      function rollToNextOpenDay(ts, regionId) {
         const oneDay = 24 * 3600 * 1000;
         let t = ts;
-        while (isWeekend(t)) t += oneDay;
+        while (isWeekend(t) || isHoliday(t, regionId)) t += oneDay;
         return t;
       }
 
-      function nextWindow(openUtc, closeUtc) {
+      function nextWindow(openUtc, closeUtc, regionId) {
         const now = Date.now();
         const oneDay = 24 * 3600 * 1000;
-        let openDay = rollToNextWeekday(openUtc);
+        let openDay = rollToNextOpenDay(openUtc, regionId);
         let closeDay = closeUtc + (openDay - openUtc);
         if (now < openDay) return { status: "closed", nextOpen: openDay, nextClose: closeDay };
         if (now >= openDay && now < closeDay) return { status: "open", nextOpen: openDay, nextClose: closeDay };
-        let nextOpen = rollToNextWeekday(openDay + oneDay);
+        let nextOpen = rollToNextOpenDay(openDay + oneDay, regionId);
         let nextClose = closeDay + (nextOpen - openDay);
         return { status: "closed", nextOpen, nextClose };
       }
@@ -435,7 +452,7 @@
         const sessionsWithStatus = sessions.map(sess => {
           const openUtc = parseUtcToday(sess.open);
           const closeUtc = parseUtcToday(sess.close);
-          const window = nextWindow(openUtc, closeUtc);
+          const window = nextWindow(openUtc, closeUtc, sess.id);
           const isOpen = window.status === "open" && now < window.nextClose;
           const timeTarget = isOpen ? window.nextClose : window.nextOpen;
           return { ...sess, _window: window, _isOpen: isOpen, _timeTarget: timeTarget };
