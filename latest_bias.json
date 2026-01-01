@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-01-01T06:46:00+00:00",
+  "updated_at": "2026-01-01T23:31:00+00:00",
   "regions": [
     {
       "region": "America",
@@ -192,68 +192,6 @@
       }
     },
     {
-      "region": "Asia",
-      "session_name": "ASIA",
-      "session_start": "31/12/2025 21:00",
-      "updated_at": "2025-12-31T23:31:00+00:00",
-      "versions": [
-        {
-          "region": "Asia",
-          "version": "1.2.1",
-          "vies": "FORA",
-          "score": 0.0,
-          "motivo": "USDJPY: FORA (score=0.0) | Alertas: Dados de USDJPY estao defasados 630.0 min (limite 10 min). Verifique API/conexao.",
-          "hit": true,
-          "hit_ref_time": "2025-12-31T00:00:00",
-          "updated_at": "2025-12-31T23:31:00+00:00",
-          "symbol_results": [
-            {
-              "symbol": "USDJPY",
-              "vies": "FORA",
-              "score": 0.0,
-              "motivos": [],
-              "alertas": [
-                "Dados de USDJPY estao defasados 630.0 min (limite 10 min). Verifique API/conexao."
-              ],
-              "blocos": {},
-              "hit": null,
-              "ref_time": null
-            }
-          ],
-          "accuracy": 0.7184466019417476
-        },
-        {
-          "region": "Asia",
-          "version": "1.0.1",
-          "vies": "FORA",
-          "score": 0.0,
-          "motivo": "USDJPY: FORA (score=0.0) | Alertas: Dados de USDJPY estao defasados 630.0 min (limite 10 min). Verifique API/conexao.",
-          "hit": true,
-          "hit_ref_time": "2025-12-31T00:00:00",
-          "updated_at": "2025-12-31T23:31:00+00:00",
-          "symbol_results": [
-            {
-              "symbol": "USDJPY",
-              "vies": "FORA",
-              "score": 0.0,
-              "motivos": [],
-              "alertas": [
-                "Dados de USDJPY estao defasados 630.0 min (limite 10 min). Verifique API/conexao."
-              ],
-              "blocos": {},
-              "hit": null,
-              "ref_time": null
-            }
-          ],
-          "accuracy": 0.7236842105263158
-        }
-      ],
-      "best_version": {
-        "version": "1.0.1",
-        "accuracy": 0.7236842105263158
-      }
-    },
-    {
       "region": "Europe",
       "session_name": "EUROPE",
       "session_start": "01/01/2026 04:00",
@@ -313,6 +251,70 @@
       "best_version": {
         "version": "1.2.2",
         "accuracy": 0.9384615384615385
+      }
+    },
+    {
+      "region": "Asia",
+      "session_name": "ASIA",
+      "session_start": "01/01/2026 21:00",
+      "updated_at": "2026-01-01T23:31:00+00:00",
+      "versions": [
+        {
+          "region": "Asia",
+          "version": "1.2.1",
+          "vies": "FORA",
+          "score": 0.0,
+          "motivo": "USDJPY: FORA (score=0.0) | Alertas: 52 gaps preenchidos (ffill <= 20).; Dados insuficientes: 32 gaps nao preenchidos.",
+          "hit": true,
+          "hit_ref_time": "2025-12-31T00:00:00",
+          "updated_at": "2026-01-01T23:31:00+00:00",
+          "symbol_results": [
+            {
+              "symbol": "USDJPY",
+              "vies": "FORA",
+              "score": 0.0,
+              "motivos": [],
+              "alertas": [
+                "52 gaps preenchidos (ffill <= 20).",
+                "Dados insuficientes: 32 gaps nao preenchidos."
+              ],
+              "blocos": {},
+              "hit": null,
+              "ref_time": null
+            }
+          ],
+          "accuracy": 0.7184466019417476
+        },
+        {
+          "region": "Asia",
+          "version": "1.0.1",
+          "vies": "FORA",
+          "score": 0.0,
+          "motivo": "USDJPY: FORA (score=0.0) | Alertas: 52 gaps preenchidos (ffill <= 20).; Dados insuficientes: 32 gaps nao preenchidos.",
+          "hit": true,
+          "hit_ref_time": "2025-12-31T00:00:00",
+          "updated_at": "2026-01-01T23:31:00+00:00",
+          "symbol_results": [
+            {
+              "symbol": "USDJPY",
+              "vies": "FORA",
+              "score": 0.0,
+              "motivos": [],
+              "alertas": [
+                "52 gaps preenchidos (ffill <= 20).",
+                "Dados insuficientes: 32 gaps nao preenchidos."
+              ],
+              "blocos": {},
+              "hit": null,
+              "ref_time": null
+            }
+          ],
+          "accuracy": 0.7236842105263158
+        }
+      ],
+      "best_version": {
+        "version": "1.0.1",
+        "accuracy": 0.7236842105263158
       }
     }
   ]
