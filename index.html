@@ -420,6 +420,15 @@
         if (/^Baixa volatilidade/i.test(text)) {
           return "Baixa volatilidade";
         }
+        if (/^EuropeSafety:/i.test(text)) {
+          return "EuropeSafety aplicado";
+        }
+        if (/^AmericaSoft:/i.test(text)) {
+          return "AmericaSoft aplicado";
+        }
+        if (/^AsiaSafety:/i.test(text)) {
+          return "AsiaSafety aplicado";
+        }
         return text;
       }
 
