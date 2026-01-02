@@ -520,6 +520,7 @@
                 const vetoFromAlerts = alertsDisplay.some(a => {
                   if (!a) return false;
                   if (/^(EuropeSafety|AmericaSoft|AsiaSafety):/i.test(a)) return true;
+                  if (/^(EuropeSafety aplicado|AmericaSoft aplicado|AsiaSafety aplicado)/i.test(a)) return true;
                   return /veto|vetado|cancelado/i.test(a);
                 });
                 let mit = "-";
