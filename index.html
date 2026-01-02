@@ -414,22 +414,23 @@
 
       function normalizeAlertText(text) {
         if (!text) return text;
-        if (/^Volatilidade excessiva detectada/i.test(text)) {
+        const trimmed = String(text).trim();
+        if (/^Volatilidade excessiva detectada/i.test(trimmed)) {
           return "Volatilidade excessiva detectada";
         }
-        if (/^Baixa volatilidade/i.test(text)) {
+        if (/^Baixa volatilidade/i.test(trimmed)) {
           return "Baixa volatilidade";
         }
-        if (/^EuropeSafety:/i.test(text)) {
+        if (/^EuropeSafety:/i.test(trimmed)) {
           return "EuropeSafety aplicado";
         }
-        if (/^AmericaSoft:/i.test(text)) {
+        if (/^AmericaSoft:/i.test(trimmed)) {
           return "AmericaSoft aplicado";
         }
-        if (/^AsiaSafety:/i.test(text)) {
+        if (/^AsiaSafety:/i.test(trimmed)) {
           return "AsiaSafety aplicado";
         }
-        return text;
+        return trimmed;
       }
 
       function parseSessionStartUtc(str) {
@@ -519,9 +520,10 @@
                 const alertsDisplay = alerts.map(normalizeAlertText);
                 const vetoFromAlerts = alertsDisplay.some(a => {
                   if (!a) return false;
-                  if (/^(EuropeSafety|AmericaSoft|AsiaSafety):/i.test(a)) return true;
-                  if (/^(EuropeSafety aplicado|AmericaSoft aplicado|AsiaSafety aplicado)/i.test(a)) return true;
-                  return /veto|vetado|cancelado/i.test(a);
+                  const clean = String(a).trim();
+                  if (/^(EuropeSafety|AmericaSoft|AsiaSafety):/i.test(clean)) return true;
+                  if (/^(EuropeSafety aplicado|AmericaSoft aplicado|AsiaSafety aplicado)/i.test(clean)) return true;
+                  return /veto|vetado|cancelado/i.test(clean);
                 });
                 let mit = "-";
                 if (mitBlocked || vetoFromAlerts) mit = "Sinal Vetado";
