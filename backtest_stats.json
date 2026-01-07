@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-01-06T23:31:03.918443+00:00",
-  "accuracy": 0.7978723404255319,
-  "total": 470,
+  "generated_at": "2026-01-07T06:46:02.725418+00:00",
+  "accuracy": 0.7911392405063291,
+  "total": 474,
   "by_region": {
     "America": {
       "accuracy": 0.8541666666666666,
       "total": 144
     },
     "Asia": {
-      "accuracy": 0.7135135135135136,
-      "total": 185
+      "accuracy": 0.7058823529411765,
+      "total": 187
     },
     "Europe": {
-      "accuracy": 0.851063829787234,
-      "total": 141
+      "accuracy": 0.8391608391608392,
+      "total": 143
     }
   },
   "days_without_loss": 0
