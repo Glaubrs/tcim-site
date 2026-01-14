@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-01-13T23:31:03.017410+00:00",
-  "accuracy": 0.8171428571428572,
-  "total": 525,
+  "generated_at": "2026-01-14T06:46:03.315988+00:00",
+  "accuracy": 0.8174904942965779,
+  "total": 526,
   "by_region": {
     "America": {
-      "accuracy": 0.86,
-      "total": 200
+      "accuracy": 0.8606965174129353,
+      "total": 201
     },
     "Asia": {
       "accuracy": 0.7472527472527473,
@@ -16,5 +16,5 @@
       "total": 143
     }
   },
-  "days_without_loss": 4
+  "days_without_loss": 5
 }
