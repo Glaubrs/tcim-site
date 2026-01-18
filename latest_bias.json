@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-01-18T23:23:00+00:00",
+  "updated_at": "2026-01-18T23:31:00+00:00",
   "regions": [
     {
       "region": "Europe",
@@ -257,30 +257,30 @@
       "region": "Asia",
       "session_name": "ASIA",
       "session_start": "18/01/2026 21:00",
-      "updated_at": "2026-01-18T23:23:00+00:00",
+      "updated_at": "2026-01-18T23:31:00+00:00",
       "versions": [
         {
           "region": "Asia",
           "version": "1.2.1",
-          "vies": "FORA",
-          "score": 1.74,
-          "motivo": "USDJPY: FORA (score=1.74) | Tendencia: Neutro (H4: slopes das EMAs proximos de zero.; D1: preco acima da EMA20 (+0.5).); Contexto: Favoravel (D1: preco acima da EMA20 (+1).; D1: preco acima da EMA50 (+0.5).) | Alertas: Volatilidade excessiva detectada (candle > 1.1x ATR).",
+          "vies": "COMPRA",
+          "score": 3.74,
+          "motivo": "USDJPY: COMPRA (score=3.74) | Tendencia: Neutro (H4: slopes das EMAs proximos de zero.; D1: preco acima da EMA20 (+0.5).); Contexto: Favoravel (D1: preco acima da EMA20 (+1).; D1: preco acima da EMA50 (+0.5).) | Alertas: Nenhum alerta crítico.",
           "hit": true,
           "hit_ref_time": "2026-01-09T00:00:00",
-          "updated_at": "2026-01-18T23:23:00+00:00",
+          "updated_at": "2026-01-18T23:31:00+00:00",
           "symbol_results": [
             {
               "symbol": "USDJPY",
-              "vies": "FORA",
-              "score": 1.74,
+              "vies": "COMPRA",
+              "score": 3.74,
               "motivos": [
                 "Tendencia: Neutro (H4: slopes das EMAs proximos de zero.; D1: preco acima da EMA20 (+0.5).)",
                 "Contexto: Favoravel (D1: preco acima da EMA20 (+1).; D1: preco acima da EMA50 (+0.5).)",
-                "Impulso: Forte (ADX=13.7 acima de 13 (+2).; Impulso segue a tendência (a favor da alta).)",
-                "Mitigação: Risco: volatilidade extrema (Candle atual > 1.1x ATR (Score penalizado em 2 pontos).)"
+                "Impulso: Forte (ADX=14.3 acima de 13 (+2).; Impulso segue a tendência (a favor da alta).)",
+                "Mitigação: Sem alertas (Volatilidade dentro do intervalo esperado.)"
               ],
               "alertas": [
-                "Volatilidade excessiva detectada (candle > 1.1x ATR)."
+                "Nenhum alerta crítico."
               ],
               "blocos": {
                 "tendencia": {
@@ -308,7 +308,7 @@
                   ],
                   "valores": {
                     "timeframe": "D1",
-                    "vwap": 158.0261179945967,
+                    "vwap": 158.01921114784912,
                     "ema20": 157.35918935047633,
                     "ema50": 156.21536111407232,
                     "atr": 0.9293342779162139,
@@ -319,28 +319,28 @@
                   "score": 2.0,
                   "status": "Forte",
                   "notas": [
-                    "ADX=13.7 acima de 13 (+2).",
+                    "ADX=14.3 acima de 13 (+2).",
                     "Impulso segue a tendência (a favor da alta)."
                   ],
                   "valores": {
-                    "adx": 13.669413392387582
+                    "adx": 14.261420174989345
                   }
                 },
                 "mitigacao": {
-                  "score": -2.0,
-                  "status": "Risco: volatilidade extrema",
+                  "score": 0.0,
+                  "status": "Sem alertas",
                   "notas": [
-                    "Candle atual > 1.1x ATR (Score penalizado em 2 pontos)."
+                    "Volatilidade dentro do intervalo esperado."
                   ],
                   "valores": {
-                    "candle_range": 0.24292000000002645,
-                    "atr": 0.12150069611699024,
+                    "candle_range": 0.12333999999998468,
+                    "atr": 0.12163207496577556,
                     "mitigation_blocked": false
                   }
                 }
               },
               "hit": null,
-              "ref_time": "2026-01-18T23:00:00+00:00"
+              "ref_time": "2026-01-18T23:15:00+00:00"
             }
           ],
           "accuracy": 0.7283950617283951
@@ -349,24 +349,24 @@
           "region": "Asia",
           "version": "1.0.1",
           "vies": "COMPRA",
-          "score": 1.44,
-          "motivo": "USDJPY: COMPRA (score=1.44) | Tendencia: Neutro (H4: slopes das EMAs proximos de zero.; D1: preco acima da EMA20 (+0.5).); Contexto: Favoravel (D1: preco acima da EMA20 (+1).; D1: preco acima da EMA50 (+0.5).) | Alertas: Volatilidade excessiva detectada (candle > 1.4x ATR).",
+          "score": 2.44,
+          "motivo": "USDJPY: COMPRA (score=2.44) | Tendencia: Neutro (H4: slopes das EMAs proximos de zero.; D1: preco acima da EMA20 (+0.5).); Contexto: Favoravel (D1: preco acima da EMA20 (+1).; D1: preco acima da EMA50 (+0.5).) | Alertas: Baixa volatilidade: range < 1.3x ATR.",
           "hit": true,
           "hit_ref_time": "2026-01-09T00:00:00",
-          "updated_at": "2026-01-18T23:23:00+00:00",
+          "updated_at": "2026-01-18T23:31:00+00:00",
           "symbol_results": [
             {
               "symbol": "USDJPY",
               "vies": "COMPRA",
-              "score": 1.44,
+              "score": 2.44,
               "motivos": [
                 "Tendencia: Neutro (H4: slopes das EMAs proximos de zero.; D1: preco acima da EMA20 (+0.5).)",
                 "Contexto: Favoravel (D1: preco acima da EMA20 (+1).; D1: preco acima da EMA50 (+0.5).)",
-                "Impulso: Moderado (ADX=13.7 entre 13-17 (+1).; Impulso segue a tendência (a favor da alta).)",
-                "Mitigação: Risco: volatilidade extrema (Candle atual > 1.4x ATR (Score penalizado em 2 pontos).)"
+                "Impulso: Moderado (ADX=14.3 entre 13-17 (+1).; Impulso segue a tendência (a favor da alta).)",
+                "Mitigação: Atenção: mercado travado (Candle atual < 1.3x ATR (-1).)"
               ],
               "alertas": [
-                "Volatilidade excessiva detectada (candle > 1.4x ATR)."
+                "Baixa volatilidade: range < 1.3x ATR."
               ],
               "blocos": {
                 "tendencia": {
@@ -394,7 +394,7 @@
                   ],
                   "valores": {
                     "timeframe": "D1",
-                    "vwap": 158.0261179945967,
+                    "vwap": 158.01921114784912,
                     "ema20": 157.35918935047633,
                     "ema50": 156.21536111407232,
                     "atr": 0.9293342779162139,
@@ -405,28 +405,28 @@
                   "score": 1.0,
                   "status": "Moderado",
                   "notas": [
-                    "ADX=13.7 entre 13-17 (+1).",
+                    "ADX=14.3 entre 13-17 (+1).",
                     "Impulso segue a tendência (a favor da alta)."
                   ],
                   "valores": {
-                    "adx": 13.669413392387582
+                    "adx": 14.261420174989345
                   }
                 },
                 "mitigacao": {
-                  "score": -2.0,
-                  "status": "Risco: volatilidade extrema",
+                  "score": -1.0,
+                  "status": "Atenção: mercado travado",
                   "notas": [
-                    "Candle atual > 1.4x ATR (Score penalizado em 2 pontos)."
+                    "Candle atual < 1.3x ATR (-1)."
                   ],
                   "valores": {
-                    "candle_range": 0.24292000000002645,
-                    "atr": 0.12150069611699024,
+                    "candle_range": 0.12333999999998468,
+                    "atr": 0.12163207496577556,
                     "mitigation_blocked": false
                   }
                 }
               },
               "hit": null,
-              "ref_time": "2026-01-18T23:00:00+00:00"
+              "ref_time": "2026-01-18T23:15:00+00:00"
             }
           ],
           "accuracy": 0.7428571428571429
