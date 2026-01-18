@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-01-18T10:34:00+00:00",
+  "updated_at": "2026-01-18T11:37:00+00:00",
   "regions": [
     {
       "region": "Asia",
@@ -257,7 +257,7 @@
       "region": "America",
       "session_name": "AMERICA",
       "session_start": "18/01/2026 10:30",
-      "updated_at": "2026-01-18T10:34:00+00:00",
+      "updated_at": "2026-01-18T11:37:00+00:00",
       "versions": [
         {
           "region": "America",
@@ -267,7 +267,7 @@
           "motivo": "XAUUSD: FORA (score=0.0) | Alertas: Dados de XAUUSD estao defasados 2250.0 min (limite 10 min). Verifique API/conexao.",
           "hit": true,
           "hit_ref_time": "2026-01-08T00:00:00",
-          "updated_at": "2026-01-18T10:34:00+00:00",
+          "updated_at": "2026-01-18T11:37:00+00:00",
           "symbol_results": [
             {
               "symbol": "XAUUSD",
@@ -292,7 +292,7 @@
           "motivo": "XAUUSD: FORA (score=0.0) | Alertas: Dados de XAUUSD estao defasados 2250.0 min (limite 10 min). Verifique API/conexao.",
           "hit": true,
           "hit_ref_time": "2026-01-16T00:00:00",
-          "updated_at": "2026-01-18T10:34:00+00:00",
+          "updated_at": "2026-01-18T11:37:00+00:00",
           "symbol_results": [
             {
               "symbol": "XAUUSD",
