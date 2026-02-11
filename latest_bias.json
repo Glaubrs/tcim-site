@@ -1,192 +1,6 @@
 {
-  "updated_at": "2026-02-10T23:31:00+00:00",
+  "updated_at": "2026-02-11T06:46:00+00:00",
   "regions": [
-    {
-      "region": "Europe",
-      "session_name": "EUROPE",
-      "session_start": "10/02/2026 04:00",
-      "updated_at": "2026-02-10T06:46:00+00:00",
-      "versions": [
-        {
-          "region": "Europe",
-          "version": "1.2.2",
-          "vies": "COMPRA",
-          "score": 2.42,
-          "motivo": "EURUSD: COMPRA (score=2.42) | Tendencia: Neutro (H4: slopes das EMAs proximos de zero.; D1: preco acima da EMA20 (+0.5).); Contexto: Favoravel (D1: preco acima da EMA20 (+1).; D1: preco acima da EMA50 (+0.5).) | Alertas: Nenhum alerta crítico.",
-          "hit": true,
-          "hit_ref_time": "2026-02-03T00:00:00",
-          "updated_at": "2026-02-10T06:46:00+00:00",
-          "symbol_results": [
-            {
-              "symbol": "EURUSD",
-              "vies": "COMPRA",
-              "score": 2.42,
-              "motivos": [
-                "Tendencia: Neutro (H4: slopes das EMAs proximos de zero.; D1: preco acima da EMA20 (+0.5).)",
-                "Contexto: Favoravel (D1: preco acima da EMA20 (+1).; D1: preco acima da EMA50 (+0.5).)",
-                "Impulso: Fraco (ADX=12.8 abaixo de 21 (0).; Impulso segue a tendência (a favor da alta).)",
-                "Mitigação: Sem alertas (Volatilidade dentro do intervalo esperado.)"
-              ],
-              "alertas": [
-                "Nenhum alerta crítico."
-              ],
-              "blocos": {
-                "tendencia": {
-                  "score": 0.5,
-                  "status": "Neutro",
-                  "notas": [
-                    "H4: slopes das EMAs proximos de zero.",
-                    "D1: preco acima da EMA20 (+0.5)."
-                  ],
-                  "valores": {
-                    "timeframe": "H4",
-                    "slope_ema20": 0.0001423122083070345,
-                    "slope_ema50": 5.068538117360715e-06,
-                    "preco": 1.19111,
-                    "ema20": 1.1850756441130306,
-                    "ema50": 1.1838644798808136
-                  }
-                },
-                "contexto": {
-                  "score": 1.5,
-                  "status": "Favoravel",
-                  "notas": [
-                    "D1: preco acima da EMA20 (+1).",
-                    "D1: preco acima da EMA50 (+0.5)."
-                  ],
-                  "valores": {
-                    "timeframe": "D1",
-                    "vwap": 1.1894568135773946,
-                    "ema20": 1.181312782265425,
-                    "ema50": 1.1753944867855985,
-                    "atr": 0.006755194064481042,
-                    "context_blocked": false
-                  }
-                },
-                "impulso": {
-                  "score": 0.0,
-                  "status": "Fraco",
-                  "notas": [
-                    "ADX=12.8 abaixo de 21 (0).",
-                    "Impulso segue a tendência (a favor da alta)."
-                  ],
-                  "valores": {
-                    "adx": 12.792136842520556
-                  }
-                },
-                "mitigacao": {
-                  "score": 0.0,
-                  "status": "Sem alertas",
-                  "notas": [
-                    "Volatilidade dentro do intervalo esperado."
-                  ],
-                  "valores": {
-                    "candle_range": 0.0004999999999999449,
-                    "atr": 0.0004601971184493732,
-                    "mitigation_blocked": false
-                  }
-                }
-              },
-              "hit": null,
-              "ref_time": "2026-02-10T06:30:00+00:00"
-            }
-          ],
-          "accuracy": 0.9036144578313253
-        },
-        {
-          "region": "Europe",
-          "version": "1.0.2",
-          "vies": "FORA",
-          "score": 0.0,
-          "motivo": "EURUSD: FORA (score=0.0) | Tendencia: Neutro (H4: slopes das EMAs proximos de zero.; D1: preco acima da EMA20 (+0.5).); Contexto: Favoravel (D1: preco acima da EMA20 (+1).; D1: preco acima da EMA50 (+0.5).) | Alertas: Baixa volatilidade: range < 1.2x ATR.; EuropeSafety: mercado travado (range/ATR baixo).",
-          "hit": false,
-          "hit_ref_time": "2026-01-15T00:00:00",
-          "updated_at": "2026-02-10T06:46:00+00:00",
-          "symbol_results": [
-            {
-              "symbol": "EURUSD",
-              "vies": "FORA",
-              "score": 0.0,
-              "motivos": [
-                "Tendencia: Neutro (H4: slopes das EMAs proximos de zero.; D1: preco acima da EMA20 (+0.5).)",
-                "Contexto: Favoravel (D1: preco acima da EMA20 (+1).; D1: preco acima da EMA50 (+0.5).)",
-                "Impulso: Fraco (ADX=12.8 abaixo de 21 (0).; Impulso segue a tendência (a favor da alta).)",
-                "Mitigação: Atenção: mercado travado (Candle atual < 1.2x ATR (-1).)",
-                "EuropeSafety: mercado travado (range/ATR baixo)."
-              ],
-              "alertas": [
-                "Baixa volatilidade: range < 1.2x ATR.",
-                "EuropeSafety: mercado travado (range/ATR baixo)."
-              ],
-              "blocos": {
-                "tendencia": {
-                  "score": 0.5,
-                  "status": "Neutro",
-                  "notas": [
-                    "H4: slopes das EMAs proximos de zero.",
-                    "D1: preco acima da EMA20 (+0.5)."
-                  ],
-                  "valores": {
-                    "timeframe": "H4",
-                    "slope_ema20": 0.0001423122083070345,
-                    "slope_ema50": 5.068538117360715e-06,
-                    "preco": 1.19111,
-                    "ema20": 1.1850756441130306,
-                    "ema50": 1.1838644798808136
-                  }
-                },
-                "contexto": {
-                  "score": 1.5,
-                  "status": "Favoravel",
-                  "notas": [
-                    "D1: preco acima da EMA20 (+1).",
-                    "D1: preco acima da EMA50 (+0.5)."
-                  ],
-                  "valores": {
-                    "timeframe": "D1",
-                    "vwap": 1.1894568135773946,
-                    "ema20": 1.181312782265425,
-                    "ema50": 1.1753944867855985,
-                    "atr": 0.006755194064481042,
-                    "context_blocked": false
-                  }
-                },
-                "impulso": {
-                  "score": 0.0,
-                  "status": "Fraco",
-                  "notas": [
-                    "ADX=12.8 abaixo de 21 (0).",
-                    "Impulso segue a tendência (a favor da alta)."
-                  ],
-                  "valores": {
-                    "adx": 12.792136842520556
-                  }
-                },
-                "mitigacao": {
-                  "score": -1.0,
-                  "status": "Atenção: mercado travado",
-                  "notas": [
-                    "Candle atual < 1.2x ATR (-1)."
-                  ],
-                  "valores": {
-                    "candle_range": 0.0004999999999999449,
-                    "atr": 0.0004601971184493732,
-                    "mitigation_blocked": false
-                  }
-                }
-              },
-              "hit": null,
-              "ref_time": "2026-02-10T06:30:00+00:00"
-            }
-          ],
-          "accuracy": 0.7384615384615385
-        }
-      ],
-      "best_version": {
-        "version": "1.2.2",
-        "accuracy": 0.9036144578313253
-      }
-    },
     {
       "region": "America",
       "session_name": "AMERICA",
@@ -559,6 +373,190 @@
       "best_version": {
         "version": "1.0.1",
         "accuracy": 0.7391304347826086
+      }
+    },
+    {
+      "region": "Europe",
+      "session_name": "EUROPE",
+      "session_start": "11/02/2026 04:00",
+      "updated_at": "2026-02-11T06:46:00+00:00",
+      "versions": [
+        {
+          "region": "Europe",
+          "version": "1.2.2",
+          "vies": "COMPRA",
+          "score": 4.62,
+          "motivo": "EURUSD: COMPRA (score=4.62) | Tendencia: Alta (H4: slopes EMA20/EMA50 positivos e preco acima das medias.; D1: preco acima da EMA20 (+0.5).); Contexto: Favoravel (D1: preco acima da EMA20 (+1).; D1: preco acima da EMA50 (+0.5).) | Alertas: Nenhum alerta crítico.",
+          "hit": true,
+          "hit_ref_time": "2026-02-03T00:00:00",
+          "updated_at": "2026-02-11T06:46:00+00:00",
+          "symbol_results": [
+            {
+              "symbol": "EURUSD",
+              "vies": "COMPRA",
+              "score": 4.62,
+              "motivos": [
+                "Tendencia: Alta (H4: slopes EMA20/EMA50 positivos e preco acima das medias.; D1: preco acima da EMA20 (+0.5).)",
+                "Contexto: Favoravel (D1: preco acima da EMA20 (+1).; D1: preco acima da EMA50 (+0.5).)",
+                "Impulso: Moderado (ADX=30.4 entre 21-33 (+1).; Impulso segue a tendência (a favor da alta).)",
+                "Mitigação: Sem alertas (Volatilidade dentro do intervalo esperado.)"
+              ],
+              "alertas": [
+                "Nenhum alerta crítico."
+              ],
+              "blocos": {
+                "tendencia": {
+                  "score": 2.0,
+                  "status": "Alta",
+                  "notas": [
+                    "H4: slopes EMA20/EMA50 positivos e preco acima das medias.",
+                    "D1: preco acima da EMA20 (+0.5)."
+                  ],
+                  "valores": {
+                    "timeframe": "H4",
+                    "slope_ema20": 0.00042606657447658513,
+                    "slope_ema50": 0.00016938224776934317,
+                    "preco": 1.19108,
+                    "ema20": 1.1874827143577529,
+                    "ema50": 1.18525893862981
+                  }
+                },
+                "contexto": {
+                  "score": 1.5,
+                  "status": "Favoravel",
+                  "notas": [
+                    "D1: preco acima da EMA20 (+1).",
+                    "D1: preco acima da EMA50 (+0.5)."
+                  ],
+                  "valores": {
+                    "timeframe": "D1",
+                    "vwap": 1.1905300347893313,
+                    "ema20": 1.182158521881603,
+                    "ema50": 1.1760546318162464,
+                    "atr": 0.006526427923435503,
+                    "context_blocked": false
+                  }
+                },
+                "impulso": {
+                  "score": 1.0,
+                  "status": "Moderado",
+                  "notas": [
+                    "ADX=30.4 entre 21-33 (+1).",
+                    "Impulso segue a tendência (a favor da alta)."
+                  ],
+                  "valores": {
+                    "adx": 30.366478599443408
+                  }
+                },
+                "mitigacao": {
+                  "score": 0.0,
+                  "status": "Sem alertas",
+                  "notas": [
+                    "Volatilidade dentro do intervalo esperado."
+                  ],
+                  "valores": {
+                    "candle_range": 0.0006800000000000139,
+                    "atr": 0.0004719330748645134,
+                    "mitigation_blocked": false
+                  }
+                }
+              },
+              "hit": null,
+              "ref_time": "2026-02-11T06:30:00+00:00"
+            }
+          ],
+          "accuracy": 0.9036144578313253
+        },
+        {
+          "region": "Europe",
+          "version": "1.0.2",
+          "vies": "COMPRA",
+          "score": 4.92,
+          "motivo": "EURUSD: COMPRA (score=4.92) | Tendencia: Alta (H4: slopes EMA20/EMA50 positivos e preco acima das medias.; D1: preco acima da EMA20 (+0.5).); Contexto: Favoravel (D1: preco acima da EMA20 (+1).; D1: preco acima da EMA50 (+0.5).) | Alertas: Nenhum alerta crítico.",
+          "hit": false,
+          "hit_ref_time": "2026-01-15T00:00:00",
+          "updated_at": "2026-02-11T06:46:00+00:00",
+          "symbol_results": [
+            {
+              "symbol": "EURUSD",
+              "vies": "COMPRA",
+              "score": 4.92,
+              "motivos": [
+                "Tendencia: Alta (H4: slopes EMA20/EMA50 positivos e preco acima das medias.; D1: preco acima da EMA20 (+0.5).)",
+                "Contexto: Favoravel (D1: preco acima da EMA20 (+1).; D1: preco acima da EMA50 (+0.5).)",
+                "Impulso: Forte (ADX=30.4 acima de 30 (+2).; Impulso segue a tendência (a favor da alta).)",
+                "Mitigação: Sem alertas (Volatilidade dentro do intervalo esperado.)"
+              ],
+              "alertas": [
+                "Nenhum alerta crítico."
+              ],
+              "blocos": {
+                "tendencia": {
+                  "score": 2.0,
+                  "status": "Alta",
+                  "notas": [
+                    "H4: slopes EMA20/EMA50 positivos e preco acima das medias.",
+                    "D1: preco acima da EMA20 (+0.5)."
+                  ],
+                  "valores": {
+                    "timeframe": "H4",
+                    "slope_ema20": 0.00042606657447658513,
+                    "slope_ema50": 0.00016938224776934317,
+                    "preco": 1.19108,
+                    "ema20": 1.1874827143577529,
+                    "ema50": 1.18525893862981
+                  }
+                },
+                "contexto": {
+                  "score": 1.5,
+                  "status": "Favoravel",
+                  "notas": [
+                    "D1: preco acima da EMA20 (+1).",
+                    "D1: preco acima da EMA50 (+0.5)."
+                  ],
+                  "valores": {
+                    "timeframe": "D1",
+                    "vwap": 1.1905300347893313,
+                    "ema20": 1.182158521881603,
+                    "ema50": 1.1760546318162464,
+                    "atr": 0.006526427923435503,
+                    "context_blocked": false
+                  }
+                },
+                "impulso": {
+                  "score": 2.0,
+                  "status": "Forte",
+                  "notas": [
+                    "ADX=30.4 acima de 30 (+2).",
+                    "Impulso segue a tendência (a favor da alta)."
+                  ],
+                  "valores": {
+                    "adx": 30.366478599443408
+                  }
+                },
+                "mitigacao": {
+                  "score": 0.0,
+                  "status": "Sem alertas",
+                  "notas": [
+                    "Volatilidade dentro do intervalo esperado."
+                  ],
+                  "valores": {
+                    "candle_range": 0.0006800000000000139,
+                    "atr": 0.0004719330748645134,
+                    "mitigation_blocked": false
+                  }
+                }
+              },
+              "hit": null,
+              "ref_time": "2026-02-11T06:30:00+00:00"
+            }
+          ],
+          "accuracy": 0.7384615384615385
+        }
+      ],
+      "best_version": {
+        "version": "1.2.2",
+        "accuracy": 0.9036144578313253
       }
     }
   ]
