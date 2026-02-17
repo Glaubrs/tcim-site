@@ -1,190 +1,6 @@
 {
-  "updated_at": "2026-02-17T06:46:00+00:00",
+  "updated_at": "2026-02-17T13:16:00+00:00",
   "regions": [
-    {
-      "region": "America",
-      "session_name": "AMERICA",
-      "session_start": "16/02/2026 10:30",
-      "updated_at": "2026-02-16T13:16:00+00:00",
-      "versions": [
-        {
-          "region": "America",
-          "version": "1.2.3",
-          "vies": "FORA",
-          "score": 2.42,
-          "motivo": "XAUUSD: FORA (score=2.42) | Tendencia: Neutro (H4: slopes das EMAs proximos de zero.; D1: preco acima da EMA20 (+0.5).); Contexto: Favoravel (D1: preco acima da EMA20 (+1).; D1: preco acima da EMA50 (+0.5).) | Alertas: Nenhum alerta crítico.",
-          "hit": true,
-          "hit_ref_time": "2026-01-20T00:00:00",
-          "updated_at": "2026-02-16T13:16:00+00:00",
-          "symbol_results": [
-            {
-              "symbol": "XAUUSD",
-              "vies": "FORA",
-              "score": 2.42,
-              "motivos": [
-                "Tendencia: Neutro (H4: slopes das EMAs proximos de zero.; D1: preco acima da EMA20 (+0.5).)",
-                "Contexto: Favoravel (D1: preco acima da EMA20 (+1).; D1: preco acima da EMA50 (+0.5).)",
-                "Impulso: Fraco (ADX=19.9 abaixo de 27 (0).; Impulso segue a tendência (a favor da alta).)",
-                "Mitigação: Sem alertas (Volatilidade dentro do intervalo esperado.)"
-              ],
-              "alertas": [
-                "Nenhum alerta crítico."
-              ],
-              "blocos": {
-                "tendencia": {
-                  "score": 0.5,
-                  "status": "Neutro",
-                  "notas": [
-                    "H4: slopes das EMAs proximos de zero.",
-                    "D1: preco acima da EMA20 (+0.5)."
-                  ],
-                  "valores": {
-                    "timeframe": "H4",
-                    "slope_ema20": -1.003426052278343,
-                    "slope_ema50": 0.13140122601348744,
-                    "preco": 5004.47328,
-                    "ema20": 5018.386202709288,
-                    "ema50": 5010.364408634505
-                  }
-                },
-                "contexto": {
-                  "score": 1.5,
-                  "status": "Favoravel",
-                  "notas": [
-                    "D1: preco acima da EMA20 (+1).",
-                    "D1: preco acima da EMA50 (+0.5)."
-                  ],
-                  "valores": {
-                    "timeframe": "D1",
-                    "vwap": 5006.630387007033,
-                    "ema20": 4946.836117028776,
-                    "ema50": 4753.70601401169,
-                    "atr": 164.5798605765211,
-                    "context_blocked": false
-                  }
-                },
-                "impulso": {
-                  "score": 0.0,
-                  "status": "Fraco",
-                  "notas": [
-                    "ADX=19.9 abaixo de 27 (0).",
-                    "Impulso segue a tendência (a favor da alta)."
-                  ],
-                  "valores": {
-                    "adx": 19.890838048060875
-                  }
-                },
-                "mitigacao": {
-                  "score": 0.0,
-                  "status": "Sem alertas",
-                  "notas": [
-                    "Volatilidade dentro do intervalo esperado."
-                  ],
-                  "valores": {
-                    "candle_range": 4.310019999999895,
-                    "atr": 6.550667561602598,
-                    "mitigation_blocked": false
-                  }
-                }
-              },
-              "hit": null,
-              "ref_time": "2026-02-16T13:00:00+00:00"
-            }
-          ],
-          "accuracy": 0.9710144927536232
-        },
-        {
-          "region": "America",
-          "version": "1.0.3",
-          "vies": "COMPRA",
-          "score": 3.44,
-          "motivo": "XAUUSD: COMPRA (score=3.44) | Tendencia: Neutro (H4: slopes das EMAs proximos de zero.; D1: preco acima da EMA20 (+0.5).); Contexto: Favoravel (D1: preco acima da EMA20 (+1).; D1: preco acima da EMA50 (+0.5).) | Alertas: Nenhum alerta crítico.",
-          "hit": true,
-          "hit_ref_time": "2026-01-20T00:00:00",
-          "updated_at": "2026-02-16T13:16:00+00:00",
-          "symbol_results": [
-            {
-              "symbol": "XAUUSD",
-              "vies": "COMPRA",
-              "score": 3.44,
-              "motivos": [
-                "Tendencia: Neutro (H4: slopes das EMAs proximos de zero.; D1: preco acima da EMA20 (+0.5).)",
-                "Contexto: Favoravel (D1: preco acima da EMA20 (+1).; D1: preco acima da EMA50 (+0.5).)",
-                "Impulso: Moderado (ADX=19.9 entre 7-35 (+1).; Impulso segue a tendência (a favor da alta).)",
-                "Mitigação: Sem alertas (Volatilidade dentro do intervalo esperado.)"
-              ],
-              "alertas": [
-                "Nenhum alerta crítico."
-              ],
-              "blocos": {
-                "tendencia": {
-                  "score": 0.5,
-                  "status": "Neutro",
-                  "notas": [
-                    "H4: slopes das EMAs proximos de zero.",
-                    "D1: preco acima da EMA20 (+0.5)."
-                  ],
-                  "valores": {
-                    "timeframe": "H4",
-                    "slope_ema20": -1.003426052278343,
-                    "slope_ema50": 0.13140122601348744,
-                    "preco": 5004.47328,
-                    "ema20": 5018.386202709288,
-                    "ema50": 5010.364408634505
-                  }
-                },
-                "contexto": {
-                  "score": 1.5,
-                  "status": "Favoravel",
-                  "notas": [
-                    "D1: preco acima da EMA20 (+1).",
-                    "D1: preco acima da EMA50 (+0.5)."
-                  ],
-                  "valores": {
-                    "timeframe": "D1",
-                    "vwap": 5006.630387007033,
-                    "ema20": 4946.836117028776,
-                    "ema50": 4753.70601401169,
-                    "atr": 164.5798605765211,
-                    "context_blocked": false
-                  }
-                },
-                "impulso": {
-                  "score": 1.0,
-                  "status": "Moderado",
-                  "notas": [
-                    "ADX=19.9 entre 7-35 (+1).",
-                    "Impulso segue a tendência (a favor da alta)."
-                  ],
-                  "valores": {
-                    "adx": 19.890838048060875
-                  }
-                },
-                "mitigacao": {
-                  "score": 0.0,
-                  "status": "Sem alertas",
-                  "notas": [
-                    "Volatilidade dentro do intervalo esperado."
-                  ],
-                  "valores": {
-                    "candle_range": 4.310019999999895,
-                    "atr": 6.550667561602598,
-                    "mitigation_blocked": false
-                  }
-                }
-              },
-              "hit": null,
-              "ref_time": "2026-02-16T13:00:00+00:00"
-            }
-          ],
-          "accuracy": 0.803030303030303
-        }
-      ],
-      "best_version": {
-        "version": "1.2.3",
-        "accuracy": 0.9710144927536232
-      }
-    },
     {
       "region": "Asia",
       "session_name": "ASIA",
@@ -554,6 +370,190 @@
       "best_version": {
         "version": "1.2.2",
         "accuracy": 0.9036144578313253
+      }
+    },
+    {
+      "region": "America",
+      "session_name": "AMERICA",
+      "session_start": "17/02/2026 10:30",
+      "updated_at": "2026-02-17T13:16:00+00:00",
+      "versions": [
+        {
+          "region": "America",
+          "version": "1.2.3",
+          "vies": "FORA",
+          "score": -1.3,
+          "motivo": "XAUUSD: FORA (score=-1.3) | Tendencia: Neutro (H4: slopes das EMAs proximos de zero.; D1: preco abaixo da EMA20 (-0.5).); Contexto: Neutro (D1: preco abaixo da EMA20 (-1).; D1: preco acima da EMA50 (+0.5).) | Alertas: Nenhum alerta crítico.",
+          "hit": true,
+          "hit_ref_time": "2026-01-20T00:00:00",
+          "updated_at": "2026-02-17T13:16:00+00:00",
+          "symbol_results": [
+            {
+              "symbol": "XAUUSD",
+              "vies": "FORA",
+              "score": -1.3,
+              "motivos": [
+                "Tendencia: Neutro (H4: slopes das EMAs proximos de zero.; D1: preco abaixo da EMA20 (-0.5).)",
+                "Contexto: Neutro (D1: preco abaixo da EMA20 (-1).; D1: preco acima da EMA50 (+0.5).)",
+                "Impulso: Fraco (ADX=16.7 abaixo de 27 (0).; Impulso segue a tendência (a favor da baixa).)",
+                "Mitigação: Sem alertas (Volatilidade dentro do intervalo esperado.)"
+              ],
+              "alertas": [
+                "Nenhum alerta crítico."
+              ],
+              "blocos": {
+                "tendencia": {
+                  "score": -0.5,
+                  "status": "Neutro",
+                  "notas": [
+                    "H4: slopes das EMAs proximos de zero.",
+                    "D1: preco abaixo da EMA20 (-0.5)."
+                  ],
+                  "valores": {
+                    "timeframe": "H4",
+                    "slope_ema20": -0.6112611585259228,
+                    "slope_ema50": 0.10080923332499504,
+                    "preco": 4926.38413,
+                    "ema20": 4990.242531739051,
+                    "ema50": 4999.506354765698
+                  }
+                },
+                "contexto": {
+                  "score": -0.5,
+                  "status": "Neutro",
+                  "notas": [
+                    "D1: preco abaixo da EMA20 (-1).",
+                    "D1: preco acima da EMA50 (+0.5)."
+                  ],
+                  "valores": {
+                    "timeframe": "D1",
+                    "vwap": 4943.542160488448,
+                    "ema20": 4951.246618047438,
+                    "ema50": 4765.465631789273,
+                    "atr": 158.28024446123487,
+                    "context_blocked": false
+                  }
+                },
+                "impulso": {
+                  "score": -0.0,
+                  "status": "Fraco",
+                  "notas": [
+                    "ADX=16.7 abaixo de 27 (0).",
+                    "Impulso segue a tendência (a favor da baixa)."
+                  ],
+                  "valores": {
+                    "adx": 16.656758483908988
+                  }
+                },
+                "mitigacao": {
+                  "score": 0.0,
+                  "status": "Sem alertas",
+                  "notas": [
+                    "Volatilidade dentro do intervalo esperado."
+                  ],
+                  "valores": {
+                    "candle_range": 11.766689999999471,
+                    "atr": 9.871214311962746,
+                    "mitigation_blocked": false
+                  }
+                }
+              },
+              "hit": null,
+              "ref_time": "2026-02-17T13:00:00+00:00"
+            }
+          ],
+          "accuracy": 0.9710144927536232
+        },
+        {
+          "region": "America",
+          "version": "1.0.3",
+          "vies": "FORA",
+          "score": 0.0,
+          "motivo": "XAUUSD: FORA (score=0.0) | Tendencia: Neutro (H4: slopes das EMAs proximos de zero.; D1: preco abaixo da EMA20 (-0.5).); Contexto: Neutro (D1: preco abaixo da EMA20 (-1).; D1: preco acima da EMA50 (+0.5).) | Alertas: Volatilidade excessiva detectada (candle > 0.9x ATR).",
+          "hit": true,
+          "hit_ref_time": "2026-01-20T00:00:00",
+          "updated_at": "2026-02-17T13:16:00+00:00",
+          "symbol_results": [
+            {
+              "symbol": "XAUUSD",
+              "vies": "FORA",
+              "score": 0.0,
+              "motivos": [
+                "Tendencia: Neutro (H4: slopes das EMAs proximos de zero.; D1: preco abaixo da EMA20 (-0.5).)",
+                "Contexto: Neutro (D1: preco abaixo da EMA20 (-1).; D1: preco acima da EMA50 (+0.5).)",
+                "Impulso: Moderado (ADX=16.7 entre 7-35 (+1).; Impulso segue a tendência (a favor da baixa).)",
+                "Mitigação: Risco: volatilidade extrema (Candle atual > 0.9x ATR (Score penalizado em 2 pontos).)"
+              ],
+              "alertas": [
+                "Volatilidade excessiva detectada (candle > 0.9x ATR)."
+              ],
+              "blocos": {
+                "tendencia": {
+                  "score": -0.5,
+                  "status": "Neutro",
+                  "notas": [
+                    "H4: slopes das EMAs proximos de zero.",
+                    "D1: preco abaixo da EMA20 (-0.5)."
+                  ],
+                  "valores": {
+                    "timeframe": "H4",
+                    "slope_ema20": -0.6112611585259228,
+                    "slope_ema50": 0.10080923332499504,
+                    "preco": 4926.38413,
+                    "ema20": 4990.242531739051,
+                    "ema50": 4999.506354765698
+                  }
+                },
+                "contexto": {
+                  "score": -0.5,
+                  "status": "Neutro",
+                  "notas": [
+                    "D1: preco abaixo da EMA20 (-1).",
+                    "D1: preco acima da EMA50 (+0.5)."
+                  ],
+                  "valores": {
+                    "timeframe": "D1",
+                    "vwap": 4943.542160488448,
+                    "ema20": 4951.246618047438,
+                    "ema50": 4765.465631789273,
+                    "atr": 158.28024446123487,
+                    "context_blocked": false
+                  }
+                },
+                "impulso": {
+                  "score": -1.0,
+                  "status": "Moderado",
+                  "notas": [
+                    "ADX=16.7 entre 7-35 (+1).",
+                    "Impulso segue a tendência (a favor da baixa)."
+                  ],
+                  "valores": {
+                    "adx": 16.656758483908988
+                  }
+                },
+                "mitigacao": {
+                  "score": -2.0,
+                  "status": "Risco: volatilidade extrema",
+                  "notas": [
+                    "Candle atual > 0.9x ATR (Score penalizado em 2 pontos)."
+                  ],
+                  "valores": {
+                    "candle_range": 11.766689999999471,
+                    "atr": 9.871214311962746,
+                    "mitigation_blocked": false
+                  }
+                }
+              },
+              "hit": null,
+              "ref_time": "2026-02-17T13:00:00+00:00"
+            }
+          ],
+          "accuracy": 0.803030303030303
+        }
+      ],
+      "best_version": {
+        "version": "1.2.3",
+        "accuracy": 0.9710144927536232
       }
     }
   ]
