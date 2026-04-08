@@ -1,199 +1,6 @@
 {
-  "updated_at": "2026-04-08T13:16:00+00:00",
+  "updated_at": "2026-04-08T23:31:00+00:00",
   "regions": [
-    {
-      "region": "Asia",
-      "session_name": "ASIA",
-      "session_start": "07/04/2026 21:00",
-      "updated_at": "2026-04-07T23:31:00+00:00",
-      "versions": [
-        {
-          "region": "Asia",
-          "version": "1.2.1",
-          "vies": "FORA",
-          "score": 0.0,
-          "motivo": "USDJPY: FORA (score=0.0) | Tendencia: Alta moderada (H4: slopes positivos, mas preco perdeu uma media.; D1 indisponivel para confirmacao de tendencia.); Contexto: Neutro (Preco abaixo da VWAP (-1).; Preco abaixo da EMA50 (-0.5).; Preco esticado > 1.4x ATR distante da EMA50 (penaliza para neutro).; Distancia > 1.5x ATR -> sinal vetado.) | Alertas: D1: barras insuficientes (59<60).; Contexto: preco afastado demais da media (risco de correcao).",
-          "hit": true,
-          "hit_ref_time": "2026-02-06T00:00:00",
-          "updated_at": "2026-04-07T23:31:00+00:00",
-          "symbol_results": [
-            {
-              "symbol": "USDJPY",
-              "vies": "FORA",
-              "score": 0.0,
-              "motivos": [
-                "Tendencia: Alta moderada (H4: slopes positivos, mas preco perdeu uma media.; D1 indisponivel para confirmacao de tendencia.)",
-                "Contexto: Neutro (Preco abaixo da VWAP (-1).; Preco abaixo da EMA50 (-0.5).; Preco esticado > 1.4x ATR distante da EMA50 (penaliza para neutro).; Distancia > 1.5x ATR -> sinal vetado.)",
-                "Impulso: Forte (ADX=37.4 acima de 13 (+2).; Impulso segue a tendência (a favor da alta).)",
-                "Mitigação: Risco: volatilidade extrema (Candle atual > 1.1x ATR (Score penalizado em 2 pontos).)"
-              ],
-              "alertas": [
-                "D1: barras insuficientes (59<60).",
-                "Contexto: preco afastado demais da media (risco de correcao).",
-                "Contexto extremo: afastamento excedeu limite. Sinal cancelado.",
-                "Volatilidade excessiva detectada (candle > 1.1x ATR)."
-              ],
-              "blocos": {
-                "tendencia": {
-                  "score": 1.0,
-                  "status": "Alta moderada",
-                  "notas": [
-                    "H4: slopes positivos, mas preco perdeu uma media.",
-                    "D1 indisponivel para confirmacao de tendencia."
-                  ],
-                  "valores": {
-                    "timeframe": "H4",
-                    "slope_ema20": 0.010434345507656033,
-                    "slope_ema50": 0.006908568701291791,
-                    "preco": 159.62133,
-                    "ema20": 159.6298540538811,
-                    "ema50": 159.5323714707521
-                  }
-                },
-                "contexto": {
-                  "score": -0.5,
-                  "status": "Neutro",
-                  "notas": [
-                    "Preco abaixo da VWAP (-1).",
-                    "Preco abaixo da EMA50 (-0.5).",
-                    "Preco esticado > 1.4x ATR distante da EMA50 (penaliza para neutro).",
-                    "Distancia > 1.5x ATR -> sinal vetado."
-                  ],
-                  "valores": {
-                    "timeframe": "M15",
-                    "vwap": 159.63529442915447,
-                    "ema20": 159.38804758491855,
-                    "ema50": 159.59584483484278,
-                    "atr": 0.12811103971981863,
-                    "context_blocked": true
-                  }
-                },
-                "impulso": {
-                  "score": 2.0,
-                  "status": "Forte",
-                  "notas": [
-                    "ADX=37.4 acima de 13 (+2).",
-                    "Impulso segue a tendência (a favor da alta)."
-                  ],
-                  "valores": {
-                    "adx": 37.42417767047375
-                  }
-                },
-                "mitigacao": {
-                  "score": -2.0,
-                  "status": "Risco: volatilidade extrema",
-                  "notas": [
-                    "Candle atual > 1.1x ATR (Score penalizado em 2 pontos)."
-                  ],
-                  "valores": {
-                    "candle_range": 0.1733600000000024,
-                    "atr": 0.12811103971981863,
-                    "mitigation_blocked": false
-                  }
-                }
-              },
-              "hit": null,
-              "ref_time": "2026-04-07T23:15:00+00:00"
-            }
-          ],
-          "accuracy": 0.7222222222222222
-        },
-        {
-          "region": "Asia",
-          "version": "1.0.1",
-          "vies": "FORA",
-          "score": 0.0,
-          "motivo": "USDJPY: FORA (score=0.0) | Tendencia: Alta moderada (H4: slopes positivos, mas preco perdeu uma media.; D1 indisponivel para confirmacao de tendencia.); Contexto: Neutro (Preco abaixo da VWAP (-1).; Preco abaixo da EMA50 (-0.5).; Preco esticado > 1.1x ATR distante da EMA50 (penaliza para neutro).; Distancia > 1.0x ATR -> sinal vetado.) | Alertas: D1: barras insuficientes (59<60).; Contexto: preco afastado demais da media (risco de correcao).",
-          "hit": true,
-          "hit_ref_time": "2026-02-06T00:00:00",
-          "updated_at": "2026-04-07T23:31:00+00:00",
-          "symbol_results": [
-            {
-              "symbol": "USDJPY",
-              "vies": "FORA",
-              "score": 0.0,
-              "motivos": [
-                "Tendencia: Alta moderada (H4: slopes positivos, mas preco perdeu uma media.; D1 indisponivel para confirmacao de tendencia.)",
-                "Contexto: Neutro (Preco abaixo da VWAP (-1).; Preco abaixo da EMA50 (-0.5).; Preco esticado > 1.1x ATR distante da EMA50 (penaliza para neutro).; Distancia > 1.0x ATR -> sinal vetado.)",
-                "Impulso: Forte (ADX=37.4 acima de 17 (+2).; Impulso segue a tendência (a favor da alta).)",
-                "Mitigação: Sem alertas (Volatilidade dentro do intervalo esperado.)"
-              ],
-              "alertas": [
-                "D1: barras insuficientes (59<60).",
-                "Contexto: preco afastado demais da media (risco de correcao).",
-                "Contexto extremo: afastamento excedeu limite. Sinal cancelado."
-              ],
-              "blocos": {
-                "tendencia": {
-                  "score": 1.0,
-                  "status": "Alta moderada",
-                  "notas": [
-                    "H4: slopes positivos, mas preco perdeu uma media.",
-                    "D1 indisponivel para confirmacao de tendencia."
-                  ],
-                  "valores": {
-                    "timeframe": "H4",
-                    "slope_ema20": 0.010434345507656033,
-                    "slope_ema50": 0.006908568701291791,
-                    "preco": 159.62133,
-                    "ema20": 159.6298540538811,
-                    "ema50": 159.5323714707521
-                  }
-                },
-                "contexto": {
-                  "score": -0.5,
-                  "status": "Neutro",
-                  "notas": [
-                    "Preco abaixo da VWAP (-1).",
-                    "Preco abaixo da EMA50 (-0.5).",
-                    "Preco esticado > 1.1x ATR distante da EMA50 (penaliza para neutro).",
-                    "Distancia > 1.0x ATR -> sinal vetado."
-                  ],
-                  "valores": {
-                    "timeframe": "M15",
-                    "vwap": 159.63529442915447,
-                    "ema20": 159.38804758491855,
-                    "ema50": 159.59584483484278,
-                    "atr": 0.12811103971981863,
-                    "context_blocked": true
-                  }
-                },
-                "impulso": {
-                  "score": 2.0,
-                  "status": "Forte",
-                  "notas": [
-                    "ADX=37.4 acima de 17 (+2).",
-                    "Impulso segue a tendência (a favor da alta)."
-                  ],
-                  "valores": {
-                    "adx": 37.42417767047375
-                  }
-                },
-                "mitigacao": {
-                  "score": 0.0,
-                  "status": "Sem alertas",
-                  "notas": [
-                    "Volatilidade dentro do intervalo esperado."
-                  ],
-                  "valores": {
-                    "candle_range": 0.1733600000000024,
-                    "atr": 0.12811103971981863,
-                    "mitigation_blocked": false
-                  }
-                }
-              },
-              "hit": null,
-              "ref_time": "2026-04-07T23:15:00+00:00"
-            }
-          ],
-          "accuracy": 0.7391304347826086
-        }
-      ],
-      "best_version": {
-        "version": "1.0.1",
-        "accuracy": 0.7391304347826086
-      }
-    },
     {
       "region": "Europe",
       "session_name": "EUROPE",
@@ -573,6 +380,198 @@
       "best_version": {
         "version": "1.2.3",
         "accuracy": 0.9710144927536232
+      }
+    },
+    {
+      "region": "Asia",
+      "session_name": "ASIA",
+      "session_start": "08/04/2026 21:00",
+      "updated_at": "2026-04-08T23:31:00+00:00",
+      "versions": [
+        {
+          "region": "Asia",
+          "version": "1.2.1",
+          "vies": "FORA",
+          "score": -1.34,
+          "motivo": "USDJPY: FORA (score=-1.34) | Tendencia: Baixa (H4: slopes EMA20/EMA50 negativos e preco abaixo das medias.; D1 indisponivel para confirmacao de tendencia.); Contexto: Neutro (Preco acima da VWAP intradiaria (+1).; Preco acima da EMA50 (+0.5).; Preco esticado > 1.4x ATR distante da EMA50 (penaliza para neutro).) | Alertas: D1: barras insuficientes (59<60).; Contexto: preco afastado demais da media (risco de correcao).",
+          "hit": true,
+          "hit_ref_time": "2026-02-06T00:00:00",
+          "updated_at": "2026-04-08T23:31:00+00:00",
+          "symbol_results": [
+            {
+              "symbol": "USDJPY",
+              "vies": "FORA",
+              "score": -1.34,
+              "motivos": [
+                "Tendencia: Baixa (H4: slopes EMA20/EMA50 negativos e preco abaixo das medias.; D1 indisponivel para confirmacao de tendencia.)",
+                "Contexto: Neutro (Preco acima da VWAP intradiaria (+1).; Preco acima da EMA50 (+0.5).; Preco esticado > 1.4x ATR distante da EMA50 (penaliza para neutro).)",
+                "Impulso: Forte (ADX=14.5 acima de 13 (+2).; Impulso segue a tendência (a favor da baixa).)",
+                "Mitigação: Atenção: mercado travado (Candle atual < 0.8x ATR (-1).)"
+              ],
+              "alertas": [
+                "D1: barras insuficientes (59<60).",
+                "Contexto: preco afastado demais da media (risco de correcao).",
+                "Baixa volatilidade: range < 0.8x ATR."
+              ],
+              "blocos": {
+                "tendencia": {
+                  "score": -2.0,
+                  "status": "Baixa",
+                  "notas": [
+                    "H4: slopes EMA20/EMA50 negativos e preco abaixo das medias.",
+                    "D1 indisponivel para confirmacao de tendencia."
+                  ],
+                  "valores": {
+                    "timeframe": "H4",
+                    "slope_ema20": -0.016989701556238496,
+                    "slope_ema50": -0.004613691439098298,
+                    "preco": 158.58407,
+                    "ema20": 159.0756773764995,
+                    "ema50": 159.2882476540762
+                  }
+                },
+                "contexto": {
+                  "score": 0.5,
+                  "status": "Neutro",
+                  "notas": [
+                    "Preco acima da VWAP intradiaria (+1).",
+                    "Preco acima da EMA50 (+0.5).",
+                    "Preco esticado > 1.4x ATR distante da EMA50 (penaliza para neutro)."
+                  ],
+                  "valores": {
+                    "timeframe": "M15",
+                    "vwap": 158.3847984993134,
+                    "ema20": 158.5658628436274,
+                    "ema50": 158.51942986636578,
+                    "atr": 0.07709895273499172,
+                    "context_blocked": false
+                  }
+                },
+                "impulso": {
+                  "score": -2.0,
+                  "status": "Forte",
+                  "notas": [
+                    "ADX=14.5 acima de 13 (+2).",
+                    "Impulso segue a tendência (a favor da baixa)."
+                  ],
+                  "valores": {
+                    "adx": 14.547067332657763
+                  }
+                },
+                "mitigacao": {
+                  "score": -1.0,
+                  "status": "Atenção: mercado travado",
+                  "notas": [
+                    "Candle atual < 0.8x ATR (-1)."
+                  ],
+                  "valores": {
+                    "candle_range": 0.05651000000000295,
+                    "atr": 0.07709895273499172,
+                    "mitigation_blocked": false
+                  }
+                }
+              },
+              "hit": null,
+              "ref_time": "2026-04-08T23:15:00+00:00"
+            }
+          ],
+          "accuracy": 0.7222222222222222
+        },
+        {
+          "region": "Asia",
+          "version": "1.0.1",
+          "vies": "FORA",
+          "score": 0.0,
+          "motivo": "USDJPY: FORA (score=0.0) | Tendencia: Baixa (H4: slopes EMA20/EMA50 negativos e preco abaixo das medias.; D1 indisponivel para confirmacao de tendencia.); Contexto: Neutro (Preco acima da VWAP intradiaria (+1).; Preco acima da EMA50 (+0.5).; Preco esticado > 1.1x ATR distante da EMA50 (penaliza para neutro).; Distancia > 1.0x ATR -> sinal vetado.) | Alertas: D1: barras insuficientes (59<60).; Contexto: preco afastado demais da media (risco de correcao).",
+          "hit": true,
+          "hit_ref_time": "2026-02-06T00:00:00",
+          "updated_at": "2026-04-08T23:31:00+00:00",
+          "symbol_results": [
+            {
+              "symbol": "USDJPY",
+              "vies": "FORA",
+              "score": 0.0,
+              "motivos": [
+                "Tendencia: Baixa (H4: slopes EMA20/EMA50 negativos e preco abaixo das medias.; D1 indisponivel para confirmacao de tendencia.)",
+                "Contexto: Neutro (Preco acima da VWAP intradiaria (+1).; Preco acima da EMA50 (+0.5).; Preco esticado > 1.1x ATR distante da EMA50 (penaliza para neutro).; Distancia > 1.0x ATR -> sinal vetado.)",
+                "Impulso: Moderado (ADX=14.5 entre 13-17 (+1).; Impulso segue a tendência (a favor da baixa).)",
+                "Mitigação: Atenção: mercado travado (Candle atual < 1.3x ATR (-1).)"
+              ],
+              "alertas": [
+                "D1: barras insuficientes (59<60).",
+                "Contexto: preco afastado demais da media (risco de correcao).",
+                "Contexto extremo: afastamento excedeu limite. Sinal cancelado.",
+                "Baixa volatilidade: range < 1.3x ATR."
+              ],
+              "blocos": {
+                "tendencia": {
+                  "score": -2.0,
+                  "status": "Baixa",
+                  "notas": [
+                    "H4: slopes EMA20/EMA50 negativos e preco abaixo das medias.",
+                    "D1 indisponivel para confirmacao de tendencia."
+                  ],
+                  "valores": {
+                    "timeframe": "H4",
+                    "slope_ema20": -0.016989701556238496,
+                    "slope_ema50": -0.004613691439098298,
+                    "preco": 158.58407,
+                    "ema20": 159.0756773764995,
+                    "ema50": 159.2882476540762
+                  }
+                },
+                "contexto": {
+                  "score": 0.5,
+                  "status": "Neutro",
+                  "notas": [
+                    "Preco acima da VWAP intradiaria (+1).",
+                    "Preco acima da EMA50 (+0.5).",
+                    "Preco esticado > 1.1x ATR distante da EMA50 (penaliza para neutro).",
+                    "Distancia > 1.0x ATR -> sinal vetado."
+                  ],
+                  "valores": {
+                    "timeframe": "M15",
+                    "vwap": 158.3847984993134,
+                    "ema20": 158.5658628436274,
+                    "ema50": 158.51942986636578,
+                    "atr": 0.07709895273499172,
+                    "context_blocked": true
+                  }
+                },
+                "impulso": {
+                  "score": -1.0,
+                  "status": "Moderado",
+                  "notas": [
+                    "ADX=14.5 entre 13-17 (+1).",
+                    "Impulso segue a tendência (a favor da baixa)."
+                  ],
+                  "valores": {
+                    "adx": 14.547067332657763
+                  }
+                },
+                "mitigacao": {
+                  "score": -1.0,
+                  "status": "Atenção: mercado travado",
+                  "notas": [
+                    "Candle atual < 1.3x ATR (-1)."
+                  ],
+                  "valores": {
+                    "candle_range": 0.05651000000000295,
+                    "atr": 0.07709895273499172,
+                    "mitigation_blocked": false
+                  }
+                }
+              },
+              "hit": null,
+              "ref_time": "2026-04-08T23:15:00+00:00"
+            }
+          ],
+          "accuracy": 0.7391304347826086
+        }
+      ],
+      "best_version": {
+        "version": "1.0.1",
+        "accuracy": 0.7391304347826086
       }
     }
   ]
