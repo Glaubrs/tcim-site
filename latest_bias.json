@@ -1,190 +1,6 @@
 {
-  "updated_at": "2026-05-21T13:16:00+00:00",
+  "updated_at": "2026-05-21T23:31:00+00:00",
   "regions": [
-    {
-      "region": "Asia",
-      "session_name": "ASIA",
-      "session_start": "20/05/2026 21:00",
-      "updated_at": "2026-05-20T23:31:00+00:00",
-      "versions": [
-        {
-          "region": "Asia",
-          "version": "1.2.1",
-          "vies": "COMPRA",
-          "score": 4.92,
-          "motivo": "USDJPY: COMPRA (score=4.92) | Tendencia: Alta (H4: slopes EMA20/EMA50 positivos e preco acima das medias.; D1: preco acima da EMA20 (+0.5).); Contexto: Favoravel (D1: preco acima da EMA20 (+1).; D1: preco acima da EMA50 (+0.5).) | Alertas: Nenhum alerta crítico.",
-          "hit": true,
-          "hit_ref_time": "2026-02-06T00:00:00",
-          "updated_at": "2026-05-20T23:31:00+00:00",
-          "symbol_results": [
-            {
-              "symbol": "USDJPY",
-              "vies": "COMPRA",
-              "score": 4.92,
-              "motivos": [
-                "Tendencia: Alta (H4: slopes EMA20/EMA50 positivos e preco acima das medias.; D1: preco acima da EMA20 (+0.5).)",
-                "Contexto: Favoravel (D1: preco acima da EMA20 (+1).; D1: preco acima da EMA50 (+0.5).)",
-                "Impulso: Forte (ADX=13.8 acima de 13 (+2).; Impulso segue a tendência (a favor da alta).)",
-                "Mitigação: Sem alertas (Volatilidade dentro do intervalo esperado.)"
-              ],
-              "alertas": [
-                "Nenhum alerta crítico."
-              ],
-              "blocos": {
-                "tendencia": {
-                  "score": 2.0,
-                  "status": "Alta",
-                  "notas": [
-                    "H4: slopes EMA20/EMA50 positivos e preco acima das medias.",
-                    "D1: preco acima da EMA20 (+0.5)."
-                  ],
-                  "valores": {
-                    "timeframe": "H4",
-                    "slope_ema20": 0.027219899423810985,
-                    "slope_ema50": 0.029454889152796433,
-                    "preco": 158.93592,
-                    "ema20": 158.87331487833245,
-                    "ema50": 158.46887814359133
-                  }
-                },
-                "contexto": {
-                  "score": 1.5,
-                  "status": "Favoravel",
-                  "notas": [
-                    "D1: preco acima da EMA20 (+1).",
-                    "D1: preco acima da EMA50 (+0.5)."
-                  ],
-                  "valores": {
-                    "timeframe": "D1",
-                    "vwap": 158.93467761375177,
-                    "ema20": 158.21653034836584,
-                    "ema50": 158.5165690095429,
-                    "atr": 0.8958264380568128,
-                    "context_blocked": false
-                  }
-                },
-                "impulso": {
-                  "score": 2.0,
-                  "status": "Forte",
-                  "notas": [
-                    "ADX=13.8 acima de 13 (+2).",
-                    "Impulso segue a tendência (a favor da alta)."
-                  ],
-                  "valores": {
-                    "adx": 13.756074208381264
-                  }
-                },
-                "mitigacao": {
-                  "score": 0.0,
-                  "status": "Sem alertas",
-                  "notas": [
-                    "Volatilidade dentro do intervalo esperado."
-                  ],
-                  "valores": {
-                    "candle_range": 0.05072000000001253,
-                    "atr": 0.04873222542397006,
-                    "mitigation_blocked": false
-                  }
-                }
-              },
-              "hit": null,
-              "ref_time": "2026-05-20T23:15:00+00:00"
-            }
-          ],
-          "accuracy": 0.7222222222222222
-        },
-        {
-          "region": "Asia",
-          "version": "1.0.1",
-          "vies": "COMPRA",
-          "score": 3.62,
-          "motivo": "USDJPY: COMPRA (score=3.62) | Tendencia: Alta (H4: slopes EMA20/EMA50 positivos e preco acima das medias.; D1: preco acima da EMA20 (+0.5).); Contexto: Favoravel (D1: preco acima da EMA20 (+1).; D1: preco acima da EMA50 (+0.5).) | Alertas: Baixa volatilidade: range < 1.3x ATR.",
-          "hit": true,
-          "hit_ref_time": "2026-02-06T00:00:00",
-          "updated_at": "2026-05-20T23:31:00+00:00",
-          "symbol_results": [
-            {
-              "symbol": "USDJPY",
-              "vies": "COMPRA",
-              "score": 3.62,
-              "motivos": [
-                "Tendencia: Alta (H4: slopes EMA20/EMA50 positivos e preco acima das medias.; D1: preco acima da EMA20 (+0.5).)",
-                "Contexto: Favoravel (D1: preco acima da EMA20 (+1).; D1: preco acima da EMA50 (+0.5).)",
-                "Impulso: Moderado (ADX=13.8 entre 13-17 (+1).; Impulso segue a tendência (a favor da alta).)",
-                "Mitigação: Atenção: mercado travado (Candle atual < 1.3x ATR (-1).)"
-              ],
-              "alertas": [
-                "Baixa volatilidade: range < 1.3x ATR."
-              ],
-              "blocos": {
-                "tendencia": {
-                  "score": 2.0,
-                  "status": "Alta",
-                  "notas": [
-                    "H4: slopes EMA20/EMA50 positivos e preco acima das medias.",
-                    "D1: preco acima da EMA20 (+0.5)."
-                  ],
-                  "valores": {
-                    "timeframe": "H4",
-                    "slope_ema20": 0.027219899423810985,
-                    "slope_ema50": 0.029454889152796433,
-                    "preco": 158.93592,
-                    "ema20": 158.87331487833245,
-                    "ema50": 158.46887814359133
-                  }
-                },
-                "contexto": {
-                  "score": 1.5,
-                  "status": "Favoravel",
-                  "notas": [
-                    "D1: preco acima da EMA20 (+1).",
-                    "D1: preco acima da EMA50 (+0.5)."
-                  ],
-                  "valores": {
-                    "timeframe": "D1",
-                    "vwap": 158.93467761375177,
-                    "ema20": 158.21653034836584,
-                    "ema50": 158.5165690095429,
-                    "atr": 0.8958264380568128,
-                    "context_blocked": false
-                  }
-                },
-                "impulso": {
-                  "score": 1.0,
-                  "status": "Moderado",
-                  "notas": [
-                    "ADX=13.8 entre 13-17 (+1).",
-                    "Impulso segue a tendência (a favor da alta)."
-                  ],
-                  "valores": {
-                    "adx": 13.756074208381264
-                  }
-                },
-                "mitigacao": {
-                  "score": -1.0,
-                  "status": "Atenção: mercado travado",
-                  "notas": [
-                    "Candle atual < 1.3x ATR (-1)."
-                  ],
-                  "valores": {
-                    "candle_range": 0.05072000000001253,
-                    "atr": 0.04873222542397006,
-                    "mitigation_blocked": false
-                  }
-                }
-              },
-              "hit": null,
-              "ref_time": "2026-05-20T23:15:00+00:00"
-            }
-          ],
-          "accuracy": 0.7391304347826086
-        }
-      ],
-      "best_version": {
-        "version": "1.0.1",
-        "accuracy": 0.7391304347826086
-      }
-    },
     {
       "region": "Europe",
       "session_name": "EUROPE",
@@ -556,6 +372,190 @@
       "best_version": {
         "version": "1.2.3",
         "accuracy": 0.9710144927536232
+      }
+    },
+    {
+      "region": "Asia",
+      "session_name": "ASIA",
+      "session_start": "21/05/2026 21:00",
+      "updated_at": "2026-05-21T23:31:00+00:00",
+      "versions": [
+        {
+          "region": "Asia",
+          "version": "1.2.1",
+          "vies": "COMPRA",
+          "score": 3.92,
+          "motivo": "USDJPY: COMPRA (score=3.92) | Tendencia: Alta (H4: slopes EMA20/EMA50 positivos e preco acima das medias.; D1: preco acima da EMA20 (+0.5).); Contexto: Favoravel (D1: preco acima da EMA20 (+1).; D1: preco acima da EMA50 (+0.5).) | Alertas: Baixa volatilidade: range < 0.8x ATR.",
+          "hit": true,
+          "hit_ref_time": "2026-02-06T00:00:00",
+          "updated_at": "2026-05-21T23:31:00+00:00",
+          "symbol_results": [
+            {
+              "symbol": "USDJPY",
+              "vies": "COMPRA",
+              "score": 3.92,
+              "motivos": [
+                "Tendencia: Alta (H4: slopes EMA20/EMA50 positivos e preco acima das medias.; D1: preco acima da EMA20 (+0.5).)",
+                "Contexto: Favoravel (D1: preco acima da EMA20 (+1).; D1: preco acima da EMA50 (+0.5).)",
+                "Impulso: Forte (ADX=14.9 acima de 13 (+2).; Impulso segue a tendência (a favor da alta).)",
+                "Mitigação: Atenção: mercado travado (Candle atual < 0.8x ATR (-1).)"
+              ],
+              "alertas": [
+                "Baixa volatilidade: range < 0.8x ATR."
+              ],
+              "blocos": {
+                "tendencia": {
+                  "score": 2.0,
+                  "status": "Alta",
+                  "notas": [
+                    "H4: slopes EMA20/EMA50 positivos e preco acima das medias.",
+                    "D1: preco acima da EMA20 (+0.5)."
+                  ],
+                  "valores": {
+                    "timeframe": "H4",
+                    "slope_ema20": 0.017522858553618535,
+                    "slope_ema50": 0.024359708035602844,
+                    "preco": 158.99722,
+                    "ema20": 158.9480731003255,
+                    "ema50": 158.5898623568498
+                  }
+                },
+                "contexto": {
+                  "score": 1.5,
+                  "status": "Favoravel",
+                  "notas": [
+                    "D1: preco acima da EMA20 (+1).",
+                    "D1: preco acima da EMA50 (+0.5)."
+                  ],
+                  "valores": {
+                    "timeframe": "D1",
+                    "vwap": 159.04093505356514,
+                    "ema20": 158.28608808257164,
+                    "ema50": 158.5714181838934,
+                    "atr": 0.8708245653221969,
+                    "context_blocked": false
+                  }
+                },
+                "impulso": {
+                  "score": 2.0,
+                  "status": "Forte",
+                  "notas": [
+                    "ADX=14.9 acima de 13 (+2).",
+                    "Impulso segue a tendência (a favor da alta)."
+                  ],
+                  "valores": {
+                    "adx": 14.866414767539736
+                  }
+                },
+                "mitigacao": {
+                  "score": -1.0,
+                  "status": "Atenção: mercado travado",
+                  "notas": [
+                    "Candle atual < 0.8x ATR (-1)."
+                  ],
+                  "valores": {
+                    "candle_range": 0.02942000000001599,
+                    "atr": 0.05531039938667482,
+                    "mitigation_blocked": false
+                  }
+                }
+              },
+              "hit": null,
+              "ref_time": "2026-05-21T23:15:00+00:00"
+            }
+          ],
+          "accuracy": 0.7222222222222222
+        },
+        {
+          "region": "Asia",
+          "version": "1.0.1",
+          "vies": "COMPRA",
+          "score": 3.62,
+          "motivo": "USDJPY: COMPRA (score=3.62) | Tendencia: Alta (H4: slopes EMA20/EMA50 positivos e preco acima das medias.; D1: preco acima da EMA20 (+0.5).); Contexto: Favoravel (D1: preco acima da EMA20 (+1).; D1: preco acima da EMA50 (+0.5).) | Alertas: Baixa volatilidade: range < 1.3x ATR.",
+          "hit": true,
+          "hit_ref_time": "2026-02-06T00:00:00",
+          "updated_at": "2026-05-21T23:31:00+00:00",
+          "symbol_results": [
+            {
+              "symbol": "USDJPY",
+              "vies": "COMPRA",
+              "score": 3.62,
+              "motivos": [
+                "Tendencia: Alta (H4: slopes EMA20/EMA50 positivos e preco acima das medias.; D1: preco acima da EMA20 (+0.5).)",
+                "Contexto: Favoravel (D1: preco acima da EMA20 (+1).; D1: preco acima da EMA50 (+0.5).)",
+                "Impulso: Moderado (ADX=14.9 entre 13-17 (+1).; Impulso segue a tendência (a favor da alta).)",
+                "Mitigação: Atenção: mercado travado (Candle atual < 1.3x ATR (-1).)"
+              ],
+              "alertas": [
+                "Baixa volatilidade: range < 1.3x ATR."
+              ],
+              "blocos": {
+                "tendencia": {
+                  "score": 2.0,
+                  "status": "Alta",
+                  "notas": [
+                    "H4: slopes EMA20/EMA50 positivos e preco acima das medias.",
+                    "D1: preco acima da EMA20 (+0.5)."
+                  ],
+                  "valores": {
+                    "timeframe": "H4",
+                    "slope_ema20": 0.017522858553618535,
+                    "slope_ema50": 0.024359708035602844,
+                    "preco": 158.99722,
+                    "ema20": 158.9480731003255,
+                    "ema50": 158.5898623568498
+                  }
+                },
+                "contexto": {
+                  "score": 1.5,
+                  "status": "Favoravel",
+                  "notas": [
+                    "D1: preco acima da EMA20 (+1).",
+                    "D1: preco acima da EMA50 (+0.5)."
+                  ],
+                  "valores": {
+                    "timeframe": "D1",
+                    "vwap": 159.04093505356514,
+                    "ema20": 158.28608808257164,
+                    "ema50": 158.5714181838934,
+                    "atr": 0.8708245653221969,
+                    "context_blocked": false
+                  }
+                },
+                "impulso": {
+                  "score": 1.0,
+                  "status": "Moderado",
+                  "notas": [
+                    "ADX=14.9 entre 13-17 (+1).",
+                    "Impulso segue a tendência (a favor da alta)."
+                  ],
+                  "valores": {
+                    "adx": 14.866414767539736
+                  }
+                },
+                "mitigacao": {
+                  "score": -1.0,
+                  "status": "Atenção: mercado travado",
+                  "notas": [
+                    "Candle atual < 1.3x ATR (-1)."
+                  ],
+                  "valores": {
+                    "candle_range": 0.02942000000001599,
+                    "atr": 0.05531039938667482,
+                    "mitigation_blocked": false
+                  }
+                }
+              },
+              "hit": null,
+              "ref_time": "2026-05-21T23:15:00+00:00"
+            }
+          ],
+          "accuracy": 0.7391304347826086
+        }
+      ],
+      "best_version": {
+        "version": "1.0.1",
+        "accuracy": 0.7391304347826086
       }
     }
   ]
