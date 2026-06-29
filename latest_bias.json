@@ -1,197 +1,6 @@
 {
-  "updated_at": "2026-06-28T23:31:00+00:00",
+  "updated_at": "2026-06-29T06:46:00+00:00",
   "regions": [
-    {
-      "region": "Europe",
-      "session_name": "EUROPE",
-      "session_start": "26/06/2026 04:00",
-      "updated_at": "2026-06-26T06:46:00+00:00",
-      "versions": [
-        {
-          "region": "Europe",
-          "version": "1.2.2",
-          "vies": "FORA",
-          "score": 0.0,
-          "motivo": "EURUSD: FORA (score=0.0) | Tendencia: Baixa (H4: slopes EMA20/EMA50 negativos e preco abaixo das medias.; D1: preco abaixo da EMA20 (-0.5).); Contexto: Neutro (D1: preco abaixo da EMA20 (-1).; D1: preco abaixo da EMA50 (-0.5).; Preco esticado > 1.6x ATR distante da EMA20 (penaliza para neutro).; Distancia > 2.0x ATR -> sinal vetado.) | Alertas: Contexto: preco afastado demais da media (risco de correcao).; Contexto extremo: afastamento excedeu limite. Sinal cancelado.",
-          "hit": true,
-          "hit_ref_time": "2026-02-03T00:00:00",
-          "updated_at": "2026-06-26T06:46:00+00:00",
-          "symbol_results": [
-            {
-              "symbol": "EURUSD",
-              "vies": "FORA",
-              "score": 0.0,
-              "motivos": [
-                "Tendencia: Baixa (H4: slopes EMA20/EMA50 negativos e preco abaixo das medias.; D1: preco abaixo da EMA20 (-0.5).)",
-                "Contexto: Neutro (D1: preco abaixo da EMA20 (-1).; D1: preco abaixo da EMA50 (-0.5).; Preco esticado > 1.6x ATR distante da EMA20 (penaliza para neutro).; Distancia > 2.0x ATR -> sinal vetado.)",
-                "Impulso: Fraco (ADX=20.4 abaixo de 21 (0).; Impulso segue a tendência (a favor da baixa).)",
-                "Mitigação: Sem alertas (Volatilidade dentro do intervalo esperado.)"
-              ],
-              "alertas": [
-                "Contexto: preco afastado demais da media (risco de correcao).",
-                "Contexto extremo: afastamento excedeu limite. Sinal cancelado."
-              ],
-              "blocos": {
-                "tendencia": {
-                  "score": -2.0,
-                  "status": "Baixa",
-                  "notas": [
-                    "H4: slopes EMA20/EMA50 negativos e preco abaixo das medias.",
-                    "D1: preco abaixo da EMA20 (-0.5)."
-                  ],
-                  "valores": {
-                    "timeframe": "H4",
-                    "slope_ema20": -0.00047660138355633567,
-                    "slope_ema50": -0.00039979444682050093,
-                    "preco": 1.13767,
-                    "ema20": 1.1382334732635002,
-                    "ema50": 1.1432611387540548
-                  }
-                },
-                "contexto": {
-                  "score": -0.5,
-                  "status": "Neutro",
-                  "notas": [
-                    "D1: preco abaixo da EMA20 (-1).",
-                    "D1: preco abaixo da EMA50 (-0.5).",
-                    "Preco esticado > 1.6x ATR distante da EMA20 (penaliza para neutro).",
-                    "Distancia > 2.0x ATR -> sinal vetado."
-                  ],
-                  "valores": {
-                    "timeframe": "D1",
-                    "vwap": 1.1366398974902794,
-                    "ema20": 1.149763667846771,
-                    "ema50": 1.1583325945708882,
-                    "atr": 0.005874282002644111,
-                    "context_blocked": true
-                  }
-                },
-                "impulso": {
-                  "score": -0.0,
-                  "status": "Fraco",
-                  "notas": [
-                    "ADX=20.4 abaixo de 21 (0).",
-                    "Impulso segue a tendência (a favor da baixa)."
-                  ],
-                  "valores": {
-                    "adx": 20.411617732345956
-                  }
-                },
-                "mitigacao": {
-                  "score": 0.0,
-                  "status": "Sem alertas",
-                  "notas": [
-                    "Volatilidade dentro do intervalo esperado."
-                  ],
-                  "valores": {
-                    "candle_range": 0.0005199999999998539,
-                    "atr": 0.00045905521350652153,
-                    "mitigation_blocked": false
-                  }
-                }
-              },
-              "hit": null,
-              "ref_time": "2026-06-26T06:30:00+00:00"
-            }
-          ],
-          "accuracy": 0.9036144578313253
-        },
-        {
-          "region": "Europe",
-          "version": "1.0.2",
-          "vies": "FORA",
-          "score": 0.0,
-          "motivo": "EURUSD: FORA (score=0.0) | Tendencia: Baixa (H4: slopes EMA20/EMA50 negativos e preco abaixo das medias.; D1: preco abaixo da EMA20 (-0.5).); Contexto: Neutro (D1: preco abaixo da EMA20 (-1).; D1: preco abaixo da EMA50 (-0.5).; Preco esticado > 1.5x ATR distante da EMA20 (penaliza para neutro).) | Alertas: Contexto: preco afastado demais da media (risco de correcao).; Baixa volatilidade: range < 1.2x ATR.",
-          "hit": false,
-          "hit_ref_time": "2026-01-15T00:00:00",
-          "updated_at": "2026-06-26T06:46:00+00:00",
-          "symbol_results": [
-            {
-              "symbol": "EURUSD",
-              "vies": "FORA",
-              "score": 0.0,
-              "motivos": [
-                "Tendencia: Baixa (H4: slopes EMA20/EMA50 negativos e preco abaixo das medias.; D1: preco abaixo da EMA20 (-0.5).)",
-                "Contexto: Neutro (D1: preco abaixo da EMA20 (-1).; D1: preco abaixo da EMA50 (-0.5).; Preco esticado > 1.5x ATR distante da EMA20 (penaliza para neutro).)",
-                "Impulso: Fraco (ADX=20.4 abaixo de 21 (0).; Impulso segue a tendência (a favor da baixa).)",
-                "Mitigação: Atenção: mercado travado (Candle atual < 1.2x ATR (-1).)",
-                "EuropeSafety: contexto nao favoravel (veto)."
-              ],
-              "alertas": [
-                "Contexto: preco afastado demais da media (risco de correcao).",
-                "Baixa volatilidade: range < 1.2x ATR.",
-                "EuropeSafety: contexto nao favoravel (veto)."
-              ],
-              "blocos": {
-                "tendencia": {
-                  "score": -2.0,
-                  "status": "Baixa",
-                  "notas": [
-                    "H4: slopes EMA20/EMA50 negativos e preco abaixo das medias.",
-                    "D1: preco abaixo da EMA20 (-0.5)."
-                  ],
-                  "valores": {
-                    "timeframe": "H4",
-                    "slope_ema20": -0.00047660138355633567,
-                    "slope_ema50": -0.00039979444682050093,
-                    "preco": 1.13767,
-                    "ema20": 1.1382334732635002,
-                    "ema50": 1.1432611387540548
-                  }
-                },
-                "contexto": {
-                  "score": -0.5,
-                  "status": "Neutro",
-                  "notas": [
-                    "D1: preco abaixo da EMA20 (-1).",
-                    "D1: preco abaixo da EMA50 (-0.5).",
-                    "Preco esticado > 1.5x ATR distante da EMA20 (penaliza para neutro)."
-                  ],
-                  "valores": {
-                    "timeframe": "D1",
-                    "vwap": 1.1366398974902794,
-                    "ema20": 1.149763667846771,
-                    "ema50": 1.1583325945708882,
-                    "atr": 0.005874282002644111,
-                    "context_blocked": false
-                  }
-                },
-                "impulso": {
-                  "score": -0.0,
-                  "status": "Fraco",
-                  "notas": [
-                    "ADX=20.4 abaixo de 21 (0).",
-                    "Impulso segue a tendência (a favor da baixa)."
-                  ],
-                  "valores": {
-                    "adx": 20.411617732345956
-                  }
-                },
-                "mitigacao": {
-                  "score": -1.0,
-                  "status": "Atenção: mercado travado",
-                  "notas": [
-                    "Candle atual < 1.2x ATR (-1)."
-                  ],
-                  "valores": {
-                    "candle_range": 0.0005199999999998539,
-                    "atr": 0.00045905521350652153,
-                    "mitigation_blocked": false
-                  }
-                }
-              },
-              "hit": null,
-              "ref_time": "2026-06-26T06:30:00+00:00"
-            }
-          ],
-          "accuracy": 0.7384615384615385
-        }
-      ],
-      "best_version": {
-        "version": "1.2.2",
-        "accuracy": 0.9036144578313253
-      }
-    },
     {
       "region": "America",
       "session_name": "AMERICA",
@@ -571,6 +380,190 @@
       "best_version": {
         "version": "1.0.1",
         "accuracy": 0.7391304347826086
+      }
+    },
+    {
+      "region": "Europe",
+      "session_name": "EUROPE",
+      "session_start": "29/06/2026 04:00",
+      "updated_at": "2026-06-29T06:46:00+00:00",
+      "versions": [
+        {
+          "region": "Europe",
+          "version": "1.2.2",
+          "vies": "VENDA",
+          "score": -2.64,
+          "motivo": "EURUSD: VENDA (score=-2.64) | Tendencia: Neutro (H4: slopes das EMAs proximos de zero.; D1: preco abaixo da EMA20 (-0.5).); Contexto: Favoravel (D1: preco abaixo da EMA20 (-1).; D1: preco abaixo da EMA50 (-0.5).) | Alertas: Nenhum alerta crítico.",
+          "hit": true,
+          "hit_ref_time": "2026-02-03T00:00:00",
+          "updated_at": "2026-06-29T06:46:00+00:00",
+          "symbol_results": [
+            {
+              "symbol": "EURUSD",
+              "vies": "VENDA",
+              "score": -2.64,
+              "motivos": [
+                "Tendencia: Neutro (H4: slopes das EMAs proximos de zero.; D1: preco abaixo da EMA20 (-0.5).)",
+                "Contexto: Favoravel (D1: preco abaixo da EMA20 (-1).; D1: preco abaixo da EMA50 (-0.5).)",
+                "Impulso: Moderado (ADX=24.2 entre 21-33 (+1).; Impulso segue a tendência (a favor da baixa).)",
+                "Mitigação: Sem alertas (Volatilidade dentro do intervalo esperado.)"
+              ],
+              "alertas": [
+                "Nenhum alerta crítico."
+              ],
+              "blocos": {
+                "tendencia": {
+                  "score": -0.5,
+                  "status": "Neutro",
+                  "notas": [
+                    "H4: slopes das EMAs proximos de zero.",
+                    "D1: preco abaixo da EMA20 (-0.5)."
+                  ],
+                  "valores": {
+                    "timeframe": "H4",
+                    "slope_ema20": -4.855112389318404e-06,
+                    "slope_ema50": -0.0001771546389146403,
+                    "preco": 1.13827,
+                    "ema20": 1.1388746244723098,
+                    "ema50": 1.141761000993442
+                  }
+                },
+                "contexto": {
+                  "score": -1.5,
+                  "status": "Favoravel",
+                  "notas": [
+                    "D1: preco abaixo da EMA20 (-1).",
+                    "D1: preco abaixo da EMA50 (-0.5)."
+                  ],
+                  "valores": {
+                    "timeframe": "D1",
+                    "vwap": 1.1387963680643793,
+                    "ema20": 1.1478348636297526,
+                    "ema50": 1.1570701508411718,
+                    "atr": 0.005685810723806957,
+                    "context_blocked": false
+                  }
+                },
+                "impulso": {
+                  "score": -1.0,
+                  "status": "Moderado",
+                  "notas": [
+                    "ADX=24.2 entre 21-33 (+1).",
+                    "Impulso segue a tendência (a favor da baixa)."
+                  ],
+                  "valores": {
+                    "adx": 24.187395434567257
+                  }
+                },
+                "mitigacao": {
+                  "score": 0.0,
+                  "status": "Sem alertas",
+                  "notas": [
+                    "Volatilidade dentro do intervalo esperado."
+                  ],
+                  "valores": {
+                    "candle_range": 0.0005900000000000905,
+                    "atr": 0.00039042352824980304,
+                    "mitigation_blocked": false
+                  }
+                }
+              },
+              "hit": null,
+              "ref_time": "2026-06-29T06:30:00+00:00"
+            }
+          ],
+          "accuracy": 0.9036144578313253
+        },
+        {
+          "region": "Europe",
+          "version": "1.0.2",
+          "vies": "VENDA",
+          "score": -2.64,
+          "motivo": "EURUSD: VENDA (score=-2.64) | Tendencia: Neutro (H4: slopes das EMAs proximos de zero.; D1: preco abaixo da EMA20 (-0.5).); Contexto: Favoravel (D1: preco abaixo da EMA20 (-1).; D1: preco abaixo da EMA50 (-0.5).) | Alertas: Nenhum alerta crítico.",
+          "hit": false,
+          "hit_ref_time": "2026-01-15T00:00:00",
+          "updated_at": "2026-06-29T06:46:00+00:00",
+          "symbol_results": [
+            {
+              "symbol": "EURUSD",
+              "vies": "VENDA",
+              "score": -2.64,
+              "motivos": [
+                "Tendencia: Neutro (H4: slopes das EMAs proximos de zero.; D1: preco abaixo da EMA20 (-0.5).)",
+                "Contexto: Favoravel (D1: preco abaixo da EMA20 (-1).; D1: preco abaixo da EMA50 (-0.5).)",
+                "Impulso: Moderado (ADX=24.2 entre 21-30 (+1).; Impulso segue a tendência (a favor da baixa).)",
+                "Mitigação: Sem alertas (Volatilidade dentro do intervalo esperado.)"
+              ],
+              "alertas": [
+                "Nenhum alerta crítico."
+              ],
+              "blocos": {
+                "tendencia": {
+                  "score": -0.5,
+                  "status": "Neutro",
+                  "notas": [
+                    "H4: slopes das EMAs proximos de zero.",
+                    "D1: preco abaixo da EMA20 (-0.5)."
+                  ],
+                  "valores": {
+                    "timeframe": "H4",
+                    "slope_ema20": -4.855112389318404e-06,
+                    "slope_ema50": -0.0001771546389146403,
+                    "preco": 1.13827,
+                    "ema20": 1.1388746244723098,
+                    "ema50": 1.141761000993442
+                  }
+                },
+                "contexto": {
+                  "score": -1.5,
+                  "status": "Favoravel",
+                  "notas": [
+                    "D1: preco abaixo da EMA20 (-1).",
+                    "D1: preco abaixo da EMA50 (-0.5)."
+                  ],
+                  "valores": {
+                    "timeframe": "D1",
+                    "vwap": 1.1387963680643793,
+                    "ema20": 1.1478348636297526,
+                    "ema50": 1.1570701508411718,
+                    "atr": 0.005685810723806957,
+                    "context_blocked": false
+                  }
+                },
+                "impulso": {
+                  "score": -1.0,
+                  "status": "Moderado",
+                  "notas": [
+                    "ADX=24.2 entre 21-30 (+1).",
+                    "Impulso segue a tendência (a favor da baixa)."
+                  ],
+                  "valores": {
+                    "adx": 24.187395434567257
+                  }
+                },
+                "mitigacao": {
+                  "score": 0.0,
+                  "status": "Sem alertas",
+                  "notas": [
+                    "Volatilidade dentro do intervalo esperado."
+                  ],
+                  "valores": {
+                    "candle_range": 0.0005900000000000905,
+                    "atr": 0.00039042352824980304,
+                    "mitigation_blocked": false
+                  }
+                }
+              },
+              "hit": null,
+              "ref_time": "2026-06-29T06:30:00+00:00"
+            }
+          ],
+          "accuracy": 0.7384615384615385
+        }
+      ],
+      "best_version": {
+        "version": "1.2.2",
+        "accuracy": 0.9036144578313253
       }
     }
   ]
